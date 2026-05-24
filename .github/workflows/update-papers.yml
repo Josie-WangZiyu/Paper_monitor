@@ -1,0 +1,42 @@
+name: Update Papers
+
+on:
+  schedule:
+    # Run every day at 06:00 UTC (14:00 Beijing Time)
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        pip install -r scripts/requirements.txt
+
+    - name: Fetch papers
+      run: |
+        python scripts/fetch_papers.py
+
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/papers.json
+        if git diff --cached --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Auto-update: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+        fi

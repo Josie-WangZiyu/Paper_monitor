@@ -37,7 +37,6 @@ def fetch_url(url: str, headers: dict = None, timeout: int = 30) -> bytes:
         resp.raise_for_status()
         return resp.content
     except Exception as e:
-        # Fallback to urllib for SSL issues with certain proxies
         if "SSL" in str(type(e).__name__) or "SSLError" in str(e) or "EOF" in str(e):
             req = urllib.request.Request(url, headers=headers or {})
             ctx = ssl.create_default_context()
@@ -49,6 +48,7 @@ def fetch_url(url: str, headers: dict = None, timeout: int = 30) -> bytes:
                 return response.read()
         raise
 
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "papers.json"
 
@@ -57,19 +57,24 @@ CROSSREF_HEADERS = {
     "Accept": "application/json",
 }
 
+# ---------------------------------------------------------------------------
 # Journal configurations
+# ---------------------------------------------------------------------------
+
 JOURNALS_RSS = {
     "jsv": {
         "name": "Journal of Sound and Vibration",
         "short": "JSV",
         "rss": "https://rss.sciencedirect.com/publication/science/0022460X",
         "website": "https://www.sciencedirect.com/journal/journal-of-sound-and-vibration",
+        "filter_type": "jsv",
     },
     "applied_acoustics": {
         "name": "Applied Acoustics",
         "short": "App. Acoustics",
         "rss": "https://rss.sciencedirect.com/publication/science/0003682X",
         "website": "https://www.sciencedirect.com/journal/applied-acoustics",
+        "filter_type": "applied_acoustics",
     },
 }
 
@@ -79,181 +84,145 @@ JOURNALS_CROSSREF = {
         "short": "JASA",
         "issn": "0001-4966",
         "website": "https://pubs.aip.org/jasa",
+        "filter_type": "jasa",
     },
     "aes": {
         "name": "Journal of the Audio Engineering Society",
         "short": "AES",
         "issn": "1549-4950",
         "website": "https://www.aes.org/journal/",
+        "filter_type": "aes",
     },
 }
 
 ARXIV_QUERY = "http://export.arxiv.org/api/query?search_query=cat:cs.SD+OR+cat:eess.AS&sortBy=submittedDate&sortOrder=descending&max_results=100"
 
 # ---------------------------------------------------------------------------
-# Keyword-based relevance scoring for Small Room Acoustics
+# Date threshold
+# ---------------------------------------------------------------------------
+MIN_YEAR = 2000
+
+# ---------------------------------------------------------------------------
+# Unified filtering keywords
 # ---------------------------------------------------------------------------
 
-KEYWORD_GROUPS = {
-    # Core small-room terms (highest weight)
-    "core": {
-        "weight": 3.0,
-        "terms": [
-            "small room acoustics", "small room acoustic",
-            "small room measurement", "small room low frequency",
-            "small room modal", "small-room acoustics", "small-room acoustic",
-            "small enclosure acoustics", "small space acoustics",
-            "small studio acoustics", "small listening room",
-            "small control room", "small home theater",
-            "small room sound", "small room response",
-            "compact room acoustics", "compact room acoustic",
-        ],
-    },
-    # Specific application scenes (high weight)
-    "scene": {
-        "weight": 2.5,
-        "terms": [
-            "car cabin acoustics", "car cabin acoustic", "vehicle cabin acoustics",
-            "automotive acoustics", "automotive cabin", "vehicle interior acoustics",
-            "automotive interior noise", "car interior acoustics",
-            "small recording room", "small recording studio",
-            "control room acoustics", "control room acoustic",
-            "listening room acoustics", "listening room acoustic",
-            "home theater acoustics", "home theater acoustic",
-            "home studio acoustics", "home studio acoustic",
-            "studio acoustics", "studio acoustic design",
-            "domestic room acoustics", "domestic listening",
-            "private room acoustics", "personal studio",
-            "bedroom studio", "project studio",
-            "booth acoustics", "vocal booth",
-            "anechoic chamber", "reverberation chamber",
-        ],
-    },
-    # Modal / low-frequency behavior (high weight)
-    "modal": {
-        "weight": 2.5,
-        "terms": [
-            "room mode", "room modes", "modal behavior", "modal analysis",
-            "modal density", "modal distribution", "modal overlap",
-            "modal frequency", "modal response", "modal decay",
-            "modal damping", "modal prediction",
-            "standing wave", "standing waves",
-            "schroeder frequency", "schroeder-frequency",
-            "low frequency room", "low-frequency room",
-            "low frequency acoustic", "low-frequency acoustic",
-            "bass response", "bass absorption", "bass trap", "bass traps",
-            "room resonance", "acoustic resonance",
-            "enclosure resonance", "cavity resonance",
-            "helmholtz resonator", "membrane absorber",
-            "porous absorber", "resonant absorber",
-        ],
-    },
-    # Measurement & treatment (medium weight)
-    "measurement": {
-        "weight": 1.5,
-        "terms": [
-            "room acoustic measurement", "room acoustic measurements",
-            "room impulse response", "room transfer function",
-            "rir measurement", "rir acquisition",
-            "room acoustic treatment", "acoustic treatment",
-            "room acoustic design", "room acoustic optimization",
-            "room acoustic simulation", "room acoustic modelling",
-            "sound field in room", "sound field in small",
-            "reverberation time", "rt60", "t60", "edt",
-            "decay time", "early decay time",
-            "diffuser", "diffusers", "acoustic diffusion", "binary diffuser", "schroeder diffuser",
-            "absorption coefficient", "sound absorption",
-            "acoustic panel", "acoustic panels",
-            "sound transmission", "sound insulation",
-            "noise reduction", "noise control",
-            "acoustic conditioning", "room conditioning",
-        ],
-    },
-    # General room-acoustics terms (lower weight, need accumulation)
-    "general": {
-        "weight": 1.0,
-        "terms": [
-            "room acoustics", "room acoustic", "indoor acoustics",
-            "enclosed space acoustics", "interior acoustics",
-            "acoustic environment", "acoustic quality",
-            "room sound field", "interior sound field", "acoustic field in room",
-            "sound reflection", "sound scattering",
-            "wall absorption", "ceiling absorption",
-            "floor absorption", "surface absorption",
-        ],
-    },
-    # Car/vehicle specific (medium weight)
-    "vehicle": {
-        "weight": 1.5,
-        "terms": [
-            "cabin noise", "cabin acoustics", "cabin acoustic", "car cabin noise",
-            "vehicle noise", "vehicle acoustics",
-            "automotive noise", "automotive sound",
-            "interior noise", "interior acoustics",
-            "powertrain noise", "road noise", "wind noise",
-            "nvh", "noise vibration harshness",
-        ],
-    },
+# Any of these in title/abstract -> strongly suggests indoor/small-room acoustics
+INDOOR_KEYWORDS = [
+    # Room types
+    "room acoustics", "architectural acoustics", "indoor acoustics",
+    "small room", "small enclosure", "small enclosed space", "small cavity",
+    "car cabin", "vehicle cabin", "automotive interior", "automotive cabin",
+    "listening room", "control room", "recording studio", "home studio",
+    "home theater", "domestic room", "project studio", "bedroom studio",
+    "vocal booth", "anechoic chamber", "reverberation chamber",
+    # Phenomena & metrics
+    "reverberation", "reverberant", "reverberation time", "rt60", "t60", "edt",
+    "room impulse response", "rir", "room transfer function",
+    "room mode", "modal analysis", "modal density", "modal overlap",
+    "standing wave", "schroeder frequency",
+    "absorption coefficient", "sound absorption", "surface absorption",
+    "acoustic diffusion", "diffuser", "diffusers", "diffusion",
+    "wall absorption", "ceiling absorption", "floor absorption",
+    "low frequency", "low-frequency", "bass response", "bass trap",
+    "sound field", "acoustic field", "sound field in room",
+    "noise reduction", "noise control", "sound insulation",
+    "acoustic treatment", "room conditioning", "acoustic panel",
+    # Measurement & perception
+    "acoustic measurement", "room measurement", "acoustic environment",
+    "acoustic quality", "spatial audio", "spatial hearing", "binaural",
+    "psychoacoustics", "speech intelligibility", "speech perception",
+]
+
+# Exclusion keywords -> drop paper if any appear in title/abstract
+EXCLUDE_KEYWORDS = [
+    "underwater", "acoustical oceanography", "oceanography",
+    "acoustic metamaterial", "metamaterial",
+    "animal bioacoustics", "biomedical acoustics",
+    "ultrasound imaging", "medical ultrasound",
+    "sonar", "seismic", "marine mammal", "bat echolocation",
+    "acoustic black hole", "black hole",
+    "structural acoustics and vibration",
+]
+
+# Special per-journal title keywords (title-only, fast pre-filter)
+TITLE_QUICK_INCLUDE = {
+    "jsv": [
+        "small enclosure", "small enclosed space", "small room",
+        "small cavity", "car cabin", "automotive", "vehicle cabin",
+        "room acoustic", "room mode", "modal analysis",
+        "room impulse response", "reverberation",
+    ],
+    "applied_acoustics": [
+        "room acoustics", "architectural acoustics", "sound perception",
+        "acoustic treatment", "room measurement", "sound field",
+        "car", "headrest", "localization", "cabin", "automotive", "vehicle",
+        "small room", "small enclosure", "studio", "listening room",
+        "reverberation", "absorption", "diffusion",
+    ],
+    "aes": [
+        "small enclosure", "small enclosed space", "small room",
+        "small cavity", "car cabin", "automotive", "vehicle cabin",
+        "studio", "control room", "listening room", "home theater",
+        "room acoustic", "room mode", "reverberation", "absorption",
+        "diffusion", "sound field", "spatial audio", "binaural",
+    ],
 }
 
-SCORE_THRESHOLD = 1.0  # Minimum score to keep a paper
+
+def contains_any(text: str, keywords: list[str]) -> bool:
+    if not text:
+        return False
+    text_lower = text.lower()
+    for kw in keywords:
+        if re.search(r'\b' + re.escape(kw.lower()) + r'\b', text_lower):
+            return True
+    return False
 
 
-def build_keyword_patterns():
-    """Pre-compile regex patterns for all keywords."""
-    patterns = {}
-    for group_name, group in KEYWORD_GROUPS.items():
-        compiled = []
-        for term in group["terms"]:
-            # Word-boundary matching, case-insensitive
-            escaped = re.escape(term)
-            pattern = re.compile(r'\b' + escaped + r'\b', re.IGNORECASE)
-            compiled.append(pattern)
-        patterns[group_name] = {
-            "weight": group["weight"],
-            "patterns": compiled,
-        }
-    return patterns
+def is_excluded(text: str, exclude_list: list[str]) -> bool:
+    return contains_any(text, exclude_list)
 
 
-KEYWORD_PATTERNS = build_keyword_patterns()
+def filter_paper(paper: dict, filter_type: str) -> bool:
+    """Return True if paper passes journal-specific filtering."""
+    title = (paper.get("title") or "").lower()
+    abstract = (paper.get("abstract") or "").lower()
+    combined = title + " " + abstract
 
+    # Global exclusion first
+    if is_excluded(combined, EXCLUDE_KEYWORDS):
+        return False
 
-def score_paper(title: str, abstract: str) -> tuple[float, list[str]]:
-    """
-    Score a paper's relevance to small room acoustics.
-    Returns (score, list of matched keywords).
-    Title matches count 2x compared to abstract matches.
-    """
-    text_title = (title or "").lower()
-    text_abstract = (abstract or "").lower()
-    text_combined = text_title + " " + text_abstract
+    # ---- JASA ----
+    if filter_type == "jasa":
+        if contains_any(combined, INDOOR_KEYWORDS):
+            return True
+        return False
 
-    score = 0.0
-    matched = []
+    # ---- Applied Acoustics ----
+    if filter_type == "applied_acoustics":
+        if contains_any(title, TITLE_QUICK_INCLUDE["applied_acoustics"]):
+            return True
+        if contains_any(combined, INDOOR_KEYWORDS):
+            return True
+        return False
 
-    for group_name, group in KEYWORD_PATTERNS.items():
-        weight = group["weight"]
-        for pattern in group["patterns"]:
-            # Count in title (2x weight)
-            title_matches = len(pattern.findall(text_title))
-            # Count in abstract (1x weight)
-            abstract_matches = len(pattern.findall(text_abstract))
+    # ---- JSV ----
+    if filter_type == "jsv":
+        if contains_any(title, TITLE_QUICK_INCLUDE["jsv"]):
+            return True
+        return False
 
-            if title_matches > 0 or abstract_matches > 0:
-                # Only record keyword once
-                keyword = pattern.pattern.replace(r'\b', '').replace('\\', '')
-                if keyword not in matched:
-                    matched.append(keyword)
+    # ---- AES ----
+    if filter_type == "aes":
+        if contains_any(title, TITLE_QUICK_INCLUDE["aes"]):
+            return True
+        return False
 
-                score += title_matches * weight * 2.0
-                score += abstract_matches * weight
-
-    # Bonus: if title explicitly contains "room" + "acoustic" + "small"
-    if "room" in text_title and "acoustic" in text_title and ("small" in text_title or "car" in text_title):
-        score += 1.5
-
-    return score, matched
+    # ---- Generic / arXiv / fallback ----
+    if contains_any(combined, INDOOR_KEYWORDS):
+        return True
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -295,6 +264,17 @@ def parse_date(entry) -> Optional[datetime]:
     return None
 
 
+def year_from_date_str(date_str: str) -> int:
+    """Extract year from ISO date string."""
+    if not date_str:
+        return 9999
+    parts = date_str.split("-")
+    try:
+        return int(parts[0])
+    except (ValueError, IndexError):
+        return 9999
+
+
 # ---------------------------------------------------------------------------
 # Fetchers
 # ---------------------------------------------------------------------------
@@ -302,6 +282,7 @@ def parse_date(entry) -> Optional[datetime]:
 def fetch_rss(journal_key: str, journal_config: dict) -> list[dict]:
     papers = []
     rss_url = journal_config["rss"]
+    filter_type = journal_config.get("filter_type", "generic")
     print(f"  Fetching {journal_config['short']} from RSS ...")
 
     try:
@@ -338,7 +319,6 @@ def fetch_rss(journal_key: str, journal_config: dict) -> list[dict]:
 
         doi = entry.get("prism_doi") or entry.get("dc_identifier", "").replace("doi:", "")
         if not doi:
-            doi = ""
             m = re.search(r'10\.\d{4,}/[^\s"<>]+', link)
             if m:
                 doi = m.group(0)
@@ -346,18 +326,12 @@ def fetch_rss(journal_key: str, journal_config: dict) -> list[dict]:
         pub_date = parse_date(entry)
         date_str = pub_date.strftime("%Y-%m-%d") if pub_date else ""
 
+        # Date filter
+        if year_from_date_str(date_str) < MIN_YEAR:
+            continue
+
         summary = normalize_text(entry.get("summary", entry.get("description", "")))
         summary = re.sub(r'<[^>]+>', '', summary)
-
-        # Score relevance
-        score, matched = score_paper(title, summary)
-
-        # OA detection for Elsevier RSS: check for open access indicators
-        is_oa = False
-        if hasattr(entry, "prism_aggregationType"):
-            # RSS doesn't reliably give OA info; infer from common patterns
-            pass
-        # Try to infer from link or DOI landing page (best effort)
 
         paper = {
             "id": "",
@@ -370,12 +344,16 @@ def fetch_rss(journal_key: str, journal_config: dict) -> list[dict]:
             "doi": doi,
             "url": link,
             "published": date_str,
-            "is_oa": is_oa,
-            "oa_url": link if is_oa else "",
-            "score": round(score, 2),
-            "matched_keywords": matched,
+            "is_oa": False,
+            "oa_url": "",
+            "image_url": "",
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }
+
+        # Apply journal-specific filter
+        if not filter_paper(paper, filter_type):
+            continue
+
         paper["id"] = generate_id(paper)
         papers.append(paper)
 
@@ -386,9 +364,15 @@ def fetch_rss(journal_key: str, journal_config: dict) -> list[dict]:
 def fetch_crossref(journal_key: str, journal_config: dict) -> list[dict]:
     papers = []
     issn = journal_config["issn"]
+    filter_type = journal_config.get("filter_type", "generic")
     print(f"  Fetching {journal_config['short']} from CrossRef (ISSN: {issn}) ...")
 
-    url = f"https://api.crossref.org/works?filter=issn:{issn}&sort=published&order=desc&rows=50"
+    # Backdate to 2000, fetch up to 100 rows
+    url = (
+        f"https://api.crossref.org/works"
+        f"?filter=issn:{issn},from-pub-date:{MIN_YEAR}-01-01"
+        f"&sort=published&order=desc&rows=100"
+    )
     try:
         content = fetch_url(url, headers=CROSSREF_HEADERS)
         data = json.loads(content)
@@ -460,6 +444,10 @@ def fetch_crossref(journal_key: str, journal_config: dict) -> list[dict]:
             except Exception:
                 pass
 
+        # Date filter (extra safety)
+        if year_from_date_str(date_str) < MIN_YEAR:
+            continue
+
         doi = item.get("DOI", "")
         url_link = item.get("URL", f"https://doi.org/{doi}" if doi else "")
         abstract = clean_jats_abstract(item.get("abstract", ""))
@@ -469,20 +457,10 @@ def fetch_crossref(journal_key: str, journal_config: dict) -> list[dict]:
         oa_url = ""
         for lic in item.get("license", []):
             start = lic.get("start", {}).get("date-time", "")
-            # If license start date is before or equal to publication, treat as OA
             if start:
                 is_oa = True
-        # CrossRef has open-access flag in some records
-        if item.get("is-referenced-by-count") is not None:
-            # Not a direct OA flag; check for free full-text links
-            pass
-        # Best-effort: many AIP journals are hybrid, so we can't reliably detect from CrossRef alone
-        # Mark as potentially OA if URL contains known OA patterns
         if "creativecommons" in str(item.get("license", [])).lower():
             is_oa = True
-
-        # Score relevance
-        score, matched = score_paper(title, abstract)
 
         paper = {
             "id": "",
@@ -497,10 +475,14 @@ def fetch_crossref(journal_key: str, journal_config: dict) -> list[dict]:
             "published": date_str,
             "is_oa": is_oa,
             "oa_url": oa_url,
-            "score": round(score, 2),
-            "matched_keywords": matched,
+            "image_url": "",
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }
+
+        # Apply journal-specific filter
+        if not filter_paper(paper, filter_type):
+            continue
+
         paper["id"] = generate_id(paper)
         papers.append(paper)
 
@@ -557,12 +539,13 @@ def fetch_arxiv() -> list[dict]:
             except Exception:
                 pass
 
+        # Date filter
+        if year_from_date_str(date_str) < MIN_YEAR:
+            continue
+
         # arXiv is always OA
         is_oa = True
         oa_url = link
-
-        # Score relevance
-        score, matched = score_paper(title, summary)
 
         paper = {
             "id": "",
@@ -577,10 +560,14 @@ def fetch_arxiv() -> list[dict]:
             "published": date_str,
             "is_oa": is_oa,
             "oa_url": oa_url,
-            "score": round(score, 2),
-            "matched_keywords": matched,
+            "image_url": "",
             "fetched_at": datetime.now(timezone.utc).isoformat(),
         }
+
+        # Apply generic filter
+        if not filter_paper(paper, "generic"):
+            continue
+
         paper["id"] = generate_id(paper)
         papers.append(paper)
 
@@ -636,18 +623,26 @@ def main():
     # Merge
     merged = merge_papers(existing_papers, all_new_papers)
 
-    # Filter by relevance score
-    relevant = [p for p in merged if p.get("score", 0) >= SCORE_THRESHOLD]
-    irrelevant = [p for p in merged if p.get("score", 0) < SCORE_THRESHOLD]
+    # Re-apply filters to ALL papers (including existing ones) so old data
+    # that no longer matches stricter rules gets cleaned out.
+    print(f"  Re-filtering {len(merged)} total papers...")
+    journal_filter_map = {k: v["filter_type"] for k, v in {**JOURNALS_RSS, **JOURNALS_CROSSREF}.items()}
+    journal_filter_map["arXiv"] = "generic"
 
-    print(f"  Relevant papers (score >= {SCORE_THRESHOLD}): {len(relevant)}")
-    print(f"  Filtered out (score < {SCORE_THRESHOLD}): {len(irrelevant)}")
+    def get_filter_type(paper):
+        return journal_filter_map.get(paper.get("journal", ""), "generic")
 
-    # Sort by date desc, then score desc
-    relevant.sort(key=lambda x: (x.get("published", ""), x.get("score", 0)), reverse=True)
+    filtered = [p for p in merged if filter_paper(p, get_filter_type(p))]
+    dropped = len(merged) - len(filtered)
+    if dropped > 0:
+        print(f"    Dropped {dropped} papers that no longer match filters")
+    merged = filtered
+
+    # Sort by date desc
+    merged.sort(key=lambda x: x.get("published", ""), reverse=True)
 
     # Update data
-    data["papers"] = relevant
+    data["papers"] = merged
     data["last_updated"] = datetime.now(timezone.utc).isoformat()
 
     # Save
@@ -655,7 +650,7 @@ def main():
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"[{datetime.now().isoformat()}] Done. Total relevant papers: {len(relevant)}")
+    print(f"[{datetime.now().isoformat()}] Done. Total papers: {len(merged)}")
     return 0
 
 

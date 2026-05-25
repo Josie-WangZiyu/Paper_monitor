@@ -1,6 +1,38 @@
 {
-  "last_updated": "2026-05-25T05:21:20.146573+00:00",
+  "last_updated": "2026-05-25T07:05:01.193667+00:00",
   "papers": [
+    {
+      "id": "69f386e6ab4a74e4",
+      "title": "Frame-Aligned Fusion of Canary and WavLM for Non-Intrusive Intelligibility Prediction of Hearing-Aid-Processed Speech",
+      "authors": "Kazushi Nakazawa",
+      "affiliations": "",
+      "abstract": "Non-intrusive intelligibility prediction estimates how well hearing-impaired listeners understand hearing-aid-processed speech without a clean reference. We study this task in the 3rd Clarity Prediction Challenge using two frozen speech encoders, Canary and WavLM. The central question is not only whether complementary pretrained representations should be combined, but where their interaction should occur. We compare single-backbone baselines, uniform score averaging, pool-late fusion, cross-attention, frame-aligned fusion, and reverse alignment under a shared left/right-preserving binaural framework. Among the compared systems, the best model temporally prepares WavLM with a learnable strided convolution and fuses it with Canary on the coarser Canary timeline before pooling, reaching Eval RMSE 24.96$\\pm$0.06 and Eval Corr 0.796$\\pm$0.001. Severity, enhancement-system, layer-window, and temporal-shift analyses indicate that coarse local temporal correspondence before pooling is a useful inductive bias for this task.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.23619v1",
+      "url": "https://arxiv.org/abs/2605.23619v1",
+      "published": "2026-05-22",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.23619v1",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.884963+00:00"
+    },
+    {
+      "id": "d97581cf04fa8afb",
+      "title": "Word-Level Modeling with Alignment-Aware Acoustic Fusion for Text-Assisted Intelligibility Prediction in Listeners with Hearing Loss",
+      "authors": "Kazushi Nakazawa",
+      "affiliations": "",
+      "abstract": "We address text-assisted speech intelligibility prediction for hearing-impaired listeners in CPC3. Although the target is a sentence-level percentage, it is determined by reference-word recognition outcomes. We formulate prediction as reference-conditioned word-level correctness modeling: a frozen Whisper encoder analyzes degraded speech, a teacher-forced decoder conditions on the canonical transcript, and sentence intelligibility is obtained by averaging predicted correctness probabilities over valid reference words. To complement transcript-conditioned decoder states, we add a word-aligned local acoustic branch based on character-level cross-attention alignment and an utterance-level global acoustic branch for calibration. On the official evaluation set, the decoder baseline obtains RMSE 24.92 and correlation 0.795, while joint fusion improves to incorrect-word F1 0.778, MCC 0.626, correlation 0.806, and RMSE 24.39. A similar trend with Whisper medium suggests that the gain comes from prediction granularity and alignment-aware fusion.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.23604v1",
+      "url": "https://arxiv.org/abs/2605.23604v1",
+      "published": "2026-05-22",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.23604v1",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.887560+00:00"
+    },
     {
       "id": "d2f2c6e864a0ce92",
       "title": "AffectCodec: Emotion-Preserving Neural Speech Codec with Block-Diagonal Residual FSQ",
@@ -14,11 +46,40 @@
       "published": "2026-05-22",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.23373v1",
-      "score": 1.0,
-      "matched_keywords": [
-        "acoustic quality"
-      ],
-      "fetched_at": "2026-05-25T05:18:02.550327+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.899521+00:00"
+    },
+    {
+      "id": "e456267eb23a3c01",
+      "title": "Live Music Diffusion Models: Efficient Fine-Tuning and Post-Training of Interactive Diffusion Music Generators",
+      "authors": "Zachary Novack, Stephen Brade, Haven Kim, Hugo Flores García, Nithya Shikarpur, Chinmay Talegaonkar, Suwan Kim, Valerie K. Chen, Julian McAuley, Taylor Berg-Kirkpatrick, Cheng-Zhi Anna Huang",
+      "affiliations": "",
+      "abstract": "Interactive streaming music generation promises the use of generative models for live performance and co-creation that is impossible with offline models. However, SOTA models exist in the discrete-AR regime, requiring industrial levels of compute for both training and inference. In this work, we investigate whether audio diffusion models, with their wide support in the open-source community but non-streaming bidirectional nature, can be repurposed efficiently into interactive models accessible on consumer hardware. By taking a critical look at the modern pipeline for block-wise outpainting diffusion, we identify critical inefficiencies during inference that result in strictly worse computational efficiency than their discrete-AR counterparts. We propose Live Music Diffusion Models (LMDMs), a simple modification of the generative diffusion process that recovers, and then outperforms, the inference complexity of the discrete Live Music Models (LMMs) through block-wise KV Caching. Unlike LMMs, LMDMs further enable stable post-training alignment through our novel ARC-Forcing paradigm, reducing error accumulation without any explicit RL or reward models. We demonstrate the application of LMDMs in a number of creative domains, including text-conditioned generation, sketch-based music synthesis, and jamming. We finally show how LMDMs can be used as a generative instrument in a real artist-AI collaboration, utilizing LMDMs as a \"generative delay\" to transform musicians' improvisation live for variable timbral effects while running locally on a consumer gaming laptop.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.22717v1",
+      "url": "https://arxiv.org/abs/2605.22717v1",
+      "published": "2026-05-21",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.22717v1",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.915013+00:00"
+    },
+    {
+      "id": "af94487a078bb892",
+      "title": "Instrumental Text-to-Music Generation with Auxiliary Conditioning Branches",
+      "authors": "Junyoung Koh",
+      "affiliations": "",
+      "abstract": "Text-to-music generation has advanced rapidly, with modern autoregressive and diffusion-based models producing convincing music from natural-language prompts. However, much of this progress relies on large-scale training data and external pretraining, making it difficult to isolate which design choices remain effective when data and pretraining are controlled. We study this setting using a Diffusion Transformer backbone with lyric and timbre conditioning, adapted to an instrumental-only text-to-music task in which the auxiliary lyric and timbre branches receive only degenerate conditioning signals. Through controlled ablations, we find that models retrained without these branches score lower across AudioBox aesthetics, LLM-as-judge, and human MOS, and that reinvesting the saved parameters as additional DiT depth recovers only marginally. This suggests the auxiliary branches may act as training-time architectural anchors whose contribution goes beyond their explicit conditioning content. We validate the same model through comparisons with external instrumental baselines and through our submission to the ICME 2026 Academic Text-to-Music (ATTM) Grand Challenge, where our Performance submission ranked first under both the objective metrics and the subsequent organizer-administered MOS over 35 raters, attaining the highest overall MOS across all challenge submissions, while our Efficiency submission was a finalist that tied for second under the objective metrics.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.21433v1",
+      "url": "https://arxiv.org/abs/2605.21433v1",
+      "published": "2026-05-20",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.21433v1",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.927657+00:00"
     },
     {
       "id": "53fb15dbc60223e7",
@@ -33,11 +94,24 @@
       "published": "2026-05-20",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.20968v1",
-      "score": 1.5,
-      "matched_keywords": [
-        "reverberation time"
-      ],
-      "fetched_at": "2026-05-25T05:20:32.271285+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.940159+00:00"
+    },
+    {
+      "id": "29d12594d6cd9b72",
+      "title": "Raon-OpenTTS: Open Models and Data for Robust Text-to-Speech",
+      "authors": "Semin Kim, Seungjun Chung, Taehong Moon, Sangheon Lee, Minyoung Ahn, Keon Lee, Nam Soo Kim, Jaewoong Cho, Ludwig Schmidt, Kangwook Lee, Dongmin Park",
+      "affiliations": "",
+      "abstract": "Recent advances in text-to-speech (TTS) models show impressive speech naturalness and quality, yet the role of large-scale open data in driving this progress remains underexplored. In this work, we introduce Raon-OpenTTS, an open TTS model that performs competitively with state-of-the-art closed-data TTS models, and Raon-OpenTTS-Pool, a large-scale open dataset for reproducible TTS training. Raon-OpenTTS-Pool consists of 615K hours of 240M speech segments aggregated from publicly available English speech corpora and web-sourced recordings. With a model-based filtering pipeline applied to Raon-OpenTTS-Pool, we derive Raon-OpenTTS-Core, a curated, high-quality subset of 510K hours and 194M speech segments. Using Raon-OpenTTS-Core, we train Raon-OpenTTS, a series of diffusion transformer (DiT)-based TTS models from 0.3B to 1B parameters. On multiple benchmarks, Raon-OpenTTS-1B shows comparable performance to state-of-the-art models such as Qwen3-TTS and CosyVoice 3, which are trained on several million hours of proprietary speech data. Notably, on Seed-TTS-Eval, Raon-OpenTTS-1B achieves a word error rate (WER) of 1.78% and a speaker similarity (SIM) of 0.749, ranking second on WER and first on SIM among recent open-weight TTS baselines. On CV3-Hard-EN, Raon-OpenTTS-1B achieves a WER of 6.15% and a SIM of 0.775, ranking first on both metrics. Furthermore, to support robust evaluation, we introduce Raon-OpenTTS-Eval, a structured benchmark for assessing TTS robustness across diverse acoustic conditions including clean, noisy, in-the-wild, and expressive speech. On Raon-OpenTTS-Eval, Raon-OpenTTS-1B achieves the best average WER and SIM among all evaluated models, and the second-best human preference, as measured by comparative mean opinion score (CMOS). Our data pool, filtering pipeline, training code, and checkpoints are publicly available at https://github.com/krafton-ai/RAON-OpenTTS.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.20830v1",
+      "url": "https://arxiv.org/abs/2605.20830v1",
+      "published": "2026-05-20",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.20830v1",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.945175+00:00"
     },
     {
       "id": "d4d18a86d2e74b45",
@@ -52,11 +126,24 @@
       "published": "2026-05-19",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.20403v1",
-      "score": 8.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:32.304609+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:00.958204+00:00"
+    },
+    {
+      "id": "c6bcce03e95243ba",
+      "title": "Stable Audio 3",
+      "authors": "Zach Evans, Julian D. Parker, Matthew Rice, CJ Carr, Zack Zukowski, Josiah Taylor, Jordi Pons",
+      "affiliations": "",
+      "abstract": "Stable Audio 3 is a family of fast latent diffusion models (small, medium, large) for variable-length audio generation and editing. Since our models can generate several minutes of audio, variable-length generations are key to avoid the cost of producing full-length generations for short sounds. We also support inpainting, enabling targeted audio editing and the continuation of short recordings. Our latent diffusion models operate on top of a novel semantic-acoustic autoencoder that projects audio into a compact latent space, enabling efficient diffusion-based generation while preserving audio fidelity and encouraging semantic structure in the latent. Finally, we run adversarial post-training to both accelerate inference and improve generation quality, reducing the number of inference steps while improving fidelity and prompt adherence. Stable Audio 3 models are trained on licensed and Creative Commons data to generate music and sounds in less than a 2s on an H200 GPU and less than a few seconds on a MacBook Pro M4. We release the weights of small and medium, that can run on consumer-grade hardware, together with their training and inference pipeline.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.17991v1",
+      "url": "https://arxiv.org/abs/2605.17991v1",
+      "published": "2026-05-18",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.17991v1",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.001668+00:00"
     },
     {
       "id": "7485d9cb45ba5c5e",
@@ -71,12 +158,8 @@
       "published": "2026-05-18",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.17964v1",
-      "score": 6.0,
-      "matched_keywords": [
-        "noise reduction",
-        "noise control"
-      ],
-      "fetched_at": "2026-05-25T05:20:32.381799+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.003006+00:00"
     },
     {
       "id": "2f5d9593c6cbf5dd",
@@ -91,11 +174,8 @@
       "published": "2026-05-17",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.17414v1",
-      "score": 4.5,
-      "matched_keywords": [
-        "diffusion"
-      ],
-      "fetched_at": "2026-05-25T05:18:02.697670+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.022224+00:00"
     },
     {
       "id": "3194cab656b154a4",
@@ -110,31 +190,8 @@
       "published": "2026-05-17",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.17407v1",
-      "score": 4.5,
-      "matched_keywords": [
-        "noise control"
-      ],
-      "fetched_at": "2026-05-25T05:20:32.414813+00:00"
-    },
-    {
-      "id": "f5512ba6a32e29ab",
-      "title": "Radial-Component Predominant-Mode Inversion of Rayleigh Waves: Application to DAS-based Site Characterization",
-      "authors": "Mrinal Bhaumik, Brady R. Cox",
-      "affiliations": "",
-      "abstract": "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization. When a vertical source is activated along the fiber, DAS measures only the in-line (radial) component of Rayleigh-wave motion. Dispersion data extracted from radial-component waveforms may differ from those obtained from vertical-component measurements, particularly under complex stratigraphic conditions. Hence, a component-consistent forward problem is desired when inverting radial-component DAS dispersion data to retrieve accurate shear wave velocity (Vs) profiles. This study presents a radial-component predominant-mode (RCPM) inversion framework designed for DAS-based surface-wave analysis that explicitly accounts for source-receiver directivity and modal sensitivity of the Rayleigh-wave radial component. The proposed approach matches measured dominant radial dispersion trends with the theoretical mode exhibiting the maximum modal participation. As a result, the RCPM framework eliminates the need for explicit modal indexing, provides a component-consistent interpretation of radial-component dispersion data, and substantially reduces reliance on subjective analyst-driven modal interpretations. The RCPM approach is systematically evaluated using three synthetic ground models and two field DAS datasets. The synthetic results demonstrate that modal energy distribution differs significantly between vertical and radial components in the presence of strong velocity contrasts and velocity reversals, and that conventional inversion approaches may misinterpret modal behavior, resulting in less accurate Vs profiles. In contrast, the RCPM method consistently captures the correct modal response and yields reliable Vs profiles. Application to two field DAS datasets further demonstrates good agreement between the inverted Vs profiles and independent invasive borehole measurements.",
-      "journal": "arXiv",
-      "journal_full": "arXiv (Audio & Acoustics)",
-      "doi": "arXiv:2605.16717v1",
-      "url": "https://arxiv.org/abs/2605.16717v1",
-      "published": "2026-05-16",
-      "is_oa": true,
-      "oa_url": "https://arxiv.org/abs/2605.16717v1",
-      "score": 5.0,
-      "matched_keywords": [
-        "modal behavior",
-        "modal response"
-      ],
-      "fetched_at": "2026-05-25T05:18:02.717680+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.023727+00:00"
     },
     {
       "id": "618cd3cb245df6d9",
@@ -149,11 +206,8 @@
       "published": "2026-05-16",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.17085v1",
-      "score": 3.0,
-      "matched_keywords": [
-        "diffusion"
-      ],
-      "fetched_at": "2026-05-25T05:18:02.708282+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.030551+00:00"
     },
     {
       "id": "6c92c0655465565a",
@@ -168,11 +222,8 @@
       "published": "2026-05-16",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.16964v1",
-      "score": 1.5,
-      "matched_keywords": [
-        "diffusion"
-      ],
-      "fetched_at": "2026-05-25T05:18:02.710787+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.031734+00:00"
     },
     {
       "id": "bcb5ccc5fa4fb215",
@@ -187,49 +238,24 @@
       "published": "2026-05-15",
       "is_oa": true,
       "oa_url": "https://arxiv.org/abs/2605.16681v1",
-      "score": 1.5,
-      "matched_keywords": [
-        "diffusion"
-      ],
-      "fetched_at": "2026-05-25T05:18:02.720630+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:05:01.038915+00:00"
     },
     {
-      "id": "d9ad728c88c2b2af",
-      "title": "Immersive Music Production in Commercial Contexts: A Qualitative Analysis of Dolby Atmos Workflows",
-      "authors": "Marcela Rada, Russell Mason, Enzo de Sena",
+      "id": "a704a442770c194e",
+      "title": "Perceptual Evaluation of Different Methods for Binaural Rendering of Recordings With Various Microphone Arrays",
+      "authors": "Tim Lübeck, Christian Scheer, David Ackermann, Fabian Brinkmann, Christoph Pörschmann, Stefan Weinzierl, Jens Ahrens, Johannes M. Arend",
       "affiliations": "",
-      "abstract": "This qualitative study examines immersive music-production workflows in professional commercial contexts, predominantly within Dolby Atmos environments. Using an interpretivist design, the study combined 30 semi-structured interviews with nonparticipant observations and analyzed transcripts and field notes through conventional content analysis with triangulation. Findings suggest that practice progresses through three stages: preproduction, production, and postproduction. In preproduction, teams align expectations through experiential listening, plain-language briefs, spatial storyboards, and early validation of stems and metadata. In production, placements of sound sources and room acoustics function as compositional parameters that shape localization and movement, inform recording choices that retain room character and multimicrophone flexibility, and expose limitations of monitoring and rendering tools. In postproduction, creative aims are balanced with the need for consistent translation across playback systems, supported by template-based routing, metadata policies, and explicit bed, object, and low-frequency–effects practices. Across these stages, practitioners face challenges, including knowledge gaps, renderer divergence, dynamics control, and economic pressures. Reported responses include stakeholder education, format-agnostic workflows, future-proofed session design, and early artist engagement. The study contributes a stage-based model of immersive production practice, a taxonomy of bed and object strategies, and guidance for achieving reliable translation between loudspeaker and headphone playback.",
+      "abstract": "Binaural reproduction of microphone array recordings has become an important technology in the research and consumer sectors. Several commercially available spherical microphone arrays have been introduced over the years along with various methods for binaural rendering of array recordings. Most of these methods have been evaluated individually, typically using only one specific microphone array. However, a comprehensive and systematic perceptual evaluation combining different methods and various microphone arrays is lacking. This study presents the results of a listening experiment comparing the motion-tracked binaural method, various Ambisonic binaural decoders, and the parametric binaural rendering method COMPASS using loudspeaker orchestra recordings with six different microphone arrays from two rooms, the Berliner Philharmonie and a laboratory space resembling a small chamber music venue. The experiment assessed the binaural renderings with respect to overall listening experience and four perceptual attributes from the Spatial Audio Quality Inventory in comparison to a reference recorded with a head and torso simulator. The results provide detailed insights into which rendering method and array combination provides a high overall listening experience while preserving the assessed perceptual attributes externalization, coloration, source position, and presence. Moreover, the results indicate the extent to which the assessed perceptual attributes contribute to overall listening experience.",
       "journal": "AES",
       "journal_full": "Journal of the Audio Engineering Society",
-      "doi": "10.17743/jaes.2022.0263",
-      "url": "https://doi.org/10.17743/jaes.2022.0263",
+      "doi": "10.17743/jaes.2022.0259",
+      "url": "https://doi.org/10.17743/jaes.2022.0259",
       "published": "2026-05-12",
       "is_oa": false,
       "oa_url": "",
-      "score": 1.0,
-      "matched_keywords": [
-        "room acoustics"
-      ],
-      "fetched_at": "2026-05-25T05:20:29.952918+00:00"
-    },
-    {
-      "id": "01e1017aea335be1",
-      "title": "Shape Optimization of Rectangular Horns for Directivity Control in Finite Enclosures",
-      "authors": "Shenyuan Gu, Yue You, Yong Shen",
-      "affiliations": "",
-      "abstract": "Rectangular horns are essential components in professional audio systems where precise directivity control is important. Although a horn’s directivity is known to be influenced by its finite mounting enclosure, a shape-optimization method to improve directivity control under these realistic conditions has been lacking. To address this, an optimization method based on a hybrid model is developed. The model couples the mode-matching method for the internal sound field of the horn with the boundary element method to accurately compute the modal radiation impedance at the mouth. This provides the mode-matching method with a realistic boundary condition that fully accounts for the enclosure. The optimization method then employs this hybrid model within a gradient-based procedure to design a rectangular horn that maintains constant coverage angles in both horizontal and vertical planes over a wide frequency band. A physical prototype was manufactured, and its directivity measurements show good agreement with simulations, validating the proposed method as a predictive tool for high-performance horn design.",
-      "journal": "AES",
-      "journal_full": "Journal of the Audio Engineering Society",
-      "doi": "10.17743/jaes.2022.0265",
-      "url": "https://doi.org/10.17743/jaes.2022.0265",
-      "published": "2026-05-12",
-      "is_oa": false,
-      "oa_url": "",
-      "score": 1.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:29.974546+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.564258+00:00"
     },
     {
       "id": "b33d95b2759aecec",
@@ -244,13 +270,24 @@
       "published": "2026-04-01",
       "is_oa": false,
       "oa_url": "",
-      "score": 5.0,
-      "matched_keywords": [
-        "sound absorption",
-        "room acoustics",
-        "wall absorption"
-      ],
-      "fetched_at": "2026-05-25T05:20:29.984962+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.568752+00:00"
+    },
+    {
+      "id": "8eaf9c585527e1ee",
+      "title": "Continuous and Overall Evaluation of Spatial Audio Reproduction Systems With Spatially Dynamic Content",
+      "authors": "Pia Nancy Porysek Moreta, Søren Bech, Jon Francombe, Jan Østergaard, Steven van de Par",
+      "affiliations": "",
+      "abstract": "This study addresses potential challenges in evaluating reproduction systems with complex, spatially dynamic audio material because current standardized methods may lead to biased or unreliable results. To investigate this, a listening experiment was conducted comparing two assessment methods—continuous and overall evaluation—applied to two attributes, basic audio quality and surrounding, using spatially dynamic content reproduced on two reproduction systems (a stereo and a 3D surround configuration). To enable comparison with overall evaluations, continuous ratings were summarized using different strategies. Although ratings were mainly influenced by the reproduction system, spatial variation, and program item, the choice of evaluation method also had a significant effect on the scores. This effect varied depending on the attribute and the metric used to summarize the continuous data. In cases where differences were observed, continuous evaluations consistently produced higher scores than overall ratings, regardless of the summary metric. These findings indicate that continuous evaluation can capture perceptual variations over time that are lost in overall ratings, suggesting it can be a useful approach when assessing attributes influenced by spatially dynamic changes.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0258",
+      "url": "https://doi.org/10.17743/jaes.2022.0258",
+      "published": "2026-04-01",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.569419+00:00"
     },
     {
       "id": "48d0bbfeafa26850",
@@ -265,11 +302,24 @@
       "published": "2026-03-06",
       "is_oa": false,
       "oa_url": "",
-      "score": 1.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:29.998505+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.571655+00:00"
+    },
+    {
+      "id": "e6e810b2a223be64",
+      "title": "BINAQUAL: A Full-Reference Objective Localization Similarity Metric for Binaural Audio",
+      "authors": "Davoud Shariat Panah, Dan Barry, Alessandro Ragano, Jan Skoglund, Andrew Hines",
+      "affiliations": "",
+      "abstract": "Spatial audio enhances immersion in applications such as virtual reality, augmented reality, gaming, and cinema by creating a three-dimensional auditory experience. Ensuring the spatial fidelity of binaural audio is crucial, given that processes such as compression, encoding, or transmission can alter localization cues. While subjective tests are used for evaluating spatial localization quality, they are costly and time-consuming. This paper introduces BINAQUAL, a full-reference objective metric designed to assess localization similarity in binaural audio recordings. BINAQUAL adapts the AMBIQUAL metric, originally developed for localization quality assessment in ambisonics audio format, to the binaural domain. BINAQUAL is evaluated across five key research questions, examining its sensitivity to variations in sound source locations, angle interpolations, surround loudspeaker layouts, audio degradations, and content diversity. Results demonstrate that BINAQUAL effectively differentiates between subtle spatial variations and correlates strongly with subjective listening tests, making it a reliable metric for binaural localization quality assessment. The proposed metric provides a robust benchmark for ensuring spatial accuracy in binaural audio processing, paving the way for improved objective evaluations in immersive audio applications.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0243",
+      "url": "https://doi.org/10.17743/jaes.2022.0243",
+      "published": "2026-02-10",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.577517+00:00"
     },
     {
       "id": "00bb77dc15312e7e",
@@ -284,11 +334,8 @@
       "published": "2025-12-16",
       "is_oa": false,
       "oa_url": "",
-      "score": 7.5,
-      "matched_keywords": [
-        "reverberation chamber"
-      ],
-      "fetched_at": "2026-05-25T05:20:30.048053+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.582028+00:00"
     },
     {
       "id": "75e52e18915cc62e",
@@ -303,49 +350,24 @@
       "published": "2025-12-16",
       "is_oa": false,
       "oa_url": "",
-      "score": 4.5,
-      "matched_keywords": [
-        "reverberation time"
-      ],
-      "fetched_at": "2026-05-25T05:18:01.065700+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.583797+00:00"
     },
     {
-      "id": "fff741ac99da1052",
-      "title": "Predicting the Perceptibility of Room Acoustic Variations Using Generalized Linear Mixed Models",
-      "authors": "Lukas Treybig, Florian Klein, Stephan Werner, Sebastià V. Amengual Garí, Steve Göring",
+      "id": "4cbef357f0a17fb0",
+      "title": "Evaluating the Plausibility of Binaural Ambisonics and Parametric Renderings",
+      "authors": "Hendrik Himmelein, Tim Lübeck, David Bau, Christoph Pörschmann",
       "affiliations": "",
-      "abstract": "Acoustic augmented realities aim to incorporate virtual elements on top of real acoustic environments. A key question is how accurately virtual acoustics must match real acoustics to enable perceptually seamless integration. In six-degrees-of-freedom scenarios, where listeners can explore spaces, intraroom acoustic variation is of particular interest. This paper presents a method for modeling the perceptibility of acoustic changes in an acoustic augmented realities context using a generalized linear mixed model based on differences in room acoustic parameters computed from pairs of room impulse responses. An online listening test based on extensive acoustic measurements investigated perceptible differences between three acoustic configurations of the same room using identical source-receiver arrangements. A total of 4,753 ratings from 120 participants in an ABX-like format (a method where participants identify whether a presented stimulus X matches stimulus A or B) were used to train the generalized linear mixed model. The resulting model shows good predictive performance (Brier score: 0.19; AUC: 0.67) based on a fivefold cross-validation with 100 repetitions, although improvements are possible. However, the perceptibility of acoustic changes can vary significantly between dynamic and static listening scenarios. The paper discusses evaluation strategies for these aspects, examines the model’s generalizability, highlights current limitations, and outlines directions for future improvement.",
+      "abstract": "Plausibility has become an established concept for evaluating the overall quality of audio rendering in extended reality. Several studies have assessed plausibility using measured binaural room impulse responses (BRIRs). However, BRIRs measured with an artificial head often suffer from limitations such as high measurement effort and limited individualization. Thus, the present study compares two alternative auralization approaches: an Ambisonics-based method and a parametric approach, using a measured BRIR condition as a reference. The results did not reveal significant differences in overall plausibility between the three conditions. Only slight differences were observed between source positions, which may be attributed to the limited head movement and specific room properties. These findings suggest that the choice of the auralization method has only a minor impact on perceived plausibility. Implications of these results for future research and auralization applications are discussed.",
       "journal": "AES",
       "journal_full": "Journal of the Audio Engineering Society",
-      "doi": "10.17743/jaes.2022.0232",
-      "url": "https://doi.org/10.17743/jaes.2022.0232",
+      "doi": "10.17743/jaes.2022.0237",
+      "url": "https://doi.org/10.17743/jaes.2022.0237",
       "published": "2025-11-10",
       "is_oa": false,
       "oa_url": "",
-      "score": 3.0,
-      "matched_keywords": [
-        "room acoustic"
-      ],
-      "fetched_at": "2026-05-25T05:18:01.069344+00:00"
-    },
-    {
-      "id": "3b646fbbaaa6efaa",
-      "title": "Rendering of a Moving Focused Sound Source Using Wave Field Synthesis",
-      "authors": "Akash Kumar, Amrita Puri",
-      "affiliations": "",
-      "abstract": "When synthesizing a dynamic sound field using a multichannel loudspeaker array, incorporating moving sound scenes enhances the immersive experience for listeners. Previous studies have explored the synthesis of a moving sound source situated outside the region enclosed by an array of loudspeakers, generally termed a nonfocused moving sound source. This paper presents the synthesis of a moving sound source inside the region enclosed by a loudspeaker array, termed a focused moving source. The driving signals for the loudspeakers are derived using the principle of wave field synthesis. Computer simulations have been conducted to evaluate the effectiveness of the proposed driving signals in synthesizing a focused moving point source.",
-      "journal": "AES",
-      "journal_full": "Journal of the Audio Engineering Society",
-      "doi": "10.17743/jaes.2022.0229",
-      "url": "https://doi.org/10.17743/jaes.2022.0229",
-      "published": "2025-11-10",
-      "is_oa": false,
-      "oa_url": "",
-      "score": 1.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:30.058431+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.586633+00:00"
     },
     {
       "id": "15f67d17ee67cb7a",
@@ -360,30 +382,24 @@
       "published": "2025-10-03",
       "is_oa": false,
       "oa_url": "",
-      "score": 1.5,
-      "matched_keywords": [
-        "room impulse response"
-      ],
-      "fetched_at": "2026-05-25T05:18:01.092026+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.591548+00:00"
     },
     {
-      "id": "a34278f863aa3ea5",
-      "title": "Joint Estimation of Sound Source Position and Room Boundaries Using a Multitask Deep Neural Network Model",
-      "authors": "Shan Gao, Yiwen Wang, Zeyu Yuan, Xihong Wu, Tianshu Qu",
+      "id": "0b14f8de59338831",
+      "title": "A Pilot Study of an Acoustic Calibration and Psychoacoustic Validation of a Binaural-Rendered Neuroengineering Laboratory",
+      "authors": "Norberto E. Naal-Ruiz, David I. Ibarra-Zarate, Luz M. Alonso-Valerdi",
       "affiliations": "",
-      "abstract": "Conventional room geometry blind inference techniques with acoustic signals often rely on prior knowledge, such as source signals or source positions, limiting their applicability when the sound source is unknown. To solve this problem, the authors propose a novel multitask deep neural network (DNN) model that jointly estimates sound source localization and room geometry using signals captured by a spherical microphone array. Considering the coupling between sound source content and environmental parameters in reverberation signals, extracted early reflection direction and delay information as network inputs to estimate spatial parameters is used, ensuring independence from the sound source signal. The proposed model employs a hierarchical architecture with dedicated subnetworks to process direction-of-arrival (DOA) and time-difference-of-arrival features, followed by a shared fusion module that exploits geometric constraints between source and boundary positions. Compared with traditional methods, this model requires less prior environmental information and performs sound source localization and room geometry inference with single-position sound field measurements. Experimental results from simulations and real measurements demonstrate the method’s effectiveness and precision compared with conventional approaches across various scenarios.",
+      "abstract": "The increasing research in extended reality technologies has driven significant progress in developing virtual auditory experiments. These efforts aim to create immersive virtual environments, yet challenges such as room divergence—mismatches between virtual and physical auditory spaces—remain critical. This study focused on calibrating a binaural-rendered listening room to match the acoustic parameters of a physical neuroengineering laboratory. Acoustic calibration of a binaural renderer plugin demonstrated reduced imprecision values across parameters, confirming the feasibility of software adjustments to replicate the behavior of physical spaces in extended reality environments. Subjective evaluations by 13 expert listeners revealed a trade-off between timbral and spatial quality, with one condition showing the least degradation in spatial quality and having the worst timbral quality score. The findings emphasize the importance of calibration, validation, and further research to enhance the performance of binaural renderers. This work provides a foundation for using auditory extended reality tools in multidisciplinary research, particularly neuroacoustics, enabling real-time collection of electrophysiological data in controlled, virtual environments.",
       "journal": "AES",
       "journal_full": "Journal of the Audio Engineering Society",
-      "doi": "10.17743/jaes.2022.0220",
-      "url": "https://doi.org/10.17743/jaes.2022.0220",
-      "published": "2025-10-03",
+      "doi": "10.17743/jaes.2022.0225",
+      "url": "https://doi.org/10.17743/jaes.2022.0225",
+      "published": "2025-09-05",
       "is_oa": false,
       "oa_url": "",
-      "score": 1.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:30.095394+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.592083+00:00"
     },
     {
       "id": "32b8392841beaa0b",
@@ -398,11 +414,136 @@
       "published": "2025-09-05",
       "is_oa": false,
       "oa_url": "",
-      "score": 4.5,
-      "matched_keywords": [
-        "diffusion"
-      ],
-      "fetched_at": "2026-05-25T05:18:01.096245+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.592666+00:00"
+    },
+    {
+      "id": "c632be4d4af10780",
+      "title": "Investigation on a Crosstalk Cancellation Algorithm for Binaural Audio Headrest",
+      "authors": "Nefeli A. Dourou, Valeria Bruschi, Stefania Cecchi",
+      "affiliations": "",
+      "abstract": "Binaural audio rendering is a technique used to create immersive sound experiences by simulating the way humans perceive spatial audio. Typically performed using headphones, binaural reproduction is widely applied in virtual reality, gaming, and 3D audio experiences, enhancing realism and engagement. However, headphones may not always be convenient, leading to the use of loudspeakers for binaural playback. In a loudspeaker setup, the crosstalk effect occurs when audio intended for one ear is heard by the other, distorting spatial perception. To address this, crosstalk cancellation algorithms are applied to ensure accurate binaural audio delivery. One promising application is binaural audio headrest systems for vehicles, enhancing audio experiences during travels. This paper aims to examine the impact of loudspeaker positioning in this system, considering the application of a crosstalk cancellation algorithm and evaluating placement and configuration of loudspeakers that are also critical for an effective cancellation. Subjective and objective analyses have demonstrated that crosstalk cancellation is necessary to improve the quality of a binaural audio headrest that probably will represent the listening space of the future.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0217",
+      "url": "https://doi.org/10.17743/jaes.2022.0217",
+      "published": "2025-09-05",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.594355+00:00"
+    },
+    {
+      "id": "850c077ff87441bf",
+      "title": "Binaural Reproduction of Microphone Array Recordings With 2D Video in Mixed Reality",
+      "authors": "Tim Lübeck, Zamir Ben-Hur, David Lou Alon, Jeffery Crukley",
+      "affiliations": "",
+      "abstract": "Head-worn devices equipped with microphone arrays and cameras can be used to capture the experience from a user’s perspective and reproduce it in virtual, mixed, or augmented reality. A concept that has recently introduced is to present the video capture as a 2D video screen augmented into the real-world environment through a mixed reality headset. This study presents such a system for reproducing audio and video capture from glasses arrays as a video “augment” along with binaural audio. Results of an initial listening experiment are presented, evaluating different state-of-the-art methods for binaural rendering. A stereo rendering through virtual loudspeakers attached to the video “augment” is compared with head-locked and world-locked binaural syntheses based on a binaural beamforming approach. The results suggest that listeners rated beamforming-based reproduction higher than stereo rendering. World-locked rendering was not rated significantly better than the head-locked version.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0213",
+      "url": "https://doi.org/10.17743/jaes.2022.0213",
+      "published": "2025-07-07",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.595516+00:00"
+    },
+    {
+      "id": "72fddde38f2c22af",
+      "title": "A Virtual Reality Interface for the Creation of 3D Spatial Audio Trajectories",
+      "authors": "Matteo Tomasetti, Bavo Van Kerrebroeck, Marcelo M. Wanderley, Domenico Stefani, Luca Turchet",
+      "affiliations": "",
+      "abstract": "This paper presents SonoSpatia, a virtual reality (VR) system designed for creating 3D spatial audio trajectories. SonoSpatia leverages the immersive capabilities of VR technology to facilitate an intuitive and expressive approach for composers and sound designers willing to control positioning parameters in 3D space via gesture-based interactions. The authors conducted a user study with 12 expert composers, sound engineers, and sound designers to assess the ability of the VR interface to enhance the creative process of spatial audio trajectory creation via a more embodied interaction with the spatial audio parameters. To this end, the workflow of SonoSpatia was compared with those of conventional digital audio workstation (DAW) tools, comprising the ControlGRIS and SpatGRIS spatial audio software and the DAW Reaper. Results indicate that SonoSpatia significantly increases user engagement, satisfaction, absorption, and expressiveness over the conventional DAW-based counterpart. Notably, both the VR and DAW-based interfaces showed minimal differences in the interaction patterns, suggesting similar user interactions across dimensions despite the reported advantages of VR. Despite some challenges related to interface complexity and fine-grained control, the system was well-received by participants, suggesting a promising direction for enhancing 3D spatial audio trajectory creation with VR.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0215",
+      "url": "https://doi.org/10.17743/jaes.2022.0215",
+      "published": "2025-07-07",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.597796+00:00"
+    },
+    {
+      "id": "4183cb5d2184d7e1",
+      "title": "Generating Music Reactive Videos by Applying Network Bending to Stable Diffusion",
+      "authors": "Luke Dzwonczyk, Carmine-Emanuele Cella, David Ban",
+      "affiliations": "",
+      "abstract": "This paper presents the first steps toward the creation of a tool which enables artists to create music visualizations using pretrained, generative, machine learning models. First, the authors investigate the application of network bending, the process of applying transforms within the layers of a generative network, to image generation diffusion models by utilizing a range of point-wise, tensor-wise, and morphological operators. A number of visual effects that result from various operators, including some that are not easily recreated with standard image editing tools, are identified. The authors find that this process allows for continuous, fine-grain control of image generation, which can be helpful for creative applications. Next, music-reactive videos are generated using Stable Diffusion by passing audio features as parameters to network bending operators. Finally, the authors comment on certain transforms that radically shift the image and the possibilities of learning more about the latent space of Stable Diffusion based on these transforms. This paper is an extended version of the paper “Network Bending of Diffusion Models,” which appeared in the 27th International Conference on Digital Audio Effects.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0210",
+      "url": "https://doi.org/10.17743/jaes.2022.0210",
+      "published": "2025-06-09",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.600766+00:00"
+    },
+    {
+      "id": "5af5d79086d74b16",
+      "title": "Diffusion-Based Denoising of Historical Recordings",
+      "authors": "Bernardo V. Miranda, Rafael A. Deslandes, Ignacio Irigaray, Luiz W. P. Biscainho",
+      "affiliations": "",
+      "abstract": "In the context of audio restoration, the need to remove background noise from historical music recordings is a recurring problem, for which traditional signal processing and supervised deep learning methods have been previously applied. In this work, a generative approach that adapts conditional diffusion sampling for removing perceptually distributed noise is investigated, using the particular case of background noise removal from solo classical piano recordings as a proof of concept. The proposed method uses a set of noise examples to simulate perceptually distributed noise with specific characteristics throughout conditional diffusion sampling. Experiments with real historical 78 RPM recordings and clean recordings with added 78 RPM noise and tape hiss demonstrate that diffusion-based audio denoising performs comparably to state-of-the-art deep learning methods.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0198",
+      "url": "https://doi.org/10.17743/jaes.2022.0198",
+      "published": "2025-04-15",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.603753+00:00"
+    },
+    {
+      "id": "3cfa64245df33895",
+      "title": "Influence of Head Rotation Speed and Individual Head-Related Transfer Functions on Latency Detection Threshold in Dynamic Binaural Rendering",
+      "authors": "Clément Rappin, Julian Palacino, Pascal Rueff, Laurent Feichter, Mathieu Paquier",
+      "affiliations": "",
+      "abstract": "Binaural audio is a relevant rendering technique for mass diffusion in immersive experiences. By adding a head tracking system, dynamic binaural rendering can improve the overall quality in comparison with static rendering. However, introduced latency between the head movement and the audio rendering is detrimental to the audio experience. Previous studies estimated the latency detection threshold for binaural listening, but the influence of head movements remains unclear. In this paper, two listening tests on latency detection threshold are presented. Several excerpts were used: pink noise, male speech, a pair of congas, and coffee shop ambiance. The first experiment investigated the influence of head rotation speed on the latency detection threshold. The second experiment focused on the impact of head-related transfer functions. An absolute judgment protocol was used in both tests. Results showed that latency was globally easier to detect with faster movement for expert subjects. No global differences between nonindividual and individual head-related transfer functions were observed. In both experiments, pink noise led to a significantly lower latency detection threshold. Large intersubject differences were also observed.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0195",
+      "url": "https://doi.org/10.17743/jaes.2022.0195",
+      "published": "2025-04-07",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.605892+00:00"
+    },
+    {
+      "id": "f46a945f55991eed",
+      "title": "Toward an Improved Auditory Model for Predicting Binaural Coloration",
+      "authors": "Thomas McKenzie, Fabian Brinkmann",
+      "affiliations": "",
+      "abstract": "The evaluation of audio quality is important in the development of immersive audio algorithms and reproduction systems, and binaural models are often used for this as a quick alternative to listening tests. Coloration (i.e., perceived loudness differences integrated across ears and frequency) is one key quality aspect; however, the majority of models used to predict coloration are often oversimplified or are missing a dedicated binaural stage to consider the relative contribution of the left and right ear signals. A binaural coloration model is presented that builds upon previous work and tests three different approaches for its binaural stage. The proposed model is evaluated in comparison with nine models that are frequently used to predict coloration by using data from five listening tests totaling 252 stimuli with various audio contents and source positions. The proposed model performed best with 85% of explained variance, followed by predictions based on ISO 532-1 loudness, yielding 78% explained variance. The commonly used log-spectral distance performed worst, with only 44% explained variance. The three tested binaural stages had little influence on the performance of the proposed model. The model is made freely available to download.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0192",
+      "url": "https://doi.org/10.17743/jaes.2022.0192",
+      "published": "2025-04-07",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.606386+00:00"
+    },
+    {
+      "id": "84cd1b23e7f9ea81",
+      "title": "Unimodal speech perception predicts stable individual differences in audiovisual benefit for phonemes, words and sentences",
+      "authors": "Jacqueline von Seth, Máté Aller, Matthew H. Davis",
+      "affiliations": "Medical Research Council Cognition and Brain Sciences Unit, University of Cambridge , 15 Chaucer Road, Cambridge CB2 7EF,",
+      "abstract": "There are substantial individual differences in the benefit that can be obtained from visual cues during speech perception. Here, 113 normally hearing participants between the ages of 18 and 60 years old completed a three-part experiment investigating the reliability and predictors of individual audiovisual benefit for acoustically degraded speech. Audiovisual benefit was calculated as the relative intelligibility (at the individual-level) of approximately matched (at the group-level) auditory-only and audiovisual speech for materials at three levels of linguistic structure: meaningful sentences, monosyllabic words, and consonants in minimal syllables. This measure of audiovisual benefit was stable across sessions and materials, suggesting that a shared mechanism of audiovisual integration operates across levels of linguistic structure. Information transmission analyses suggested that this may be related to simple phonetic cue extraction: sentence-level audiovisual benefit was reliably predicted by the relative ability to discriminate place of articulation at the consonant-level. Finally, whereas unimodal speech perception was related to cognitive measures (matrix reasoning and vocabulary) and demographics (age and gender), audiovisual benefit was predicted only by unimodal speech perceptual abilities: Better lipreading ability and subclinically poorer hearing (speech reception thresholds) independently predicted enhanced audiovisual benefit. This work has implications for practices in quantifying audiovisual benefit and research identifying strategies to enhance multimodal communication in hearing loss.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034846",
+      "url": "https://doi.org/10.1121/10.0034846",
+      "published": "2025-03-03",
+      "is_oa": true,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.005041+00:00"
     },
     {
       "id": "101c87e14fcc816e",
@@ -417,11 +558,40 @@
       "published": "2025-02-27",
       "is_oa": true,
       "oa_url": "",
-      "score": 2.0,
-      "matched_keywords": [
-        "acoustic environment"
-      ],
-      "fetched_at": "2026-05-25T05:17:59.191178+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.053285+00:00"
+    },
+    {
+      "id": "9d7eaba54e0aea68",
+      "title": "The extended speech reception threshold model: Predicting speech intelligibility in different types of non-stationary noise in hearing-impaired listeners",
+      "authors": "Koenraad S. Rhebergen, Wouter A. Dreschler",
+      "affiliations": "Department of Otorhinolaryngology and Head and Neck Surgery, University Medical Center Utrecht 1 , Utrecht,; Brain Center Rudolf Magnus, University Medical Center Utrecht 2 , Utrecht,; Department of Clinical and Experimental Audiology, Academic Medical Center Amsterdam 3 ,",
+      "abstract": "The speech reception threshold (SRT) model of Plomp [J. Acoust. Soc. Am. 63(2), 533–549 (1978)] can be used to describe SRT (dB signal-to-noise ratio) for 50% of sentences correct in stationary noise in normal-hearing (NH) and hearing-impaired (HI) listeners. The extended speech reception threshold model (ESRT) [Rhebergen et al., J. Acoust. Soc. Am. 117, 2181–2192 (2010)] was introduced to describe the SRT in non-stationary noises. With the ESRT model, they showed that the SRT in non-stationary noises is, contra to the SRT in stationary noise, dependent on the non-stationary noise type and noise level. We examine with SRT data from the literature, whether the ESRT model can also be used to predict SRT in individual NH and HI listeners in different types of non-stationary noise based on a single SRT measurement in quiet, stationary, and non-stationary noise. The predicted speech reception thresholds (SRTs) in non-stationary noises in NH and HI listeners correspond well with the observed SRTs independent of the used non-stationary spectral or temporal masking, or noise masking levels. The ESRT model cannot only be used to describe the SRT within a non-stationary noise but can also be used to predict the SRTs in other non-stationary noise types as a function of noise level in NH and HI listeners.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035833",
+      "url": "https://doi.org/10.1121/10.0035833",
+      "published": "2025-02-27",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.077627+00:00"
+    },
+    {
+      "id": "49a096fd4e906fbb",
+      "title": "Comparing accounts of formant normalization against US English listeners' vowel perception",
+      "authors": "Anna Persson, Santiago Barreda, T. Florian Jaeger",
+      "affiliations": "Swedish Language and Multilingualism, Stockholm University 1 , Stockholm, SE-106 91,; Linguistics, University of California 2 , Davis, California 95616,; Brain and Cognitive Sciences, Goergen Institute for Data Science and Artificial Intelligence, University of Rochester 3 , Rochester, New York 14627,",
+      "abstract": "Human speech recognition tends to be robust, despite substantial cross-talker variability. Believed to be critical to this ability are auditory normalization mechanisms whereby listeners adapt to individual differences in vocal tract physiology. This study investigates the computations involved in such normalization. Two 8-way alternative forced-choice experiments assessed L1 listeners' categorizations across the entire US English vowel space—both for unaltered and synthesized stimuli. Listeners' responses in these experiments were compared against the predictions of 20 influential normalization accounts that differ starkly in the inference and memory capacities they imply for speech perception. This includes variants of estimation-free transformations into psycho-acoustic spaces, intrinsic normalizations relative to concurrent acoustic properties, and extrinsic normalizations relative to talker-specific statistics. Listeners' responses were best explained by extrinsic normalization, suggesting that listeners learn and store distributional properties of talkers' speech. Specifically, computationally simple (single-parameter) extrinsic normalization best fit listeners' responses. This simple extrinsic normalization also clearly outperformed Lobanov normalization—a computationally more complex account that remains popular in research on phonetics and phonology, sociolinguistics, typology, and language acquisition.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035476",
+      "url": "https://doi.org/10.1121/10.0035476",
+      "published": "2025-02-25",
+      "is_oa": true,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.068410+00:00"
     },
     {
       "id": "b5ecab5c63d417b0",
@@ -436,11 +606,8 @@
       "published": "2025-02-24",
       "is_oa": false,
       "oa_url": "",
-      "score": 2.5,
-      "matched_keywords": [
-        "anechoic chamber"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.661688+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.035369+00:00"
     },
     {
       "id": "fa23db638b6f3437",
@@ -455,13 +622,8 @@
       "published": "2025-02-21",
       "is_oa": false,
       "oa_url": "",
-      "score": 13.5,
-      "matched_keywords": [
-        "absorption coefficient",
-        "sound absorption",
-        "noise reduction"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.630241+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.021647+00:00"
     },
     {
       "id": "18def35e5918d9cb",
@@ -476,50 +638,104 @@
       "published": "2025-02-21",
       "is_oa": false,
       "oa_url": "",
-      "score": 6.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.729778+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.064174+00:00"
     },
     {
-      "id": "6d5b28b466bcbb57",
-      "title": "Understanding end corrections and flow near the open end of a flue instrument",
-      "authors": "N. Giordano",
-      "affiliations": "Department of Physics, Auburn University , Auburn, Alabama, 36832,",
-      "abstract": "Wind instruments containing a resonator (i.e., pipe) with an open end are expected to exhibit an acoustic standing wave characterized by a density oscillation whose amplitude falls to zero a short distance beyond the end of the resonator. An extrapolation of this amplitude based on the behavior inside the resonator yields an “effective” node of the standing wave (i.e., a point at which the extrapolated amplitude vanishes), and the distance from the end of the resonator to the location of this effective node (which is commonly referred to as simply a “node”) is known as the “end correction.” Recent work using a novel optical technique involving optical speckle patterns surprisingly suggested instead that a node is located inside the resonator with unexpected structure in the standing wave amplitude just beyond the end of the resonator. We have studied this problem by numerically solving the Navier-Stokes equations and find that the effective node of the density oscillation is located at the expected position outside the resonator with no unexpected structure in the functional form of the standing wave. We also show how pressure gradients and the flow pattern found near the end of the resonator can account for the unexpected behavior observed in the experiments. This sensitivity of optical interference effects to flow structure may give a new experimental way to investigate vorticity and other complex flows found in the mouthpiece of a musical instrument and in other situations.",
+      "id": "de55bbc91d37481f",
+      "title": "Impact of indoor soundscape workshop on sound awareness of interior architecture students",
+      "authors": "Zinah Al-Bayyar, Papatya Nur Dökmeci Yörükoğlu, Kivanc Kitapci, Özlem Türker Bayrak",
+      "affiliations": "Department of Interior Architecture, Çankaya University 1 , Ankara,; Acoustics Application and Research Center 2 , Çankaya University, Ankara,; Statistics Unit, Inter-Curricular Courses Department, Çankaya University 3 , Ankara,",
+      "abstract": "This study aims to investigate the effects of attending a soundscape workshop on the awareness of sound as a design element for interior architects. The workshop is structured in three phases: theoretical lectures, practical applications, and discussions. In the first phase, fundamentals of architectural acoustics, the sense of place, and soundscape theory were delivered through theoretical lectures. In the second phase, participants were asked to design a sound environment for a restaurant and an office. In the third and final phase, participants discussed their sound designs from the perspectives of the lectures and sound-related topics. Additionally, participants completed an open-ended questionnaire to evaluate their workshop experience and provided suggestions for improvement. The effectiveness of the workshop in raising awareness was tested using a pre-test/post-test analysis method, with data collected through structured questionnaires completed by participants before and after the workshop. The results of the statistical analysis show that attending the workshop changed participants' evaluations of sound expectations and preferences, as well as their sensitivity to sound. The findings indicate that participating in an indoor soundscape workshop can positively influence interior architects' understanding of sound as a design element to be considered in their future work.",
       "journal": "JASA",
       "journal_full": "Journal of the Acoustical Society of America",
-      "doi": "10.1121/10.0035834",
-      "url": "https://doi.org/10.1121/10.0035834",
-      "published": "2025-02-13",
+      "doi": "10.1121/10.0035569",
+      "url": "https://doi.org/10.1121/10.0035569",
+      "published": "2025-02-20",
       "is_oa": false,
       "oa_url": "",
-      "score": 10.0,
-      "matched_keywords": [
-        "standing wave"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.665676+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.047794+00:00"
     },
     {
-      "id": "c11b843009e265cc",
-      "title": "Characterization of fibrous media transport parameters from multi-compression-ratio measurements of normal incidence sound absorption",
-      "authors": "Andrea Santoni, Francesco Pompoli, Cristina Marescotti, Patrizio Fausti",
-      "affiliations": "Department of Engineering, University of Ferrara , via G. Saragat 1, 44122 Ferrara,",
-      "abstract": "This study presents a novel approach for estimating the transport parameters that characterize the acoustic behavior of fibrous materials using the Johnson-Champoux-Allard equivalent fluid model. We propose an inversion technique, based on an optimization algorithm, to fit the Johnson-Champoux-Allard model's predictions of normal incidence sound absorption coefficient to multi-compression-ratio experimental data. Experimental measurements using the two-microphone technique within an impedance tube are conducted on fibrous material samples tested at various compression ratios. Optimization is performed using both a non-linear programming solver and a genetic algorithm. Validation of the proposed method shows good agreement with well-established techniques and demonstrates its effectiveness across a range of fibrous materials. A sensitivity analysis emphasizes the importance of selecting appropriate boundaries for the search space in the optimization process. To enhance the robustness of optimization, a two-step iterative procedure is proposed. This straightforward methodology offers a robust and reliable framework for characterizing the transport properties of fibrous materials. Its ease of implementation and accuracy make it a valuable tool for enhancing material design and optimization in acoustic engineering.",
+      "id": "446b689cba9797bf",
+      "title": "The multimode coupled vibration transducer with the higher emission performances at resonant frequencies",
+      "authors": "Yihao Chen, Shuyu Lin",
+      "affiliations": "Shaanxi Key Laboratory of Ultrasonics, Institute of Applied Acoustics, Shaanxi Normal University , Xi'an, 710119,",
+      "abstract": "The majority of existing piezoelectric transducers work at a single resonant frequency, and their applications in scenarios with multi-frequency or frequency variation are not fully considered. Moreover, emitting high-energy ultrasound at different frequencies is also crucial. Here, we propose the three-frequency coupled vibration piezoelectric transducer, which exhibits higher emission performances. The proposed transducer is comprised of two rectangular piezoelectric ceramics, which are cut from a piece of rectangular piezoelectric ceramic. We derive the three-dimensional coupled vibration electromechanical equivalent circuit of the proposed transducer. Then, the characteristics of the transducer are numerically simulated. And comparison experiments between the proposed transducer and a piece of rectangular piezoelectric ceramic transducer were done. An ultrasonic water tank measurement system was used to measure their sound field, axial sound pressure, and transmitting voltage response. Experiments are conducted to verify the electromechanical and sound field characteristics of transducers, which are in good agreement with the simulated results and theoretical predictions. The proposed transducer can generate stable and stronger energy ultrasonic waves at three resonant frequencies. And this study can provide the theoretical and experimental references for multi-frequency conversion and high-energy ultrasonic radiation of the transducer.",
       "journal": "JASA",
       "journal_full": "Journal of the Acoustical Society of America",
-      "doi": "10.1121/10.0035847",
-      "url": "https://doi.org/10.1121/10.0035847",
-      "published": "2025-02-13",
+      "doi": "10.1121/10.0035568",
+      "url": "https://doi.org/10.1121/10.0035568",
+      "published": "2025-02-20",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.084986+00:00"
+    },
+    {
+      "id": "263940296c69824a",
+      "title": "Development of a rapid automated binaural detection task",
+      "authors": "Daniel E. Shub, Ken W. Grant, Douglas S. Brungart",
+      "affiliations": "National Military Audiology and Speech Center, Walter Reed National Military Medical Center , Bethesda, Maryland 20889-5630,",
+      "abstract": "Three different automated procedures for efficiently measuring the 500 Hz N0Sπ binaural tone detection threshold of individuals with normal audiometric thresholds were tested with 6803 subjects and the results are compared with an automated version of an existing clinical procedure. Two of these procedures resulted in substantially reduced binaural detection performance and caused a notable decrease in the reliability of the behavior of the subjects. The remaining procedure was an 18-trial yes/no procedure and the difficulty of the trials in this procedure varied in a non-monotonic manner. This procedure not only has fewer trials than the existing clinical procedure but the reliability of the estimate of threshold is improved. The average difference in threshold between this procedure and the clinical procedure was only −0.67 dB, which is likely not clinically significant. Further, only 0.35% of the 6208 subjects tested with the non-monotonic-order procedure were unable to complete the fully automated test which was better than the failure rate for the automated version of the clinical procedure. With such a low failure rate, the modified procedure appears suitable for use as a rapid tool for helping to detect functional hearing deficits that are not captured by the audiogram.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035644",
+      "url": "https://doi.org/10.1121/10.0035644",
+      "published": "2025-02-19",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.060037+00:00"
+    },
+    {
+      "id": "4bcd9debdfd1b3ea",
+      "title": "Binaural rendering using higher-order stereophony",
+      "authors": "Jacob Hollebon, Filippo Maria Fazi",
+      "affiliations": "Institute of Sound and Vibration Research (ISVR), University of Southampton , Southampton SO17 1BJ,",
+      "abstract": "Higher-order stereophony is a new approach for spatial audio reproduction which extends classic two-channel stereophony to higher order soundfield reproduction and generalised multi-channel loudspeaker arrays. Higher order stereophony achieves accurate soundfield reproduction over a line by reproducing the degree m = 0 spherical harmonic soundfield coefficients only. The reproduction line is assumed to align with the interaural axis of a listener. This article addresses the extension of higher order stereophony to binaural reproduction. The technique is shown to exactly reproduce binaural signals when using a rigid sphere head-related transfer function model, and to reorder the energy of more generalised head-related transfer functions into spherical harmonic coefficients with degree index close to 0. To truncation order N, higher order stereophony requires only (N + 1) spherical harmonic coefficients compared to (N + 1)2 with higher order ambisonics, and the two techniques are compared through simulations and a listening test. Higher order stereophony is shown to perform similarly to higher order ambisonics under truncation to the same order, but using a smaller number of soundfield coefficients. For higher virtual source elevations, higher order stereophony performs worse than higher order ambisonics due to its ability to only reproduce axisymmetric head-related transfer functions.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035793",
+      "url": "https://doi.org/10.1121/10.0035793",
+      "published": "2025-02-18",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.029255+00:00"
+    },
+    {
+      "id": "808b617883808d48",
+      "title": "The increasing importance of voice onset time in the perception and production of Zurich German plosives: An ongoing sound change",
+      "authors": "Franka Zebe-Sheng, Camille Watter, Stephan Schmid",
+      "affiliations": "Department of Computational Linguistics, University of Zurich , Rämistrasse 71, 8006 Zurich,",
+      "abstract": "Recent evidence suggests an ongoing sound change in Zurich German, where the primary cue between lenis and fortis plosives is commonly considered to be closure duration, while both plosive types are traditionally unaspirated and phonetically voiceless. There has been a shift toward more lexical items being aspirated by younger speakers, who also are shown to produce generally longer voice onset times (VOTs) in comparison to older speakers. The current study investigates word-medial and word-initial plosives in speech perception and production. Using the apparent-time paradigm, two experiments were conducted with 48 speakers of Zurich German belonging to 2 age groups. Results confirm that younger speakers produce more aspiration in word-initial fortis plosives than older speakers but disconfirm previous findings which found a reduction in closure duration of fortis plosives. Results from the perception experiment reveal that, word-initially, VOT seems to increase in importance and closure duration is not always sufficient in distinguishing between lenis and fortis plosives. Results further highlight the importance of lexical differences, according to which production and perception are either aligned or misaligned. Overall, the current study provides evidence for a sound change affecting word-initial fortis plosives in Zurich German in speech perception and production.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034842",
+      "url": "https://doi.org/10.1121/10.0034842",
+      "published": "2025-02-18",
       "is_oa": true,
       "oa_url": "",
-      "score": 6.0,
-      "matched_keywords": [
-        "absorption coefficient",
-        "sound absorption"
-      ],
-      "fetched_at": "2026-05-25T05:17:59.220667+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.098115+00:00"
+    },
+    {
+      "id": "53bbd3fdf602e438",
+      "title": "Influence of thickness profile and bracing pattern in the radiation patterns of archtop guitars",
+      "authors": "Giacomo Longo, Sebastian Gonzalez, Jon Dewitt Enriquez Dalisay, Thomas Nania, Fabio Antonacci",
+      "affiliations": "Dipartimento di Elettronica Informazione e Bioingegneria, Politecnico di Milano 1 , Milan,; Department of Mechanical Engineering, College of Engineering, University of the Philippines Diliman 2 , Quezon City, Philippines; D'Addario and Company 3 , Farmingdale, New York 11735,",
+      "abstract": "In this study, we investigate the influence of the thickness profile of the top plate and bracing pattern on the vibrational and acoustic properties of archtop guitars through finite element simulations. Starting from a laser scan of a real archtop guitar, we develop a fully parametric three-dimensional model of the guitar body. The thickness profile is parametrically controlled by adjusting the lower surface while maintaining the fixed upper surface. Both geometric and numerical modeling techniques are used to analyze the mechanical behavior of the guitar, including modal analysis, and acoustic behavior, focusing on sound intensity, and directivity. Our simulations reveal that variations in the thickness profile significantly affect the modal response and sound radiation patterns. In particular, we highlight the relationship between the vibrational modes and radiation patterns, demonstrating that changes in thickness lead to shifts in eigenfrequencies and variations in radiated sound pressure levels. The models and simulation code are made openly available to facilitate further research in the acoustics of archtop guitars.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035805",
+      "url": "https://doi.org/10.1121/10.0035805",
+      "published": "2025-02-14",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.083918+00:00"
     },
     {
       "id": "da2cb7f653169f30",
@@ -541,6 +757,86 @@
       "fetched_at": "2026-05-25T05:20:27.716262+00:00"
     },
     {
+      "id": "3786e79465abc05f",
+      "title": "Modelling context processing during sentence recognition in noise and reverberation for listeners with and without hearing loss",
+      "authors": "Kristin Sprenger, Thomas Brand",
+      "affiliations": "Medizinische Physik, Carl von Ossietzky Universität Oldenburg 1 , Oldenburg 26111,; Cluster of Excellence “Hearing4all,” Carl von Ossietzky Universität Oldenburg 2 , Oldenburg 26111,",
+      "abstract": "This study evaluated three models quantifying context processing in human speech recognition. We presented everyday sentences with high semantic predictability and closed word set (matrix) sentences with low semantic predictability to listeners with normal hearing and listeners with hearing loss. Sentences were presented in quiet, in steady-state noise, and in speech-like modulated noise. Reverberated and clean speech were used. We evaluated whether the models are suited for testing the following hypotheses: (1) “Listeners with hearing loss compensate reduced auditory input by relying more strongly on speech context.” (2) “Speech context is used to compensate missing information differently in modulated noise than in steady state noise or in quiet, with a smaller difference in context effects for listeners with hearing loss.” (3) “Context processing explains why matrix sentences are much more robust against reverberation than everyday sentences.” Significance testing was performed using bootstrapping. Only one of the context models showed significant differences in context processing between normal-hearing and hearing-impaired listeners for the different sentence types and for different listening conditions. No differences in context processing were found between stationary and modulated noise. To explain the behavior in reverberation, it is important to distinguish between a priori context and a posteriori context.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035801",
+      "url": "https://doi.org/10.1121/10.0035801",
+      "published": "2025-02-13",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.017626+00:00"
+    },
+    {
+      "id": "6d5b28b466bcbb57",
+      "title": "Understanding end corrections and flow near the open end of a flue instrument",
+      "authors": "N. Giordano",
+      "affiliations": "Department of Physics, Auburn University , Auburn, Alabama, 36832,",
+      "abstract": "Wind instruments containing a resonator (i.e., pipe) with an open end are expected to exhibit an acoustic standing wave characterized by a density oscillation whose amplitude falls to zero a short distance beyond the end of the resonator. An extrapolation of this amplitude based on the behavior inside the resonator yields an “effective” node of the standing wave (i.e., a point at which the extrapolated amplitude vanishes), and the distance from the end of the resonator to the location of this effective node (which is commonly referred to as simply a “node”) is known as the “end correction.” Recent work using a novel optical technique involving optical speckle patterns surprisingly suggested instead that a node is located inside the resonator with unexpected structure in the standing wave amplitude just beyond the end of the resonator. We have studied this problem by numerically solving the Navier-Stokes equations and find that the effective node of the density oscillation is located at the expected position outside the resonator with no unexpected structure in the functional form of the standing wave. We also show how pressure gradients and the flow pattern found near the end of the resonator can account for the unexpected behavior observed in the experiments. This sensitivity of optical interference effects to flow structure may give a new experimental way to investigate vorticity and other complex flows found in the mouthpiece of a musical instrument and in other situations.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035834",
+      "url": "https://doi.org/10.1121/10.0035834",
+      "published": "2025-02-13",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.036336+00:00"
+    },
+    {
+      "id": "c11b843009e265cc",
+      "title": "Characterization of fibrous media transport parameters from multi-compression-ratio measurements of normal incidence sound absorption",
+      "authors": "Andrea Santoni, Francesco Pompoli, Cristina Marescotti, Patrizio Fausti",
+      "affiliations": "Department of Engineering, University of Ferrara , via G. Saragat 1, 44122 Ferrara,",
+      "abstract": "This study presents a novel approach for estimating the transport parameters that characterize the acoustic behavior of fibrous materials using the Johnson-Champoux-Allard equivalent fluid model. We propose an inversion technique, based on an optimization algorithm, to fit the Johnson-Champoux-Allard model's predictions of normal incidence sound absorption coefficient to multi-compression-ratio experimental data. Experimental measurements using the two-microphone technique within an impedance tube are conducted on fibrous material samples tested at various compression ratios. Optimization is performed using both a non-linear programming solver and a genetic algorithm. Validation of the proposed method shows good agreement with well-established techniques and demonstrates its effectiveness across a range of fibrous materials. A sensitivity analysis emphasizes the importance of selecting appropriate boundaries for the search space in the optimization process. To enhance the robustness of optimization, a two-step iterative procedure is proposed. This straightforward methodology offers a robust and reliable framework for characterizing the transport properties of fibrous materials. Its ease of implementation and accuracy make it a valuable tool for enhancing material design and optimization in acoustic engineering.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035847",
+      "url": "https://doi.org/10.1121/10.0035847",
+      "published": "2025-02-13",
+      "is_oa": true,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.070748+00:00"
+    },
+    {
+      "id": "8b84d34f0f30b3b7",
+      "title": "Numerical study on aerodynamic noise reduction of optimized pantograph",
+      "authors": "Longzhou Qi, Zhigang Yang, Hanlin Liu, Xinyuan Lu, Zhendong Lv",
+      "affiliations": "Key Laboratory of Traffic Safety on Track, Ministry of Education, School of Traffic & Transportation Engineering, Central South University 1 , Changsha 410075,; Joint International Research Laboratory of Key Technologies for Rail Traffic Safety, Central South University 2 , Changsha 410075,; National and Local Joint Engineering Research Center of Safety Technology for Rail Vehicle 3 , Changsha 410075,",
+      "abstract": "The pantograph of a high-speed train, a crucial device for current collection, is a primary source of environmental noise pollution. This study utilized a 1:8 scale model of the CR400BF pantograph, featuring elliptical cross-sections for the panhead and arm frame, and a streamlined bottom frame, operating at a speed of 400 km/h. By combining large eddy simulation with the Ffowcs Williams–Hawkings equation, we investigated the flow field and acoustic characteristics of the pantograph both before and after optimization, focusing on its noise reduction effects and mechanisms. The results show that the optimized pantograph significantly reduces far-field radiated noise, with a maximum noise reduction of 3 dB at the standard measurement point. The droplet-shaped panhead reduces the frontal area and downstream vortices, preventing periodic vortex shedding and significantly decreasing discrete tones noise at 2000 Hz, resulting in a noise reduction of approximately 1.5 dB. The elliptical arms and streamlined bottom frame decrease aerodynamic drag and vortex shedding, thereby weakening the noise source intensity at the rear step surface of the pantograph cavity and the train body surface behind the cavity, leading to a noise reduction of about 1.7 dB. This study demonstrates that aerodynamic acoustic optimization of the pantograph significantly reduces noise in high-speed trains.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035786",
+      "url": "https://doi.org/10.1121/10.0035786",
+      "published": "2025-02-13",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.073731+00:00"
+    },
+    {
+      "id": "c3222fc6a3e76ecb",
+      "title": "Differential Volterra filter: A two-stage decoupling method for audible sounds generated by parametric array loudspeakers based on Westervelt equation",
+      "authors": "Wenyao Ma, Yunxi Zhu, Peifeng Ji, Zheng Kuang, Ming Wu, Jun Yang",
+      "affiliations": "Key Laboratory of Noise and Vibration Research, Institute of Acoustics, Chinese Academy of Sciences 1 , Beijing 100190,; University of Chinese Academy of Sciences 2 , Beijing 100049,; Audfly Technology Corporation 3 , Suzhou 215011,",
+      "abstract": "Parametric array loudspeakers (PALs) produce highly directional sounds due to the parametric process in air. Its application in creating personal audio zones requires simple modeling of the audible sound field near the PAL, which is crucial for subsequent designs to reduce inherent nonlinear distortion. However, current accurate methods for describing the sound field, reliant on numerical solutions to wave equations, are computationally intensive. To achieve both effectiveness and simplicity, this paper proposes a time-domain model for audible sounds generated in the Westervelt far field, called the differential Volterra filter (Diff-VF). It is obtained through two stages: first, a narrow-band (NB) approximation is introduced to decouple the virtual source energy density from interactions of ultrasonic beams when solving the Westervelt equation. This results in a NB Westervelt solution for time-domain inputs. Second, to further develop a generic response independent of inputs, a temporal-spatial discretization is used to simplify the NB Westervelt solution into the Diff-VF model with a one-dimensional kernel. Numerical simulations confirmed the effectiveness of the NB Westervelt solution when compared with an exact solution, whether on- and off-axis. Experimental results validated that the Diff-VF model achieved superior prediction performance over existing VF-based models, with insensitivity to inputs and lower complexity.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035791",
+      "url": "https://doi.org/10.1121/10.0035791",
+      "published": "2025-02-12",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.075694+00:00"
+    },
+    {
       "id": "be0a5f0c245ca046",
       "title": "Enhancing marine acoustic field prediction in shallow seas using an ocean-sediment coupled model",
       "authors": "Guang-Bing Yang, Poru Huang, Xiaochan Zhang, Bin Xiao, Zongwei Liu, Chunmei Yang, Ying Jiang, Lian-Gang Lü, Fangli Qiao",
@@ -553,30 +849,88 @@
       "published": "2025-02-11",
       "is_oa": false,
       "oa_url": "",
-      "score": 3.0,
-      "matched_keywords": [
-        "acoustic field"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.756682+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.072052+00:00"
     },
     {
-      "id": "37388dfa024a0b6e",
-      "title": "Introduction to the special issue on verification and validation of source and propagation models for underwater sound",
-      "authors": "Kathleen J. Vigness-Raposa, Klaus Lucke, Michael A. Ainslie, Michele B. Halvorsen, Christ A. F. de Jong, Stanley J. Labak, Martin Siderius",
-      "affiliations": "Inspire Environmental, Venterra Group 1 , Newport, Rhode Island 02840,; German Environment Agency 2 , Dessau-Roßlau, 06844,; JASCO Applied Sciences 3 , Schwentinental, 24223,",
-      "abstract": "This joint Special Issue of JASA and JASA Express Letters focuses on underwater sound source and propagation modelling, both of ambient sound as well as sources of relevance to possible effects of sound on aquatic life, and corresponding acoustical metrics. Combining information on the sound field with information on a dose-effect relationship enables estimation of the potential effects. The Special Issue presents a collection of eighteen articles on the following topics: (1) verification of source and propagation models, (2) validation of source and propagation models, and (3) bioacoustical metrics for assessment of the risk of environmental effects. This special issue demonstrates the need for clear metrics and verification and validation protocols.",
+      "id": "360d2d87171e4e1a",
+      "title": "Acoustic vector sensor based multi-sources localization in reverberant environment using acoustic polarization state analysis",
+      "authors": "Yuan Sun, Hao Ge, Bei Wang, Kai Wang, Xiang-Yuan Xu, Ming-Hui Lu, Yan-Feng Chen",
+      "affiliations": "National Laboratory of Solid State Microstructures and Department of Materials Science and Engineering, Nanjing University 1 , Nanjing, Jiangsu 210093,; NIO 2 , Shanghai 201805,",
+      "abstract": "Estimating the direction of arrival (DOA) under real-world conditions poses a significant challenge, as reverberations can lead to erroneous information. We note that the direct-path component and the reverberant components of sound exhibit distinct polarization states within the acoustic particle velocity field. Based on this observation, we propose and experimentally verify a method for localizing multiple sources in reverberant environments using a single acoustic vector sensor (AVS). The measurement of polarization states via AVS enables the identification of time-frequency bins primarily influenced by the direct-path component within the time-frequency domain, which are subsequently utilized for DOA estimation. Our study offers a novel perspective on sound field detection and may catalyze future applications including de-reverberation and the determination of environmental geometric parameters.",
       "journal": "JASA",
       "journal_full": "Journal of the Acoustical Society of America",
-      "doi": "10.1121/10.0035845",
-      "url": "https://doi.org/10.1121/10.0035845",
+      "doi": "10.1121/10.0035816",
+      "url": "https://doi.org/10.1121/10.0035816",
+      "published": "2025-02-11",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.092079+00:00"
+    },
+    {
+      "id": "671b10647d5fc584",
+      "title": "Magnified interaural level differences enhance binaural unmasking in bilateral cochlear implant users",
+      "authors": "Benjamin N. Richardson, Jana M. Kainerstorfer, Barbara G. Shinn-Cunningham, Christopher A. Brown",
+      "affiliations": "Neuroscience Institute, Carnegie Mellon University 1 , 4400 Fifth Avenue, Pittsburgh, Pennsylvania 15213,; Department of Biomedical Engineering, Carnegie Mellon University 2 , 5000 Forbes Avenue, Pittsburgh, Pennsylvania 15213,; Department of Communication Science and Disorders, University of Pittsburgh 3 , 4028 Forbes Tower, Pittsburgh, Pennsylvania 15260,",
+      "abstract": "Bilateral cochlear implant (BiCI) usage makes binaural benefits a possibility for implant users. Yet for BiCI users, limited access to interaural time difference (ITD) cues and reduced saliency of interaural level difference (ILD) cues restricts perceptual benefits of spatially separating a target from masker sounds. The present study explored whether magnifying ILD cues improves intelligibility of masked speech for BiCI listeners in a “symmetrical-masker” configuration, which ensures that neither ear benefits from a long-term positive target-to-masker ratio (TMR) due to naturally occurring ILD cues. ILD magnification estimates moment-to-moment ITDs in octave-wide frequency bands, and applies corresponding ILDs to the target-masker mixtures reaching the two ears at each specific time and frequency band. ILD magnification significantly improved intelligibility in two experiments: one with normal hearing (NH) listeners using vocoded stimuli and one with BiCI users. BiCI listeners showed no benefit of spatial separation between target and maskers with natural ILDs, even for the largest target-masker separation. Because ILD magnification relies on and manipulates only the mixed signals at each ear, the strategy never alters the monaural TMR in either ear at any time. Thus, the observed improvements to masked speech intelligibility come from binaural effects, likely from increased perceptual separation of the competing sources.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034869",
+      "url": "https://doi.org/10.1121/10.0034869",
+      "published": "2025-02-11",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.094518+00:00"
+    },
+    {
+      "id": "727ec73bc0ea3a1e",
+      "title": "A nonlinear sound field control method for a multi-channel parametric array loudspeaker array",
+      "authors": "Yunxi Zhu, Liwen Qin, Wenyao Ma, Fengyi Fan, Ming Wu, Zheng Kuang, Jun Yang",
+      "affiliations": "Key Laboratory of Noise and Vibration Research, Institute of Acoustics, Chinese Academy of Sciences 1 Beijing, 100190,; University of Chinese Academy of Sciences 2 , Beijing 100049,; Audfly Technology Corporation 3 , Suzhou 215011,",
+      "abstract": "A parametric array loudspeaker (PAL) generates a highly directional audible sound beam. However, indoor scattering and reflecting effects diminish its advantage of high directivity, causing the scattered or reflected sound to appear in undesired regions. Deriving from the Westervelt equation, the nonlinear coupling exists between each channel, rendering linear sound field control algorithms ineffective. This paper proposes a framework of nonlinear sound field control, enabling the manipulation of nonlinear sound fields generated by the PAL in complicated acoustic environments. Besides, PAL often faces challenges in radiation efficiency due to the poor conversion efficiency of nonlinear sound. Therefore, a sound control algorithm suitable for PAL is proposed, which maximizes radiation efficiency while ensuring acoustic contrast through a two-stage non-convex optimization procedure. The simulations and experimental results verify the effectiveness of the proposed framework and algorithm of nonlinear sound field control. The undesired audible sound in the dark zone is suppressed while maintaining the desired audible sound in the bright zone. This enhances the performance of a PAL in real scenarios with existing scattering or reflecting effects.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035797",
+      "url": "https://doi.org/10.1121/10.0035797",
       "published": "2025-02-07",
       "is_oa": false,
       "oa_url": "",
-      "score": 1.0,
-      "matched_keywords": [
-        "sound field"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.731861+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.100290+00:00"
+    },
+    {
+      "id": "5c03ff42561ffda2",
+      "title": "Broadband noise modulation of multirotor aircraft",
+      "authors": "Ze Feng (Ted) Gan, Vitor Tumelero Valente, Kenneth S. Brentner, Eric Greenwood",
+      "affiliations": "Department of Aerospace Engineering, The Pennsylvania State University , University Park, Pennsylvania 16802,",
+      "abstract": "Rotor broadband noise is typically analyzed over time scales encompassing multiple rotor periods. However, modulation of broadband noise levels with the blade passage frequency has been shown to be significant for human perception of wind turbine and helicopter noise. In contrast, broadband noise modulation has not been extensively studied for aircraft with many rotors, such as unmanned aerial vehicles (UAVs) or advanced air mobility aircraft. In this work, significant broadband noise modulation was measured in flight tests and anechoic chamber experiments of hexacopter UAVs. The amplitude of this modulation depended on the azimuthal phase offsets between rotors, demonstrating the potential for synchrophasing control to reduce broadband noise modulation, analogous to synchrophasing control of tonal noise. If rotors are not synchronized, as in typical flight, the azimuthal phase offsets between rotors vary with time. This variation was found to follow a uniform random distribution, resulting in modulation depth also varying randomly with time. The probability distribution of modulation depth was computed using offset copies of the modulation of a single rotor. These results contribute understanding to how the broadband noise modulation of rotors sum together, and showed that this modulation is likely to be significant in flight.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035646",
+      "url": "https://doi.org/10.1121/10.0035646",
+      "published": "2025-02-07",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.112099+00:00"
+    },
+    {
+      "id": "45e1a1b458fc4f04",
+      "title": "Personal sound zones in the short-time Fourier transform domain with relaxed reverberation",
+      "authors": "Jun Tang, Wenye Zhu, Xiaofei Li",
+      "affiliations": "School of Engineering, Westlake University 1 , Hangzhou 310030,; Institute of Advanced Technology, Westlake Institute for Advanced Study 2 , Hangzhou 310030,; Zhejiang University 3 , Hangzhou 310058,",
+      "abstract": "Personal-sound-zones (PSZ) techniques deliver independent sounds to multiple zones within a room using a loudspeaker array. The target signal for each zone is clearly audible within that zone while inaudible or non-distracting in others, assured by applying pre-filters to the loudspeaker array. The pre-filters are traditionally designed with time-domain or frequency-domain methods, which suffer from high computational complexity and large system latency, respectively. This work proposes a subband pressure-matching method in the short-time Fourier transform domain using the convolutive transfer function approximation, termed CTF-PM. The proposed method considerably reduces computational complexity relative to time-domain methods and existing subband methods, while maintaining low system latency. Additionally, CTF-PM achieves similar performances in acoustic contrast and normalized mean square error compared to baseline methods. Moreover, by introducing a weighting vector on the reproduction error, a relaxed-reverberation framework is incorporated into CTF-PM. This framework aims for an accurate reproduction of the decaying rate instead of the random samples of the reverberations, improving the acoustic contrast of the PSZ system while preserving the perceptual experience. Our experiments demonstrated that the relaxed-reverberation framework improved broadband acoustic contrast in the 0–2 kHz range by more than 3 dB, without degrading the perceptual experience.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0035578",
+      "url": "https://doi.org/10.1121/10.0035578",
+      "published": "2025-02-05",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.033753+00:00"
     },
     {
       "id": "6dff86ae9b1cd136",
@@ -591,12 +945,8 @@
       "published": "2025-02-05",
       "is_oa": false,
       "oa_url": "",
-      "score": 6.0,
-      "matched_keywords": [
-        "noise reduction",
-        "noise control"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.672642+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.039966+00:00"
     },
     {
       "id": "b10e3a41f7a47c20",
@@ -611,12 +961,152 @@
       "published": "2025-02-04",
       "is_oa": true,
       "oa_url": "",
-      "score": 8.0,
-      "matched_keywords": [
-        "room acoustics",
-        "room acoustic"
-      ],
-      "fetched_at": "2026-05-25T05:20:27.658196+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.034878+00:00"
+    },
+    {
+      "id": "d618cdfd0f45c734",
+      "title": "Theoretical modeling and modal analysis of multi-element coupled transducers",
+      "authors": "Hao Sun, Yu Lan, Wei Lu, Tianfang Zhou",
+      "affiliations": "National Key Laboratory of Underwater Acoustic Technology, Harbin Engineering University 1 , Harbin 150001,; Key Laboratory of Marine Information Acquisition and Security (Harbin Engineering University), Ministry of Industry and Information Technology 2 , Harbin 150001,; College of Underwater Acoustic Engineering, Harbin Engineering University 3 , Harbin 150001,",
+      "abstract": "Low-frequency transducers are considerably smaller than the wavelength. When multiple low-frequency transducers are closely packed, they couple with the surrounding water and form a transducer–water–transducer coupling structure called multi-element coupled transducers (MCT). This study presents a theoretical model of the MCT based on radiation and mutual radiation theory and analyzes it under multiple resonance frequencies and vibration modes. The MCT comprising N single-degree-of-freedom elements possesses N resonance frequencies and corresponding vibration modes, and the resonance frequency varies with the spacing between elements. Additionally, the elements have different vibration amplitudes, with the phases of vibration among the elements manifesting as different combinations of in-phase and anti-phase in different vibration modes. Validation is performed through finite element analysis (FEA) and measurements of binary and ternary coupled transducer prototypes. The prototypes comprise bender transducers closely packed in a vertical configuration. The theoretical predictions agree with the FEA and measurement results. Thus, the theoretical model contributes to enhancing the understanding of acoustic transducer behavior in coupled configurations and optimizing the design of low-frequency acoustic arrays.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034862",
+      "url": "https://doi.org/10.1121/10.0034862",
+      "published": "2025-01-22",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.118717+00:00"
+    },
+    {
+      "id": "36079334e4756e0a",
+      "title": "Neural estimation of mutual information in speech signals processed by an auditory model",
+      "authors": "Donghoon Shin, Hyung Soon Kim",
+      "affiliations": "Department of Electronics Engineering, Pusan National University 1 , Busan,; Agency for Defense Development 2 , Changwon, 51698,",
+      "abstract": "The amount of information contained in speech signals is a fundamental concern of speech-based technologies and is particularly relevant in speech perception. Measuring the mutual information of actual speech signals is non-trivial, and quantitative measurements have not been extensively conducted to date. Recent advancements in machine learning have made it possible to directly measure mutual information using data. This study utilized neural estimators of mutual information to estimate the information content in speech signals. The high-dimensional speech signal was divided into segments and then compressed using Mel-scale filter bank, which approximates the non-linear frequency perception of the human ear. The filter bank outputs were then truncated based on the dynamic range of the auditory system. This data compression preserved a significant amount of information from the original high-dimensional speech signal. The amount of information varied, depending on the categories of the speech sounds, with relatively higher mutual information in vowels compared to consonants. Furthermore, the information available in the speech signals, as processed by the auditory model, decreased as the dynamic range was reduced.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034854",
+      "url": "https://doi.org/10.1121/10.0034854",
+      "published": "2025-01-21",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.113001+00:00"
+    },
+    {
+      "id": "327c1f6f7d932629",
+      "title": "A reciprocity calibration of hydrophones in a non-anechoic water tank: Method and realization",
+      "authors": "Liuqing Yang, Yi Chen, Yongjun Huang, Jun Zhang",
+      "affiliations": "Hangzhou Applied Acoustics Research Institute 1 , Hangzhou, Zhejiang 311400,; Qingdao Innovation and Development Base, Harbin Engineering University 2 , Qingdao, Shandong 266000,",
+      "abstract": "To measure the electroacoustic parameters of transducers in the continuous sound field in a limited water area, a reciprocity calibration method of hydrophones using a spatial sampling average method in a non-anechoic tank was developed. The sound propagation in the non-anechoic tank under the impedance boundary condition, with a sound source producing continuous sound, is introduced based on the Helmholtz equation and Green's function. The reciprocity constant is given using the spatial sampling average sound pressure, and the three-transducer reciprocity calibration procedure was established. The number of spatial sampling points, which must be not less than 6000, and the sampling configuration in the non-anechoic tank are determined. In the non-anechoic tank of 15 m × 9 m × 6 m, the sensitivity of the hydrophone in the frequency range of 250 Hz to 10 kHz was calibrated, and the largest discrepancy between the measurement results from the reciprocity calibration method in the non-anechoic water tank and the standard facility was 0.7 dB.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034850",
+      "url": "https://doi.org/10.1121/10.0034850",
+      "published": "2025-01-15",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.126594+00:00"
+    },
+    {
+      "id": "895704cc36353e94",
+      "title": "Evaluating Localization Accuracy of Dynamic Binaural Synthesis: Differences Between Individual, Estimated, and Generic HRTFs",
+      "authors": "Cornelius Frankenbach, Carsten Herzog, Julia Seitz, Janina Fels",
+      "affiliations": "",
+      "abstract": "In a listening experiment with 24 participants, the localization accuracy of dynamic binaural synthesis employing individual and estimated head-related transfer functions (HRTFs) was compared to the localization accuracy with generic HRTFs in vertical and horizontal direction. The experiment featured five different HRTF estimation methods, high-frequency audiometry, proximal pointing, and individual headphone equalization. While generic Knowles Electronics Mannikin for Acoustic Research (KEMAR) HRTFs served as a baseline, individually measured ones provided a reference. Estimated HRTFs were acquired based on anthropometric data and 3D head models by means of an interaural time difference adaptation, a selection from an HRTF database, a principal component-based synthesis, and a numerical HRTF simulation. Compared to the KEMAR, measured and estimated HRTFs produced significantly smaller vertical errors, while differences in terms of the horizontal error were not significant. The HRTF synthesis qualified as the preferred estimation method by significantly reducing the vertical error for virtual sources on and below the horizontal plane, compared to the generic HRTFs.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0190",
+      "url": "https://doi.org/10.17743/jaes.2022.0190",
+      "published": "2025-01-14",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.607841+00:00"
+    },
+    {
+      "id": "9dbc7781622a1181",
+      "title": "Typicality analysis on statistical shape model-based average head and its head-related transfer functions",
+      "authors": "Yewei Wang, Guangzheng Yu",
+      "affiliations": "School of Physics and Optoelectronics, South China University of Technology , Guangzhou,",
+      "abstract": "In acoustics, an artificial head generally comprises two pinnae and occasionally a torso, which are useful for recording binaural signals and acquiring head-related transfer functions (HRTFs). Currently, most artificial heads are designed based on the anthropometric parameters of specific populations. However, anthropometric parameters do not accurately express head surface shapes, and thus, typical HRTFs are difficult to generate. Thus, this study presents a statistical shape model-based average head of 100 Chinese adults and comprehensively presents its repeatable design process. Furthermore, to validate the representativeness of the statistical shape model-based average head in terms of the head surface shape features and acoustical characteristics, its anthropometric parameters are compared with those of the 100 subjects. Moreover, the representativeness of statistical shape model-based average head's HRTFs is verified through the typical HRTFs clustered from the entire HRTF database. Owing to the clear and concise design process, the proposed method can be easily applied and promoted to a new population.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034746",
+      "url": "https://doi.org/10.1121/10.0034746",
+      "published": "2025-01-08",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:52.133558+00:00"
+    },
+    {
+      "id": "41d591ceaeb336e3",
+      "title": "Spatial Sound, Part 1: Exploring the Impact of Listening Room on Perceptual Immersion",
+      "authors": "Janne Riionheimo, Tapio Lokki",
+      "affiliations": "",
+      "abstract": "Room acoustics and sound reproduction systems shape the spatial sound character in a listening room, influencing sound quality. This study introduces a novel technique to assess the spatial character of room acoustics and sound reproduction systems, addressing a research gap in understanding spatial differences between listening environments. The technique was employed in a listening test where 15 assessors evaluated the impact of three listening rooms on perceptual immersion for music in 2.0 and 7.1 configurations using loudspeakers and binaural audio for headphones. The results indicate room reverberation enhances perceptual immersion, particularly with two-channel stereophonic setups. Surround speakers reduce room-induced effects when the music is mixed sufficiently enveloping, especially with distinct, nonreverberant surround elements. The results with headphones were similar but less pronounced. Assessors found the normal stereo tonally preferable to binaural conditions, but perceptions of immersiveness varied. Some described it as highly immersive, whereas others reported a lack of spatial depth, although it was perceived as supernaturally wide and effective compared with binaural sound. This highlights the challenge of transitioning from normal stereo to a spatialized mix in streaming services. Overall, the findings can enhance the immersive experience and even out perceptual differences between listening environments, including loudspeakers and headphones.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0179",
+      "url": "https://doi.org/10.17743/jaes.2022.0179",
+      "published": "2024-12-23",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T06:41:28.002231+00:00"
+    },
+    {
+      "id": "1f86655fa06e961f",
+      "title": "Spatial Sound, Part 2: Exploring the Impact of Listening Room on Sound Character",
+      "authors": "Janne Riionheimo, Tapio Lokki",
+      "affiliations": "",
+      "abstract": "The spatial sound character in a listening room is influenced by both the room acoustics and the sound reproduction system. These elements, either individually or in combination, can improve or reduce the sound quality. This study investigates the impact of room acoustics and electroacoustics on the sound character of popular mainstream music mixed in 7.1 and 7.1.4 formats. Fourteen skilled assessors evaluated the impact on envelopment, clarity, proximity, and preference. As one might expect, the results suggest that room reverberation improves envelopment and preference. Surprisingly, most assessors found that reverberation also brings clarity to the music. Conversely, dry acoustics were not considered preferable, nor did they improve the proximity for the majority of assessors. Adding overhead channels made punk and rock songs more enveloping but improved the preference only with the simple sound field of a ballad. Overall, the results can help improve spatial sound quality and make it easier for sound mixers to deliver consistent immersive sound experiences to listeners.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0175",
+      "url": "https://doi.org/10.17743/jaes.2022.0175",
+      "published": "2024-12-23",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T06:41:28.002688+00:00"
+    },
+    {
+      "id": "e881ff7ecb9171e5",
+      "title": "A Perceptual Study on the Plausibility of Binaural Rendering in Anechoic Environments",
+      "authors": "Tim Lübeck, Tobias Weber, Christoph Pörschmann",
+      "affiliations": "",
+      "abstract": "Plausibility has become a widely used paradigm for evaluating binaural audio for augmented reality. Although several studies have evaluated the plausibility of different binaural rendering techniques, it is not clear which parameters contribute to plausibility and to what extent. The present study attempts to fill this gap and presents the results of five listening experiments systematically investigating the impact of different parameters. A first plausibility test performed in anechoic conditions assessed the plausibility of nonindividual head-related transfer-function rendering. In four subsequent experiments, the influence of spherical harmonics truncation order, visual cues, small translational head movements, and different head-related transfer-function sets is assessed. Overall, the results indicate that even large manipulations of the rendering system have surprisingly little impact on the estimated d’.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0180",
+      "url": "https://doi.org/10.17743/jaes.2022.0180",
+      "published": "2024-12-23",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.612833+00:00"
+    },
+    {
+      "id": "50389457b9aeb98e",
+      "title": "Room Acoustic Adversarial Neural Network for Robust Sound Event Classification",
+      "authors": "Sreenivasa Upadhyaya, Wim Buyens, Wim Desmet, Peter Karsmakers",
+      "affiliations": "",
+      "abstract": "The variation in the acoustic condition of a room presents a major hurdle in the performance robustness of sound event classification. Room impulse response characterizes the way in which a sound wave is propagated from source to receiver and the overall perceptual quality and intelligibility of the recorded sound. This study presents the Room Acoustic Adversarial Neural Network (RAANN) method that can make sound event classification more robust to changes in acoustic condition by exploiting knowledge regarding the room acoustics during learning. With RAANN, the weighted F1 score for the classification task improved by 1.54 percentage points, and the standard deviation in performance dropped from 1.74 percentage points to 1.07 percentage points for acoustic conditions that were harder than those seen during the learning phase. The Clarity Index over the first 25 ms emerged as a good metric for the acoustic estimation in the RAANN training.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2022.0174",
+      "url": "https://doi.org/10.17743/jaes.2022.0174",
+      "published": "2024-11-15",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:57.615732+00:00"
     },
     {
       "id": "29dc9d7ff0f80bd6",
@@ -631,30 +1121,8 @@
       "published": "",
       "is_oa": false,
       "oa_url": "",
-      "score": 5.0,
-      "matched_keywords": [
-        "modal analysis"
-      ],
-      "fetched_at": "2026-05-25T05:20:20.348157+00:00"
-    },
-    {
-      "id": "7694af73b792b27a",
-      "title": "An acoustic metamaterial plate featuring low-frequency broadband vibration damping and sound insulation",
-      "authors": "Unknown",
-      "affiliations": "",
-      "abstract": "Publication date: 5 September 2026Source: Applied Acoustics, Volume 252Author(s): Kai Zhang, Rui Yang, Xiangbing Liu, Chaoqi Dong, Li Lei, Tingting Wang, Zichen Deng",
-      "journal": "App. Acoustics",
-      "journal_full": "Applied Acoustics",
-      "doi": "",
-      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26001593?dgcid=rss_sd_all",
-      "published": "",
-      "is_oa": false,
-      "oa_url": "",
-      "score": 3.0,
-      "matched_keywords": [
-        "sound insulation"
-      ],
-      "fetched_at": "2026-05-25T05:20:22.791517+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:31.727291+00:00"
     },
     {
       "id": "25313597518396a9",
@@ -669,11 +1137,8 @@
       "published": "",
       "is_oa": false,
       "oa_url": "",
-      "score": 2.0,
-      "matched_keywords": [
-        "acoustic environment"
-      ],
-      "fetched_at": "2026-05-25T05:20:22.796267+00:00"
+      "image_url": "",
+      "fetched_at": "2026-05-25T07:04:35.616788+00:00"
     }
   ]
 }

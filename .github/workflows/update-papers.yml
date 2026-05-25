@@ -2,9 +2,9 @@ name: Update Papers
 
 on:
   schedule:
-    # Run every day at 06:00 UTC (14:00 Beijing Time)
-    - cron: '0 6 * * *'
-  workflow_dispatch:  # Allow manual trigger
+    # Beijing Time 08:00 = UTC 00:00
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update:

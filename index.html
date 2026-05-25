@@ -1,385 +1,431 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paper Monitor | 声学文献追踪</title>
+  <title>Recent Research in Small Room Acoustics</title>
   <style>
     :root {
-      --bg: #0d1117;
-      --bg-secondary: #161b22;
-      --border: #30363d;
-      --text: #c9d1d9;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
-      --accent-hover: #79c0ff;
-      --card-bg: #161b22;
-      --tag-bg: #21262d;
-      --tag-border: #30363d;
-      --success: #3fb950;
-      --warning: #d29922;
+      --ink: #172126;
+      --muted: #617179;
+      --line: #d9e2e4;
+      --surface: #ffffff;
+      --soft: #edf4f2;
+      --bg: #f7faf9;
+      --accent: #0b6f72;
+      --accent-dark: #06494f;
+      --accent-light: #e6f4f1;
+      --oa: #15803d;
+      --oa-bg: #dcfce7;
+      --tag: #e7f0ff;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
       background: var(--bg);
-      color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
     }
 
     /* Header */
-    header {
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .header-top {
+    .topbar {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
+      gap: 24px;
+      padding: 32px clamp(20px, 4vw, 56px) 24px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .logo svg { width: 28px; height: 28px; }
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 0.875rem;
     }
 
-    /* Search & Filter */
-    .controls {
+    .topbar-brand h1 {
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .topbar-brand .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+      line-height: 1.5;
+      max-width: 600px;
+    }
+
+    .topbar-status {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
-    .search-box {
-      position: relative;
-      flex: 1;
-      min-width: 250px;
-      max-width: 500px;
+
+    /* Main */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px clamp(16px, 4vw, 40px) 48px;
     }
-    .search-box input {
+
+    /* Controls */
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(140px, 1fr));
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .controls { grid-template-columns: 1fr 1fr; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .topbar-status { align-items: flex-start; }
+    }
+
+    .control-group {
+      display: grid;
+      gap: 6px;
+    }
+
+    .control-group label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .control-group input,
+    .control-group select {
       width: 100%;
-      padding: 0.6rem 1rem 0.6rem 2.5rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
+      min-height: 42px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
       border-radius: 8px;
-      color: var(--text);
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
       font-size: 0.9rem;
       outline: none;
-      transition: border-color 0.2s;
     }
-    .search-box input:focus { border-color: var(--accent); }
-    .search-box svg {
-      position: absolute;
-      left: 0.75rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      color: var(--text-muted);
+
+    .control-group input:focus,
+    .control-group select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(11, 111, 114, 0.12);
     }
-    .journal-filters {
+
+    /* Papers list */
+    .papers {
+      display: grid;
+      gap: 12px;
+    }
+
+    .paper {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      transition: box-shadow 0.15s;
+    }
+
+    .paper:hover {
+      box-shadow: 0 4px 16px rgba(23, 33, 38, 0.08);
+    }
+
+    .paper-header {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    @media (max-width: 480px) {
+      .paper-header { grid-template-columns: 1fr; }
+    }
+
+    /* Journal badge */
+    .journal-badge {
+      display: grid;
+      place-items: center;
+      width: 70px;
+      min-height: 50px;
+      border: 2px solid var(--journal-color, var(--accent));
+      border-radius: 8px;
+      padding: 5px;
+      color: var(--journal-color, var(--accent));
+      background: #fff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+      box-shadow: inset 0 -6px 0 var(--journal-bg, var(--accent-light));
+    }
+
+    .paper-body {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .paper-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--accent-dark);
+    }
+
+    .paper-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .paper-title a:hover {
+      text-decoration: underline;
+    }
+
+    .paper-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .filter-btn {
-      padding: 0.4rem 0.9rem;
-      background: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      border-radius: 20px;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      user-select: none;
-    }
-    .filter-btn:hover { border-color: var(--accent); color: var(--text); }
-    .filter-btn.active {
-      background: rgba(88, 166, 255, 0.15);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Stats */
-    .stats-bar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.75rem 2rem;
-      display: flex;
-      justify-content: space-between;
+      gap: 8px 14px;
       align-items: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .paper-meta a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .paper-meta a:hover {
+      text-decoration: underline;
+    }
+
+    .oa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--oa-bg);
+      color: var(--oa);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .oa-badge:hover {
+      text-decoration: underline;
+    }
+
+    .meta-sep {
+      color: var(--line);
+    }
+
+    .paper-authors {
+      color: #35484f;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .paper-affiliation {
+      color: var(--muted);
       font-size: 0.8rem;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
+      line-height: 1.4;
     }
 
-    /* Main Content */
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
+    .paper-abstract {
+      margin-top: 4px;
+      color: #34464d;
+      font-size: 0.88rem;
+      line-height: 1.55;
     }
 
-    /* Loading */
+    .paper-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .kw-tag {
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: #fff7ed;
+      color: #92400e;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    /* Loading & empty */
     .loading {
       text-align: center;
-      padding: 4rem 2rem;
-      color: var(--text-muted);
+      padding: 60px 20px;
+      color: var(--muted);
     }
+
     .loading-spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--border);
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--line);
       border-top-color: var(--accent);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      margin: 0 auto 1rem;
+      margin: 0 auto 14px;
     }
+
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .error {
       text-align: center;
-      padding: 4rem 2rem;
-      color: #f85149;
+      padding: 60px 20px;
+      color: #b91c1c;
     }
 
-    /* Paper Cards */
-    .paper-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 1rem;
-    }
-    @media (max-width: 600px) {
-      .paper-grid { grid-template-columns: 1fr; }
-      header, main { padding-left: 1rem; padding-right: 1rem; }
-    }
-
-    .paper-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-      transition: border-color 0.2s, transform 0.15s;
-      display: flex;
-      flex-direction: column;
-    }
-    .paper-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .journal-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-    }
-    .tag-jasa { background: rgba(47, 129, 247, 0.15); color: #58a6ff; }
-    .tag-jsv { background: rgba(35, 197, 94, 0.15); color: #3fb950; }
-    .tag-app-acoustics { background: rgba(210, 153, 34, 0.15); color: #d29922; }
-    .tag-aes { background: rgba(244, 63, 94, 0.15); color: #f43f5e; }
-    .tag-arxiv { background: rgba(139, 148, 158, 0.15); color: #8b949e; }
-    .tag-other { background: rgba(139, 148, 158, 0.15); color: #8b949e; }
-
-    .date {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .title {
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.45;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    .title a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .title a:hover { color: var(--accent-hover); }
-
-    .authors {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      line-height: 1.5;
-    }
-
-    .abstract {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      flex: 1;
-    }
-    .abstract.collapsed {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.75rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-    .expand-btn {
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 0.8rem;
-      cursor: pointer;
-      padding: 0;
-    }
-    .expand-btn:hover { text-decoration: underline; }
-    .doi-link {
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .doi-link:hover { text-decoration: underline; }
-    .doi-link svg { width: 14px; height: 14px; }
-
-    .no-results {
+    .empty {
       text-align: center;
-      padding: 4rem 2rem;
-      color: var(--text-muted);
+      padding: 60px 20px;
+      color: var(--muted);
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
     }
-    footer a { color: var(--accent); text-decoration: none; }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Journal color vars */
+    .paper[data-journal="JASA"] {
+      --journal-color: #0b6f72;
+      --journal-bg: #e6f4f1;
+    }
+    .paper[data-journal="JSV"] {
+      --journal-color: #2563eb;
+      --journal-bg: #eff6ff;
+    }
+    .paper[data-journal="App. Acoustics"] {
+      --journal-color: #c2410c;
+      --journal-bg: #fff7ed;
+    }
+    .paper[data-journal="AES"] {
+      --journal-color: #7c3aed;
+      --journal-bg: #f5f3ff;
+    }
+    .paper[data-journal="arXiv"] {
+      --journal-color: #475569;
+      --journal-bg: #f1f5f9;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <div class="header-top">
-        <div class="logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-          </svg>
-          Paper Monitor
-        </div>
-        <div class="subtitle">声学/音频领域最新文献追踪</div>
-      </div>
-      <div class="controls">
-        <div class="search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-          </svg>
-          <input type="text" id="searchInput" placeholder="搜索标题、作者、摘要关键词...">
-        </div>
-        <div class="journal-filters" id="journalFilters"></div>
-      </div>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <h1>Recent Research in Small Room Acoustics</h1>
+      <p class="subtitle">
+        Tracking recent publications on small room acoustics, modal behavior, low-frequency properties, and acoustic measurement in enclosed spaces including studios, listening rooms, car cabins, and home theaters.
+      </p>
+    </div>
+    <div class="topbar-status">
+      <span id="paperCount">Loading…</span>
+      <span id="updateTime"></span>
     </div>
   </header>
 
-  <div class="stats-bar">
-    <span id="statsText">加载中...</span>
-    <span id="updateTime"></span>
-  </div>
-
   <main>
+    <section class="controls" aria-label="Filters">
+      <div class="control-group">
+        <label for="searchInput">Search</label>
+        <input type="search" id="searchInput" placeholder="Title, author, keyword…">
+      </div>
+      <div class="control-group">
+        <label for="journalFilter">Journal</label>
+        <select id="journalFilter">
+          <option value="">All journals</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="sortBy">Sort by</label>
+        <select id="sortBy">
+          <option value="date-desc">Date (newest)</option>
+          <option value="date-asc">Date (oldest)</option>
+          <option value="score-desc">Relevance</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="oaFilter">Access</label>
+        <select id="oaFilter">
+          <option value="">All</option>
+          <option value="oa">Open Access only</option>
+        </select>
+      </div>
+    </section>
+
     <div id="loading" class="loading">
       <div class="loading-spinner"></div>
-      <p>正在加载文献数据...</p>
+      <p>Loading papers…</p>
     </div>
     <div id="error" class="error" style="display:none;"></div>
-    <div id="papersContainer" class="paper-grid" style="display:none;"></div>
-    <div id="noResults" class="no-results" style="display:none;">
-      <p>没有找到匹配的文献</p>
+    <div id="papersContainer" class="papers" style="display:none;"></div>
+    <div id="emptyState" class="empty" style="display:none;">
+      <p>No papers match the current filters.</p>
     </div>
   </main>
 
   <footer>
-    <p>数据来源: JASA, JSV, Applied Acoustics, AES, arXiv | 
-    <a href="#" target="_blank" id="githubLink">GitHub</a></p>
-    <script>
-      // Auto-detect GitHub repo from Pages URL
-      (function(){
-        var host = location.host;
-        var path = location.pathname.split('/').filter(Boolean);
-        if (host.endsWith('.github.io') && path.length > 0) {
-          var user = host.replace('.github.io', '');
-          document.getElementById('githubLink').href = 'https://github.com/' + user + '/' + path[0];
-        } else {
-          document.getElementById('githubLink').href = 'https://github.com';
-        }
-      })();
-    </script>
+    <p>Sources: JASA, JSV, Applied Acoustics, AES, arXiv (cs.SD / eess.AS) ·
+    <a href="#" id="githubLink">GitHub</a></p>
   </footer>
 
   <script>
-    const JOURNAL_STYLES = {
-      'JASA': 'tag-jasa',
-      'JSV': 'tag-jsv',
-      'App. Acoustics': 'tag-app-acoustics',
-      'AES': 'tag-aes',
-      'arXiv': 'tag-arxiv'
-    };
-
     let allPapers = [];
-    let activeFilter = 'all';
+
+    const JOURNAL_NAMES = {
+      'JASA': 'JASA',
+      'JSV': 'JSV',
+      'App. Acoustics': 'App. Acoust.',
+      'AES': 'AES',
+      'arXiv': 'arXiv'
+    };
 
     async function loadData() {
       try {
-        const response = await fetch('data/papers.json?t=' + Date.now());
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        const data = await response.json();
+        const res = await fetch('data/papers.json?t=' + Date.now());
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
         allPapers = data.papers || [];
-        updateStats(data.last_updated);
-        renderFilters();
+        updateStatus(data.last_updated);
+        populateFilters();
         renderPapers();
         document.getElementById('loading').style.display = 'none';
         document.getElementById('papersContainer').style.display = '';
@@ -387,124 +433,126 @@
         console.error(err);
         document.getElementById('loading').style.display = 'none';
         document.getElementById('error').style.display = '';
-        document.getElementById('error').textContent = '加载数据失败: ' + err.message;
+        document.getElementById('error').textContent = 'Failed to load data: ' + err.message;
       }
     }
 
-    function updateStats(lastUpdated) {
+    function updateStatus(lastUpdated) {
       const total = allPapers.length;
-      const jounals = [...new Set(allPapers.map(p => p.journal))];
-      document.getElementById('statsText').textContent = 
-        `共收录 ${total} 篇文献 | ${jounals.length} 个来源`;
+      document.getElementById('paperCount').textContent = total + ' paper' + (total === 1 ? '' : 's');
       if (lastUpdated) {
         const d = new Date(lastUpdated);
-        document.getElementById('updateTime').textContent = 
-          '更新于 ' + d.toLocaleString('zh-CN');
+        document.getElementById('updateTime').textContent = 'Updated ' + d.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
       }
     }
 
-    function renderFilters() {
-      const journals = [...new Set(allPapers.map(p => p.journal))];
-      const container = document.getElementById('journalFilters');
-      container.innerHTML = '';
-
-      const allBtn = document.createElement('button');
-      allBtn.className = 'filter-btn active';
-      allBtn.textContent = '全部';
-      allBtn.onclick = () => setFilter('all');
-      container.appendChild(allBtn);
-
+    function populateFilters() {
+      const journals = [...new Set(allPapers.map(p => p.journal))].sort();
+      const sel = document.getElementById('journalFilter');
+      sel.innerHTML = '<option value="">All journals</option>';
       journals.forEach(j => {
-        const btn = document.createElement('button');
-        btn.className = 'filter-btn';
-        btn.textContent = j;
-        btn.onclick = () => setFilter(j);
-        container.appendChild(btn);
+        const opt = document.createElement('option');
+        opt.value = j;
+        opt.textContent = j;
+        sel.appendChild(opt);
       });
     }
 
-    function setFilter(journal) {
-      activeFilter = journal;
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', 
-          (journal === 'all' && btn.textContent === '全部') || btn.textContent === journal
-        );
-      });
-      renderPapers();
-    }
-
-    function getSearchQuery() {
-      return document.getElementById('searchInput').value.toLowerCase().trim();
+    function getFilters() {
+      return {
+        query: document.getElementById('searchInput').value.toLowerCase().trim(),
+        journal: document.getElementById('journalFilter').value,
+        sort: document.getElementById('sortBy').value,
+        oaOnly: document.getElementById('oaFilter').value === 'oa'
+      };
     }
 
     function renderPapers() {
-      const query = getSearchQuery();
-      const filtered = allPapers.filter(p => {
-        const matchJournal = activeFilter === 'all' || p.journal === activeFilter;
-        if (!matchJournal) return false;
-        if (!query) return true;
-        const text = (p.title + ' ' + p.authors + ' ' + p.abstract).toLowerCase();
-        return text.includes(query);
+      const f = getFilters();
+      let list = allPapers.filter(p => {
+        if (f.journal && p.journal !== f.journal) return false;
+        if (f.oaOnly && !p.is_oa) return false;
+        if (f.query) {
+          const text = (p.title + ' ' + p.authors + ' ' + p.abstract + ' ' + (p.affiliations||'')).toLowerCase();
+          return text.includes(f.query);
+        }
+        return true;
       });
 
-      const container = document.getElementById('papersContainer');
-      const noResults = document.getElementById('noResults');
-
-      if (filtered.length === 0) {
-        container.style.display = 'none';
-        noResults.style.display = '';
-        return;
+      if (f.sort === 'date-asc') {
+        list.sort((a,b) => (a.published||'').localeCompare(b.published||''));
+      } else if (f.sort === 'score-desc') {
+        list.sort((a,b) => (b.score||0) - (a.score||0));
+      } else {
+        list.sort((a,b) => (b.published||'').localeCompare(a.published||''));
       }
 
+      const container = document.getElementById('papersContainer');
+      const empty = document.getElementById('emptyState');
+
+      if (list.length === 0) {
+        container.style.display = 'none';
+        empty.style.display = '';
+        return;
+      }
       container.style.display = '';
-      noResults.style.display = 'none';
-      container.innerHTML = filtered.map(p => renderCard(p)).join('');
+      empty.style.display = 'none';
+      container.innerHTML = list.map(p => renderPaper(p)).join('');
     }
 
-    function renderCard(paper) {
-      const tagClass = JOURNAL_STYLES[paper.journal] || 'tag-other';
-      const hasAbstract = paper.abstract && paper.abstract.length > 20;
-      const abstractId = 'abs-' + paper.id;
-      const doiUrl = paper.doi && !paper.doi.startsWith('arXiv') 
-        ? 'https://doi.org/' + paper.doi 
-        : (paper.url || '#');
+    function renderPaper(p) {
+      const jShort = JOURNAL_NAMES[p.journal] || p.journal;
+      const doiUrl = p.doi && !p.doi.startsWith('arXiv')
+        ? 'https://doi.org/' + p.doi
+        : (p.url || '#');
+
+      let metaParts = [];
+      if (p.published) metaParts.push('<span>' + escapeHtml(p.published) + '</span>');
+
+      if (p.doi) {
+        metaParts.push('<a href="' + escapeHtml(doiUrl) + '" target="_blank" rel="noopener">' + escapeHtml(p.doi) + '</a>');
+      }
+
+      if (p.is_oa) {
+        const oaLink = p.oa_url || doiUrl;
+        metaParts.push('<a class="oa-badge" href="' + escapeHtml(oaLink) + '" target="_blank" rel="noopener">Open Access</a>');
+      }
+
+      if (p.score) {
+        metaParts.push('<span class="score-badge">score ' + p.score + '</span>');
+      }
+
+      const metaHtml = metaParts.join('<span class="meta-sep">·</span>');
+
+      const authorsHtml = p.authors ? '<div class="paper-authors">' + escapeHtml(p.authors) + '</div>' : '';
+      const affilHtml = p.affiliations ? '<div class="paper-affiliation">' + escapeHtml(p.affiliations) + '</div>' : '';
+
+      let abstractHtml = '';
+      if (p.abstract) {
+        const short = p.abstract.length > 350 ? p.abstract.slice(0, 350) + '…' : p.abstract;
+        abstractHtml = '<div class="paper-abstract">' + escapeHtml(short) + '</div>';
+      }
+
+      let kwHtml = '';
+      if (p.matched_keywords && p.matched_keywords.length) {
+        kwHtml = '<div class="paper-keywords">' + p.matched_keywords.slice(0,6).map(k => '<span class="kw-tag">' + escapeHtml(k) + '</span>').join('') + '</div>';
+      }
 
       return `
-        <article class="paper-card">
-          <div class="card-header">
-            <span class="journal-tag ${tagClass}">${paper.journal}</span>
-            <span class="date">${paper.published || '日期未知'}</span>
+        <article class="paper" data-journal="${escapeHtml(p.journal)}">
+          <div class="paper-header">
+            <div class="journal-badge">${escapeHtml(jShort)}</div>
+            <div class="paper-body">
+              <h2 class="paper-title"><a href="${escapeHtml(p.url || doiUrl || '#')}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></h2>
+              <div class="paper-meta">${metaHtml}</div>
+              ${authorsHtml}
+              ${affilHtml}
+              ${abstractHtml}
+              ${kwHtml}
+            </div>
           </div>
-          <h3 class="title">
-            <a href="${paper.url || '#'}" target="_blank" rel="noopener">${escapeHtml(paper.title)}</a>
-          </h3>
-          <div class="authors">${escapeHtml(paper.authors)}</div>
-          ${hasAbstract ? `
-            <div class="abstract collapsed" id="${abstractId}">${escapeHtml(paper.abstract)}</div>
-            <div class="card-footer">
-              <button class="expand-btn" onclick="toggleAbstract('${abstractId}', this)">展开摘要</button>
-              <a class="doi-link" href="${doiUrl}" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                查看原文
-              </a>
-            </div>
-          ` : `
-            <div class="card-footer" style="justify-content: flex-end; margin-top: auto;">
-              <a class="doi-link" href="${doiUrl}" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                查看原文
-              </a>
-            </div>
-          `}
         </article>
       `;
-    }
-
-    function toggleAbstract(id, btn) {
-      const el = document.getElementById(id);
-      const isCollapsed = el.classList.contains('collapsed');
-      el.classList.toggle('collapsed');
-      btn.textContent = isCollapsed ? '收起摘要' : '展开摘要';
     }
 
     function escapeHtml(text) {
@@ -514,10 +562,25 @@
       return div.innerHTML;
     }
 
-    // Event listeners
-    document.getElementById('searchInput').addEventListener('input', renderPapers);
+    // Events
+    ['searchInput','journalFilter','sortBy','oaFilter'].forEach(id => {
+      document.getElementById(id).addEventListener('input', renderPapers);
+      document.getElementById(id).addEventListener('change', renderPapers);
+    });
 
-    // Load on start
+    // Auto-detect GitHub link
+    (function(){
+      var host = location.host;
+      var path = location.pathname.split('/').filter(Boolean);
+      var link = document.getElementById('githubLink');
+      if (host.endsWith('.github.io') && path.length > 0) {
+        var user = host.replace('.github.io', '');
+        link.href = 'https://github.com/' + user + '/' + path[0];
+      } else {
+        link.href = 'https://github.com';
+      }
+    })();
+
     loadData();
   </script>
 </body>

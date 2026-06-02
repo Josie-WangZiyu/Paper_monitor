@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-06-01T04:05:53.922561+00:00",
+  "last_updated": "2026-06-02T03:59:52.600086+00:00",
   "papers": [
+    {
+      "id": "97b2eb15c75d290e",
+      "title": "Diffusion-Based Heart Sound Generation: Evaluation with Physiological Signal Metrics, Classifiers, and Expert Listening",
+      "authors": "Xinqi Bao, Jia Bi, Xin Chen, Ernest Nlandu Kamavuako, Saikat Chatterjee",
+      "affiliations": "",
+      "abstract": "Publicly available phonocardiogram (PCG) datasets remain limited in size and pathological diversity, constraining both auscultation training and the generalisation of automated heart-sound classifiers. A class-conditional diffusion model for PCG generation is developed in the log-mel domain and synthetic fidelity is assessed using complementary (i) physiology-inspired plausibility metrics, (ii) downstream label-consistency evaluation, and (iii) expert listening. Experiments use the Phy-sioNet/Computing in Cardiology Challenge 2016 dataset (3240 recordings) with recording-level splits. After preprocessing and quality control, 16,749 non-overlapping 4 s clips are mapped to a normalised 1 x 128 x 128 log-mel representation to train a conditional 2D U-Net denoiser with classifier-free guidance. Signal-level plausibility is quantified on reconstructed waveforms using three lightweight metrics: an envelope-autocorrelation rhythm score, an amplitude-based explosion score, and the dominant cycle lag. Synthetic clips preserve similar dominant cycle durations but exhibit reduced envelope periodicity and increased transient burstiness relative to real clips. For downstream evaluation, a ResNet-50 classifier achieves 92.24% accuracy on the held-out real test set and 82.8% accuracy on class-balanced synthetic batches, indicating that generated signals retain discriminative structure relevant to normal/abnormal classification. In a pilot expert listening study (60 clips, two clinicians), most synthetic clips are judged as heart-sound-like, while abnormality sensitivity is low for both real and synthetic 4 s excerpts. Overall, the results provide a practical baseline for diffusion-based PCG generation while highlighting remaining challenges in retaining abnormal acoustic cues and reducing reconstruction-induced artefacts.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.02448v1",
+      "url": "https://arxiv.org/abs/2606.02448v1",
+      "published": "2026-06-01",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.02448v1",
+      "image_url": "",
+      "fetched_at": "2026-06-02T03:59:52.301877+00:00"
+    },
     {
       "id": "52f136b0fa5aef4b",
       "title": "UNISON: A Unified Sound Generation and Editing Framework via Deep LLM Fusion",
@@ -96,6 +112,22 @@
       "oa_url": "https://arxiv.org/abs/2605.30748v1",
       "image_url": "",
       "fetched_at": "2026-06-01T04:05:53.650001+00:00"
+    },
+    {
+      "id": "6206af601aa16086",
+      "title": "Chatterbox-Flash: Prior-Calibrated Block Diffusion for Streaming Zero-Shot TTS",
+      "authors": "Deokjin Seo, Gangin Park, Kihyun Nam",
+      "affiliations": "",
+      "abstract": "We present Chatterbox-Flash, a zero-shot text-to-speech model obtained by fine-tuning a pretrained autoregressive TTS decoder into a block-diffusion decoder, enabling parallel token generation within each block while retaining block-by-block streaming. We find that naively transferring mainstream block-diffusion decoding to discrete speech tokens degrades quality, as a long-tail token distribution biases parallel position selection toward a few high-frequency tokens. To mitigate this without architectural modification, we introduce two inference-time techniques: prior-calibrated scoring, which subtracts the block-level marginal token distribution, and an early-decoding schedule, which adaptively terminates iteration based on calibrated confidence. On standard zero-shot TTS benchmarks, Chatterbox-Flash attains high-fidelity synthesis comparable to strong autoregressive and non-autoregressive baselines, while supporting streaming inference with time-to-first-packet on par with streaming AR systems and substantially lower real-time factor. Code and audio samples are available at https://github.com/resemble-ai/chatterbox-flash.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2605.30748v2",
+      "url": "https://arxiv.org/abs/2605.30748v2",
+      "published": "2026-05-29",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2605.30748v2",
+      "image_url": "",
+      "fetched_at": "2026-06-02T03:59:52.391053+00:00"
     },
     {
       "id": "4556e8e346b438f3",

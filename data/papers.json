@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06T03:31:21.023191+00:00",
+  "last_updated": "2026-06-07T03:57:39.629871+00:00",
   "papers": [
     {
       "id": "a80889d6e6795415",
@@ -1683,6 +1683,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-05-28T03:37:38.160845+00:00"
+    },
+    {
+      "id": "de561f5a7853199e",
+      "title": "A floating floor resilient layer development approach and its application to the design of a high impact sound insulation wood-based solution",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Rok Prislan, Andeja Kutnar, Urban Kavka, Maximilian Neusser, Daniel Svenšek",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26001830?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-07T03:57:36.596475+00:00"
+    },
+    {
+      "id": "11eb869cc6fc74e8",
+      "title": "Broadband sound absorption performance of parallel gyroid-type triply periodic minimal surface micro-perforated plate sandwich structures",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Peng-Fei Zhang, Zhong-Hua Li, Si-Chen Pei, Yan-Lan Li, Chong Xu, Ke Shi, Qi-Fei Zhang, Bo-Tao Yan, Miao Zhao, Yin-Zhuo Li, Fei Liu, Bin Liu, Pei-Kang Bai",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X2600191X?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-07T03:57:36.598542+00:00"
     }
   ]
 }

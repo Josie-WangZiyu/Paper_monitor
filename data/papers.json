@@ -1,6 +1,38 @@
 {
-  "last_updated": "2026-06-09T03:32:28.347896+00:00",
+  "last_updated": "2026-06-10T03:43:06.943975+00:00",
   "papers": [
+    {
+      "id": "54195618643f07e7",
+      "title": "Spatial-Omni: Spatial Audio Understanding Integration in Multimodal LLMs via FOA Encoding",
+      "authors": "Zhiyuan Zhu, Yixuan Chen, Yiwen Shao, Wenxiang Guo, Changhao Pan, Yu Zhang, Yuxiang Wang, Wei Liu, Houhua Zhang, Chengkuan Zeng, Wenbo Cheng, Yunxi Liu, Rui Yang, Steve Yves, Liefeng Bo, Zhou Zhao",
+      "affiliations": "",
+      "abstract": "Recent multimodal large language models mainly process audio as monaural signals, thereby discarding the spatial cues contained in spatial audio for sound localization, spatial relation reasoning, and spatial scene understanding. We propose Spatial-Omni, a lightweight method that implements SO-Encoder to inject First-Order Ambisonics (FOA) spatial audio into existing Omni LLMs as an independent modality, without modifying their original audio encoders. SO-Encoder provides spatial tokens with limited additional context cost and improves spatial audio understanding through efficient staged training. To support training and evaluation, we construct SO-Dataset, SO-QA, and SO-Bench from open-source data, real recordings, and simulations, containing 400K FOA spatial audio clips and 2.1M spatial question answering pairs. SO-Bench covers 16 spatial audio understanding subtasks, including basic detection and location estimation, spatial relation understanding, and complex spatial reasoning. Experiments show that Spatial-Omni outperforms existing open-source Large Audio-Language Models (LALMs) and Omni LLM models on spatial audio understanding tasks while retaining a reasonable level of general audio understanding. Code and data are available at https://github.com/dieKarotte/Spatial-Omni.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.10738v1",
+      "url": "https://arxiv.org/abs/2606.10738v1",
+      "published": "2026-06-09",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.10738v1",
+      "image_url": "",
+      "fetched_at": "2026-06-10T03:43:06.638438+00:00"
+    },
+    {
+      "id": "476ebdee2a0b1687",
+      "title": "Speech Meets ELF: Audio Conditional Continuous-Target Diffusion for Speech Recognition and Translation",
+      "authors": "Xuanchen Li, Tianrui Wang, Yuheng Lu, Zikang Huang, Yu Jiang, Chenghan Lin, Chenrui Cui, Ziyang Ma, Xingyu Ma, Chunyu Qiang, Guochen Yu, Xie Chen, Longbiao Wang, Jianwu Dang",
+      "affiliations": "",
+      "abstract": "Speech-to-text (S2T) systems for recognition (ASR) and translation (S2TT) typically generate discrete text tokens. In contrast, continuous-target language modelling performs generation in a continuous space, yet its potential for S2T remains unexplored. To bridge this gap, we propose ELF-S2T, an audio-conditioned continuous-target generative model for S2T. Built upon the pre-trained Embedded Language Flows (ELF) backbone, ELF-S2T processes speech via a frozen Whisper encoder and a single linear projector, prepending the resulting audio condition to the noisy text latent for in-context, flow-matching denoising. To prevent the model from over-relying on its pre-trained text context, we introduce audio forcing during training, and further amplify the audio condition via classifier-free guidance at inference. Experiments on LibriSpeech and CoVoST2 show that ELF-S2T achieves competitive ASR and S2TT performance. Crucially, our error analysis reveals that, although ASR and S2TT errors look very different on the surface, both stem from the same underlying cause, a close distance confusion in the continuous latent space. This finding naturally aligns with the continuous representation generation paradigm, indicating a common semantic mapping process beneath recognition and translation. Our code and pretrained models are publicly available at https://github.com/Sslnon/ELF-S2T.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.10368v1",
+      "url": "https://arxiv.org/abs/2606.10368v1",
+      "published": "2026-06-09",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.10368v1",
+      "image_url": "",
+      "fetched_at": "2026-06-10T03:43:06.655239+00:00"
+    },
     {
       "id": "ec923aac3d8439b7",
       "title": "What Makes Synthetic Speech Sound Sarcastic? A Prosody-Controlled Perception Study",
@@ -80,6 +112,22 @@
       "oa_url": "https://arxiv.org/abs/2606.09050v1",
       "image_url": "",
       "fetched_at": "2026-06-09T03:32:28.019774+00:00"
+    },
+    {
+      "id": "db45907b71c1c6f2",
+      "title": "Optimality of FSQ Tokens for Continuous Diffusion for Categorical Data with Application to Text-to-Speech",
+      "authors": "Vadim Popov, Wenju Gu, Tasnima Sadekova, Georgii Aparin, Assel Yermekova",
+      "affiliations": "",
+      "abstract": "Continuous diffusion for categorical data is a framework belonging to the diffusion family and aiming at generating discrete data. The scientific interest to such models has been constantly increasing these days because researchers try to achieve a challenging goal of finding reasonable alternatives to autoregressive large language models. In this paper, we study the properties of the structure of the latent space corresponding to discrete tokens expressed in terms of Kullback-Leibler divergence on diffusion path measures and accuracy of the correct token prediction by the optimally trained diffusion model. We find that FSQ tokenization scheme has the latent space structure with the properties that make it best suited for continuous diffusion for categorical data as verified through rigorous theoretical analysis and numerical experiments. To validate our findings in real-life scenario, we train several text-to-speech diffusion models having speech tokens as intermediate acoustic features, and show that the one based on FSQ tokens indeed performs the best, and, moreover, it outperforms its strong LLM-based counterpart, at the same time being significantly smaller and faster.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.09962v1",
+      "url": "https://arxiv.org/abs/2606.09962v1",
+      "published": "2026-06-08",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.09962v1",
+      "image_url": "",
+      "fetched_at": "2026-06-10T03:43:06.687188+00:00"
     },
     {
       "id": "b0fdc4597491a33f",

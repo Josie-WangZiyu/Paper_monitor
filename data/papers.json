@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-12T03:59:45.684973+00:00",
+  "last_updated": "2026-06-13T03:44:43.379865+00:00",
   "papers": [
     {
       "id": "1cbb8cf9f8b1e500",
@@ -2035,6 +2035,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-06-07T03:57:36.598542+00:00"
+    },
+    {
+      "id": "987208e995448ef2",
+      "title": "Prediction, analysis, and improvement of sound insulation performance of membrane-type acoustic metamaterials using machine learning and preliminary experiments",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Erfan Asgari, Reza Hedayati, Abdolreza Ohadi, Mohammadreza Sadeghi Naeini, Mohammadali Taleghani Esfahani",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002100?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-13T03:44:40.878775+00:00"
     }
   ]
 }

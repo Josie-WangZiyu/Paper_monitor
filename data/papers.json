@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-06-14T04:06:29.753142+00:00",
+  "last_updated": "2026-06-15T04:18:32.997265+00:00",
   "papers": [
+    {
+      "id": "5dacda10edc7102f",
+      "title": "HIDVAS: A Hearing Instrument Dataset in Various Acoustical Scenarios for Algorithm Evaluation and Training",
+      "authors": "Arnout Roebben, Giuliano Bernardi, Jan Wouters, Toon van Waterschoot, Marc Moonen",
+      "affiliations": "",
+      "abstract": "To evaluate the performance of audio signal processing algorithms and to train data-driven algorithms, e.g., as applied in hearing instruments, either simulated or recorded data can be used. While large batches of simulated data can be generated using mathematical models, recorded data provide a more adequate representation of real-life scenarios. Therefore, in this paper, the Hearing Instrument Dataset in Various Acoustical Scenarios (HIDVAS) is introduced. This dataset consists of both impulse responses and audio recordings using eight external loudspeakers, two external microphones, and a dummy head. On this dummy head behind-the-ear (BTE) hearing instrument shells with two microphones per shell are mounted, and in the dummy head's ears receiver-in-canal (RIC) hearing instrument loudspeakers are inserted. The dummy head also contains microphones located at its eardrum. The impulse responses have been computed from a swept-sine recording for each microphone-loudspeaker pair, and the audio recordings have been obtained by playing back audio (male and female speech, speech shaped noise, singing voice, stringed instrument, wind instrument, and percussion instrument) through each individual loudspeaker and recording simultaneously using all microphones. These recordings have been repeated for four hearing instrument domes (open, semi-open, closed, and no-RIC) in three reverberation conditions in one room (T30 = 0.09 s, T30 = 0.47 s, and T30 = 0.73 s), and in one reverberation condition in a different room (T30 = 1.48 s). The usage of the dataset as a `hearing instrument in a box' is exemplified with three example use cases.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.14175v1",
+      "url": "https://arxiv.org/abs/2606.14175v1",
+      "published": "2026-06-12",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.14175v1",
+      "image_url": "",
+      "fetched_at": "2026-06-15T04:18:32.681450+00:00"
+    },
     {
       "id": "1cbb8cf9f8b1e500",
       "title": "AudioX-Turbo: A Unified Framework for Efficient Anything-to-Audio Generation",
@@ -2051,6 +2067,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-06-13T03:44:40.878775+00:00"
+    },
+    {
+      "id": "4f33968aa5f9f145",
+      "title": "A low-frequency silencer with integrated vibration isolation for fluid-filled pipelines",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Xiaochen Zhao, Nan Fang, Jiahui Zhang, Zhi Hu, Lanlan Luo",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002185?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-15T04:18:28.555328+00:00"
+    },
+    {
+      "id": "52200178ad3b5846",
+      "title": "Enhanced low-frequency sound absorption via a cavity pressure criterion in an active helmholtz resonator",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Junhao Liu, Pengyao Zhang, Yuanyan Lin, Zhaoyong Sun, Yuzhen Yang, Han Jia",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002136?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-15T04:18:28.557086+00:00"
     }
   ]
 }

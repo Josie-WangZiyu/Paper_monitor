@@ -1,6 +1,70 @@
 {
-  "last_updated": "2026-06-15T04:18:32.997265+00:00",
+  "last_updated": "2026-06-16T04:09:00.776797+00:00",
   "papers": [
+    {
+      "id": "9ff25f806098ad36",
+      "title": "Learning Input-Channel Permutation Equivariance for Multi-Channel Source Separation: Reducing Bleeding in Small Music Ensembles",
+      "authors": "Ruchi Pandey, Jaime Garcia-Martinez, Pablo Cabanas-Molero, David Diaz Guerra, Ricardo Falcon Perez, Tuomas Virtanen, Julio J. Carabias-Orti, Pedro Vera-Candeas",
+      "affiliations": "",
+      "abstract": "Microphone bleed is a persistent challenge in small ensembles and orchestral recordings, where close microphones intended for individual instruments also capture leakage from nearby sources. This overlap degrades track isolation and complicates mixing. This paper addresses the bleeding problem by making channel-permutation-equivariance a core learning principle. During training, we apply the same random permutation to the input microphone channels and their corresponding reference targets. This discourages reliance on fixed channel-instrument associations and improves robustness to changes in the recording setup and even in the recorded instruments. The proposed model is trained on synthetic ensembles with diverse simulated room acoustics and microphone placements, and evaluated on unseen simulated conditions and real URMP recordings. The results show that permutation-aware training consistently improves SDR and reduces bleeding under unseen conditions compared with non-permutation baselines. The findings highlight permutation-equivariance as a simple, data-centric strategy for robust debleeding and practical multi-channel source separation in music production workflows.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.16551v1",
+      "url": "https://arxiv.org/abs/2606.16551v1",
+      "published": "2026-06-15",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.16551v1",
+      "image_url": "",
+      "fetched_at": "2026-06-16T04:09:00.447192+00:00"
+    },
+    {
+      "id": "97d84f47939d05ec",
+      "title": "Unified Audio Generation and Editing via Joint Condition Modeling and Progressive Training",
+      "authors": "Haocheng Dong, Yuheng Lu, Cheng Gong, Shansong Liu, Xiao-Lei Zhang, Xuelong Li",
+      "affiliations": "",
+      "abstract": "With the growing focus on audio in multimedia applications, numerous advanced works on audio generation have emerged. Existing studies typically treat text-to-audio (TTA) and other related audio generation tasks, such as instruction-based audio editing, as independent challenges, adopting task-specific architectures or modules. This absence of a unified modeling paradigm substantially increases the overhead and complexity of building a system for both audio generation and editing, while also leading to limited scalability. To address this issue, we introduce AudioWeave, a unified model for TTA and audio editing without additional task-specific components. Specifically, we propose a joint condition modeling approach with a factorized position embedding, enabling the diffusion transformer backbone to operate under heterogeneous inputs of TTA and audio editing. We further propose a progressive multistage training strategy to mitigate task competition and catastrophic forgetting caused by interference among multiple tasks. This in turn helps maintain the performance of each individual task and may even lead to improvements in certain aspects. Experimental results on TTA task and six audio editing tasks show that our unified model achieves competitive performance with task-specific models, laying a groundwork for further exploration of unified audio generation models.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.16435v1",
+      "url": "https://arxiv.org/abs/2606.16435v1",
+      "published": "2026-06-15",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.16435v1",
+      "image_url": "",
+      "fetched_at": "2026-06-16T04:09:00.455444+00:00"
+    },
+    {
+      "id": "a74901e1c2575658",
+      "title": "Joycent: Diffusion-based Accent TTS without Accented Phone Prediction",
+      "authors": "Xintong Wang, Ye Wang",
+      "affiliations": "",
+      "abstract": "Accent text-to-speech (TTS) aims to synthesize speech with target accents. Existing accent TTS systems typically rely on a two-stage pipeline that first converts standard phone sequences into accented phone sequences and then synthesizes accented speech. However, such approaches suffer from error accumulation and require paired standard-accented phone sequence data, which is often limited in practice. Moreover, text-based accented phone representations are insufficient to model acoustic accent characteristics such as prosody and rhythm. In this work, we propose Joycent, a diffusion-based accent TTS model that synthesizes accented speech directly from standard phone sequences and speech references without accented phone prediction. Joycent integrates accent and speaker representations through conditional layer normalization (CLN) in the text encoder. We introduce WhisAID, a Mandarin accent identification model trained on accented Mandarin speech to extract accent representations. Experimental results show that Joycent improves accentedness while preserving speaker identity compared with baseline systems. We release our code and demos at: https://github.com/oshindow/Joycent-code.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.16417v1",
+      "url": "https://arxiv.org/abs/2606.16417v1",
+      "published": "2026-06-15",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.16417v1",
+      "image_url": "",
+      "fetched_at": "2026-06-16T04:09:00.456886+00:00"
+    },
+    {
+      "id": "6d077dd88a0fa263",
+      "title": "DDPO-VC: Speaker De-Identification via Diffusion Denoising Policy Optimization",
+      "authors": "Liming Wang, Cody Karjadi, Rhoda Au, James Glass",
+      "affiliations": "",
+      "abstract": "A key challenge of speaker de-identification is the balance between privacy and utility. Many utility variables, such as the cognitive health status of the speaker, are correlated with the privacy variable, such as the speaker identity, violating the independence assumption held by the disentanglement-based approaches, causing leakage of private information and the loss of useful information for downstream tasks. To tackle this challenge, we propose a general framework, DDPO-VC, for speaker de-identification through reinforcement learning-based post-training with diffusion models. Learning from reward signals combining knowledge from privacy-focused and utility-focused teachers, our method outperforms various strong \\deid/ methods in both privacy preservation and cognitive utility on two commonly used dementia speech benchmarks. Please check out our code\\footnote{\\href{https://github.com/cactuswiththoughts/DDPO-VC}{https://github.com/cactuswiththoughts/DDPO-VC}} and demo\\footnote{\\href{https://cactuswiththoughts.github.io/SpeakerDeID-Demo/}{https://cactuswiththoughts.github.io/SpeakerDeID-Demo/}}.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.15313v1",
+      "url": "https://arxiv.org/abs/2606.15313v1",
+      "published": "2026-06-13",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.15313v1",
+      "image_url": "",
+      "fetched_at": "2026-06-16T04:09:00.482094+00:00"
+    },
     {
       "id": "5dacda10edc7102f",
       "title": "HIDVAS: A Hearing Instrument Dataset in Various Acoustical Scenarios for Algorithm Evaluation and Training",
@@ -16,6 +80,22 @@
       "oa_url": "https://arxiv.org/abs/2606.14175v1",
       "image_url": "",
       "fetched_at": "2026-06-15T04:18:32.681450+00:00"
+    },
+    {
+      "id": "afc2dbf81a2c7834",
+      "title": "Spectro-Temporal Interference Confounds Phase Encoding in Spatial Audio Foundation Models",
+      "authors": "Yuxuan Chen, Haoyuan Yu, Peize He",
+      "affiliations": "",
+      "abstract": "Recent spatial self supervised audio models achieve high performance on localization tasks, raising questions about their encoding of microsecond interaural phase fine structures. We propose a psychoacoustic benchmark based on the binaural masking level difference to evaluate this. Using an equalization cancellation baseline and a GCC PHAT positive control we evaluate nine frozen audio models spanning binaural SSL, monaural SSL, and neural audio codecs. Four monaural negative controls yield zero BMLD confirming binaural specificity. Two general purpose binaural SSL models exhibit minimal phase sensitivity while dedicated binaural spatial SSL models achieve BMLD comparable to the analytical baseline. Progressive physical ablations show that general purpose binaural SSL models rely on spectro temporal interference textures rather than cross channel phase computation. High detection rates in speech reflect a confounding reliance on broadband envelopes rather than genuine phase encoding.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2606.14820v1",
+      "url": "https://arxiv.org/abs/2606.14820v1",
+      "published": "2026-06-12",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2606.14820v1",
+      "image_url": "",
+      "fetched_at": "2026-06-16T04:09:00.516082+00:00"
     },
     {
       "id": "1cbb8cf9f8b1e500",
@@ -2099,6 +2179,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-06-15T04:18:28.557086+00:00"
+    },
+    {
+      "id": "46cf94615d2080c9",
+      "title": "Experimental characterization and numerical inverse estimation of non-acoustical parameters of loose wheat straw as green sound absorption materials",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Said Bousshine, Mohammed Garoum, Mohamed Ouakarrouch, Abdelmajid Bybi, Najma Laaroussi, Adil Ammar",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002094?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-16T04:08:54.113367+00:00"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16T04:09:00.776797+00:00",
+  "last_updated": "2026-06-17T04:09:40.482589+00:00",
   "papers": [
     {
       "id": "9ff25f806098ad36",
@@ -2195,6 +2195,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-06-16T04:08:54.113367+00:00"
+    },
+    {
+      "id": "e1b665c53fc3c6ab",
+      "title": "Wide-frequency sound absorption measurement using a square cross-sectional tube with an eight-microphone/four-point-source technique",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Akira Sanada, Nozomu Fujimoto, Akihiro Katsuhara, Kosuke Miyamoto",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002161?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-17T04:09:03.590686+00:00"
+    },
+    {
+      "id": "a5134e3c2122ff92",
+      "title": "Research on the generation mechanism and noise reduction of nose landing gear cavity noise",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Yifeng Sun, Peiqing Liu, Hao Guo, Qiulin Qu, Jiachi Zhou",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002173?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-17T04:09:03.591576+00:00"
     }
   ]
 }

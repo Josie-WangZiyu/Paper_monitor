@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-22T04:15:52.751327+00:00",
+  "last_updated": "2026-06-23T03:35:19.079616+00:00",
   "papers": [
     {
       "id": "1fb0bd1707c8dcf9",
@@ -2371,6 +2371,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-06-17T04:09:03.591576+00:00"
+    },
+    {
+      "id": "57ba86fc14686212",
+      "title": "Neuroarchitectural acoustic design in therapeutic environments: an EEG study of acoustic treatment, aesthetic sound perception, and stress reduction",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Navid Khaleghimoghaddam, Sara Arzhangi",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X2600229X?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-23T03:35:03.721570+00:00"
+    },
+    {
+      "id": "3a30a685839b150d",
+      "title": "Multiple speaker separation in reverberant rooms under low SNR conditions using the relative transfer matrix",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Wageesha N. Manamperi",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002288?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-06-23T03:35:03.721782+00:00"
     }
   ]
 }

@@ -1,6 +1,54 @@
 {
-  "last_updated": "2026-07-08T02:41:05.254390+00:00",
+  "last_updated": "2026-07-09T03:17:09.997133+00:00",
   "papers": [
+    {
+      "id": "d256cbdd16949172",
+      "title": "EscFOA: Enhancing Spatial Learning for Visually Impaired Learners via Generative Spatial Audio in 360-Degree Educational Environments",
+      "authors": "Ziyu Luo, Xiaowei Dai, Siying Zhu, Xiaoming Chen",
+      "affiliations": "",
+      "abstract": "Immersive 360-degree educational environments often lack accessible spatial structure, limiting visually impaired learners' ability to orient, explore, and construct mental representations. This paper proposes EscFOA, a geometry-aware spatial audio generation framework designed as an \\emph{acoustic scaffolding} to support spatial cognition. By integrating 3D Gaussian Splatting (3DGS) with conditional diffusion models, EscFOA reconstructs scene geometry from 360-degree videos to synthesize high-fidelity spatial audio consistent with the environmental structure. Explicitly targeting learning outcomes like independent spatial orientation and reduced cognitive load, EscFOA significantly outperforms conventional monaural and stereo audio in supporting spatial learning behaviors among blindfolded sighted participants (simulating visually impaired learners). These findings demonstrate that geometry-consistent generative audio can effectively enable inclusive access to complex spatial learning materials.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2607.07015v1",
+      "url": "https://arxiv.org/abs/2607.07015v1",
+      "published": "2026-07-08",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2607.07015v1",
+      "image_url": "",
+      "fetched_at": "2026-07-09T03:17:09.563981+00:00"
+    },
+    {
+      "id": "f99a0cf73538d0f8",
+      "title": "Learning-based Physics-Constrained Neural Kernel for Sound Field Estimation With Source-Position-Dependent Directional Weighting",
+      "authors": "Mattia Marella, Shoichi Koyama",
+      "affiliations": "",
+      "abstract": "A learning-based physics-constrained neural kernel for sound field estimation is proposed. Sound field estimation aims to estimate the spatial distribution of an acoustic field from a discrete set of microphone measurements, which have a wide range of applications. Among existing sound field estimation methods, kernel-regression-based methods offer a flexible and principled framework for incorporating physical constraints and allow inference through linear operation. It is also possible to adapt the kernel function to the target acoustic environment by representing the directional weighting function as an implicit neural representation (INR) and optimizing hyperparameters using measurements. However, the kernel function is generally optimized for single snapshot measurements of the microphones, which can lead to strong overfitting and poor generalization. We propose a source-position-dependent INR for the directional weighting function, enabling the kernel function to capture common directional patterns and to generalize to unseen source positions in the target acoustic environment. Experimental results indicate that our proposed method outperforms the snapshot-based method by estimating a directional weighting function that matches the directivity of the target sound field.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2607.06274v1",
+      "url": "https://arxiv.org/abs/2607.06274v1",
+      "published": "2026-07-07",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2607.06274v1",
+      "image_url": "",
+      "fetched_at": "2026-07-09T03:17:09.582910+00:00"
+    },
+    {
+      "id": "0ef342a1670887ac",
+      "title": "Fréchet Distance Loss on Speech Representations for Text-to-Speech Synthesis",
+      "authors": "Ho-Lam Chung, Kuan-Po Huang, Bo-Ru Lu, Hung-yi Lee",
+      "affiliations": "",
+      "abstract": "Few-step diffusion and flow-matching text-to-speech (TTS) models are usually trained with local objectives, such as conditional flow matching, reconstruction, and stop prediction. These losses provide stable optimization, but they never ask whether sampled speech follows the distribution of high-quality speech. We propose Speech Representation Fr'echet Distance loss (SR-FD), a training-time distributional regularizer for tokenizer-free flow-matching autoregressive TTS. During fine-tuning, the model synthesizes speech with the same few-step sampler used at deployment, and SR-FD matches the mean and covariance of frozen Whisper and CTC features of this speech to reference statistics computed offline from three complementary content targets. The loss requires no discriminator and no inference-time computation. On Seed-TTS English, four-step SR-FD fine-tuning reduces WER from the original four-step VoxCPM2 baseline's 2.2279% to 1.4147%, a 36.5% relative reduction, and also surpasses the original ten-step baseline at 1.7366%; both gains are significant under an utterance-level paired bootstrap. Speaker similarity and objective quality proxies are preserved at the ten-step level, and an error analysis shows the gain comes from content substitutions across all prompt lengths. SR-FD is thus an intelligibility-improving distributional regularizer for few-step TTS.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2607.06027v1",
+      "url": "https://arxiv.org/abs/2607.06027v1",
+      "published": "2026-07-07",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2607.06027v1",
+      "image_url": "",
+      "fetched_at": "2026-07-09T03:17:09.595283+00:00"
+    },
     {
       "id": "2dd2fa0ecd28b3cf",
       "title": "Ranking the Impact of Contextual Specialization in Neural Speech Enhancement",
@@ -16,6 +64,22 @@
       "oa_url": "https://arxiv.org/abs/2607.04826v1",
       "image_url": "",
       "fetched_at": "2026-07-07T03:23:27.156440+00:00"
+    },
+    {
+      "id": "6fb6f67175778391",
+      "title": "Distributed Multichannel Wiener Filtering for Topology-Unconstrained Wireless Acoustic Sensor Networks",
+      "authors": "Paul Didier, Pourya Behmandpoor, Henri Gode, Toon van Waterschoot, Simon Doclo, Jörg Bitzer, Marc Moonen",
+      "affiliations": "",
+      "abstract": "This paper introduces the topology-independent distributed multichannel Wiener filter (TI-dMWF), a novel algorithm for distributed node-specific signal estimation in wireless acoustic sensor networks (WASNs) with unconstrained topologies. The TI-dMWF enables each node in the network to compute its centralized multichannel Wiener filter solution by exchanging only low-dimensional fused signals, without requiring iterative estimation, unlike state-of-the-art approaches such as the topology-independent distributed adaptive node-specific signal estimation (TI-DANSE) algorithm. The TI-dMWF is proven optimal when each source is observed by either all nodes or only one node. Theoretical analysis and numerical simulations confirm that it achieves centralized estimation performance in a single run. Its latency as a function of the pruned-tree depth and its computational complexity are also analyzed. Its robustness is assessed in reverberant-room simulations under estimated second-order statistics, various network topologies, and deviations from the assumed observability model.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2607.05561v1",
+      "url": "https://arxiv.org/abs/2607.05561v1",
+      "published": "2026-07-06",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2607.05561v1",
+      "image_url": "",
+      "fetched_at": "2026-07-09T03:17:09.612979+00:00"
     },
     {
       "id": "7da6841a9d513ff4",
@@ -2723,6 +2787,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-06-23T03:35:03.721782+00:00"
+    },
+    {
+      "id": "e7e3843f33b33219",
+      "title": "Hybrid ISM+BRIR convolution reverberation acoustic model with tuning of absorption coefficients based on single-position measurements",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Pablo Gutierrez-Parera, Fabian Arrebola, Maria Cuevas-Rodriguez, Daniel Gonzalez-Toledo, Luis Molina-Tanco, Arcadio Reyes-Lecuona",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002306?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-09T03:17:07.107210+00:00"
     }
   ]
 }

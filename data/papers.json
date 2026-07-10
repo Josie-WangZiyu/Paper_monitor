@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-07-09T03:17:09.997133+00:00",
+  "last_updated": "2026-07-10T03:19:06.554779+00:00",
   "papers": [
+    {
+      "id": "f16327debf97552c",
+      "title": "It Takes Few to TANGO: A Quantized Distributed Model for Binaural Speech Enhancement",
+      "authors": "Zahra Benslimane, Pierre Chouteau, Martyna Poreba, Fabrice Auzanneau, Michal Szczepanski, Fabian Chersi, Romain Serizel",
+      "affiliations": "",
+      "abstract": "Neural network-based multichannel speech enhancement systems achieve strong enhancement performance, but their computational and memory requirements limit deployment on resource-constrained devices. This paper investigates low-precision inference for TANGO, a hybrid distributed binaural speech enhancement system combining neural mask estimation with spatial filtering. We evaluate post-training quantization and quantization-aware training for the neural components, and analyze how quantization errors in the mask estimators propagate through the downstream spatial filtering stage. Our analysis shows that, although quantization degrades intermediate mask estimates, the spatial filtering stage compensates for most quantization-induced errors. Leveraging this robustness, we simplify TANGO into MN-TANGO, reducing both model size and computational complexity while maintaining comparable final performance. By combining INT8 weight-and-activation quantization with ERB compression and grouped recurrent layers, the most compact MN-TANGO reaches 4.65 MMAC/s and 0.177 MB.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2607.08645v1",
+      "url": "https://arxiv.org/abs/2607.08645v1",
+      "published": "2026-07-09",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2607.08645v1",
+      "image_url": "",
+      "fetched_at": "2026-07-10T03:19:06.108943+00:00"
+    },
     {
       "id": "d256cbdd16949172",
       "title": "EscFOA: Enhancing Spatial Learning for Visually Impaired Learners via Generative Spatial Audio in 360-Degree Educational Environments",

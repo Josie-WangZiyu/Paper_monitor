@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-11T02:38:21.006346+00:00",
+  "last_updated": "2026-07-12T02:46:02.680679+00:00",
   "papers": [
     {
       "id": "f16327debf97552c",
@@ -2819,6 +2819,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-07-09T03:17:07.107210+00:00"
+    },
+    {
+      "id": "90679cd80520110c",
+      "title": "Enhanced low-frequency near-field deconvolution using an evanescent-wave-compensated steering vector",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Xin Liu, Xiaodong Jing",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26001696?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-12T02:45:31.445931+00:00"
     }
   ]
 }

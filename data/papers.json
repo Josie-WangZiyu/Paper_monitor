@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21T02:40:32.786962+00:00",
+  "last_updated": "2026-07-22T02:37:46.420065+00:00",
   "papers": [
     {
       "id": "7a1648c844afe88f",
@@ -3251,6 +3251,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-07-20T03:11:49.753326+00:00"
+    },
+    {
+      "id": "1efad7dd89e33c70",
+      "title": "Broadband sound absorption of a stepped multi-cellular acoustic structure",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Zhengqing Liu, Zhenyuan Zheng, Qianjiang Chen, Dawei Gu, Yongyi Liu, Baisong Pan, Mohammad Fard, John Laurence Davy",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X2600263X?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-22T02:37:44.748561+00:00"
+    },
+    {
+      "id": "762b0eecca0aca4b",
+      "title": "Low-frequency sound insulation characteristics and tunability of lever-type inertial amplification plates",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Chenyang Xi, Tao Li, Yongzhen Mi, Hui Zheng, David W. Rosen",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002604?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-22T02:37:44.749290+00:00"
     }
   ]
 }

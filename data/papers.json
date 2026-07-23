@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-22T02:37:46.420065+00:00",
+  "last_updated": "2026-07-23T02:43:57.385556+00:00",
   "papers": [
     {
       "id": "7a1648c844afe88f",
@@ -3283,6 +3283,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-07-22T02:37:44.749290+00:00"
+    },
+    {
+      "id": "f42c11faf3517aa7",
+      "title": "Dual-mode acoustic materials with excellent sound absorption performance",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Fengyi Zhang, Suchao Xie, Hongyu Yan, Haiping Ding, Ziqiang Zhou",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002690?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-23T02:43:25.651058+00:00"
     }
   ]
 }

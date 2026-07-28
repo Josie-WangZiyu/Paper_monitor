@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27T02:54:43.825421+00:00",
+  "last_updated": "2026-07-28T02:31:48.410053+00:00",
   "papers": [
     {
       "id": "7a1648c844afe88f",
@@ -3299,6 +3299,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-07-23T02:43:25.651058+00:00"
+    },
+    {
+      "id": "44bb580d6f11a027",
+      "title": "A compact piezoelectric secondary source for low-frequency active noise control in liquid-filled pipelines: Theory and experiment",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Yunhao Wang, Wenjing Yu, Ruoqin Liu, Qichao Liu, Danyan Li, Guo Cheng",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002732?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-28T02:31:17.210156+00:00"
     }
   ]
 }

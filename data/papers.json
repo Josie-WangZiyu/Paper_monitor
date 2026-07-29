@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-28T02:31:48.410053+00:00",
+  "last_updated": "2026-07-29T02:36:10.666663+00:00",
   "papers": [
     {
       "id": "7a1648c844afe88f",
@@ -3315,6 +3315,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-07-28T02:31:17.210156+00:00"
+    },
+    {
+      "id": "0ae2c33f88f721a2",
+      "title": "Numerical simulation of aerodynamic noise control on a high-speed train bogie with region-specific serrated leading-edge spoilers",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Longzhou Qi, Zhigang Yang",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002719?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-07-29T02:35:51.766949+00:00"
     }
   ]
 }

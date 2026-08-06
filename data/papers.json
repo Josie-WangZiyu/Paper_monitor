@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-05T02:29:51.637765+00:00",
+  "last_updated": "2026-08-06T02:31:56.124442+00:00",
   "papers": [
     {
       "id": "7a1648c844afe88f",
@@ -3347,6 +3347,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-08-05T02:29:31.367029+00:00"
+    },
+    {
+      "id": "7a4b16b4485f4cf4",
+      "title": "Local topology optimization of Helmholtz and Fabry-Pérot resonators for low-frequency broadband sound absorption",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 December 2026Source: Applied Acoustics, Volume 254Author(s): Shaokang Zhai, Hongxing Li, Yuze Liu, Chongrui Liu, Honggang Zhao, Fuyin Ma",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26002823?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-06T02:31:53.861651+00:00"
     }
   ]
 }

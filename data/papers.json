@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-24T01:15:32.914486+00:00",
+  "last_updated": "2026-08-25T01:13:36.637848+00:00",
   "papers": [
     {
       "id": "7a1648c844afe88f",
@@ -2853,6 +2853,54 @@
       "fetched_at": "2026-05-25T07:04:52.034878+00:00"
     },
     {
+      "id": "f985e65d5efb152b",
+      "title": "A solution method for active suppression of reflections in anechoic chambers",
+      "authors": "R. Haasjes, A. P. Berkhoff",
+      "affiliations": "University of Twente, Faculty of Engineering Technology, Applied Mechanics and Data Analysis 1 , Drienerlolaan 5, 7522 NG Enschede,; TNO Acoustics 2 , Oude Waalsdorperweg 63, 2597 AK, The Hague,",
+      "abstract": "A solution method to improve an anechoic chamber at low frequencies with the use of active noise control is presented. The approach uses the Kirchhoff-Helmholtz integral to compute the reflected sound field resulting from the primary sources together with an algorithm to compute the filter coefficients of a controller driving secondary sources on the walls of the enclosure using reference signals as inputs, which are measured on a contour enclosing the primary sources. A causal frequency domain method with conjugate gradient iterations is derived to determine the controller. The method is sufficiently efficient to allow computation of a causal time-domain controller with hundreds of secondary sources and hundreds of reference sensors in two- (2D) or three-dimensional configurations using a fully coupled multiple-input multiple-output system. The paper shows the results of a simulation with 200 secondary sources, 200 reference sensors, and 225 performance sensors based on a 2D finite element simulation. The method is verified in real-time in an experiment with the objective to suppress the reflections from the walls in a smaller 2D setup. Measurements with verification microphones show that the reverberation time is effectively reduced in the real-time experiment.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034881",
+      "url": "https://doi.org/10.1121/10.0034881",
+      "published": "2025-01-28",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-25T01:13:35.929833+00:00"
+    },
+    {
+      "id": "6c392c8b329a93a6",
+      "title": "Active headrest combined with a depth camera-based ear-positioning system",
+      "authors": "Yuteng Liu, Haowen Li, Haishan Zou, Zhibin Lin, Jing Lu",
+      "affiliations": "Key Laboratory of Modern Acoustic, Nanjing University 1 , Nanjing 210093,; NJU-Horizon Intelligent Audio Lab, Horizon Robotics 2 , Beijing, Beijing 100094,",
+      "abstract": "Due to the limited size of the quiet zone created by active headrests (AHR) near the human ear, noise reduction (NR) at the human ear decreases dramatically when the head moves. Combined with a head tracking system can improve the NR performance when the head moves, but most such studies currently only consider head translation. To improve the robustness when the head translates or rotates, an ear-positioning (EP) system based on a depth camera and human pose estimation model is presented in this paper and integrated with AHR. A post processing method is proposed to address extreme scenarios like an ear being occluded. Experimental results show that the EP system can effectively track the movement of ears. The performance of AHR combined with the system is more robust, achieving the lowest 11.7/12.2 dBA (left ear/right ear) NR for white noise in range of 80–2000 Hz when head translates in a 5 × 5 × 2 grid at a 2.5 cm interval and 11.4/13.6 dBA for head rotation within the range of 60° compared to −5.7/−6.9 and −3.7/2.5 dBA without the system.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034860",
+      "url": "https://doi.org/10.1121/10.0034860",
+      "published": "2025-01-24",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-25T01:13:35.934988+00:00"
+    },
+    {
+      "id": "97fdf6b075bdeb01",
+      "title": "Mode-informed complex-valued neural processes for matched field processing",
+      "authors": "Yining Liu, Wei Gao, Desheng Chen, Lijun Xu",
+      "affiliations": "School of Ocean Engineering and Technology, Sun Yat-sen University 1 , Zhuhai 528478,; School of Information and Electronics, Beijing Institute of Technology 2 , Beijing 100081,",
+      "abstract": "A complex-valued neural process method, combined with modal depth functions (MDFs) of the ocean waveguide, is proposed to reconstruct the acoustic field. Neural networks are used to describe complex Gaussian processes, modeling the distribution of the acoustic field at different depths. The network parameters are optimized through a meta-learning strategy, preventing overfitting under small sample conditions (sample size equals the number of array elements) and mitigating the slow reconstruction speed of Gaussian processes (GPs), while denoising and interpolating sparsely distributed acoustic field data, generating dense field data for virtual receiver arrays. The predicted field is then integrated with the matched field processing (MFP) method for passive source localization. Validation on the SWellEx-96 waveguide shows significant improvements in localization performance and reduces sidelobes of ambiguity surface compared to traditional MFP and GP-based MFP. Moreover, the proposed kernel based on MDFs outperforms the Gaussian kernel in describing ocean waveguide characteristics. Because of the feature representation of multi-modal mapping, this kernel enhances acoustic field prediction performance and improves the accuracy and robustness of MFP. Simulated and real data are used to verify the validity.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034856",
+      "url": "https://doi.org/10.1121/10.0034856",
+      "published": "2025-01-23",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-25T01:13:35.936613+00:00"
+    },
+    {
       "id": "d618cdfd0f45c734",
       "title": "Theoretical modeling and modal analysis of multi-element coupled transducers",
       "authors": "Hao Sun, Yu Lan, Wei Lu, Tianfang Zhou",
@@ -2917,6 +2965,22 @@
       "fetched_at": "2026-05-25T07:04:57.607841+00:00"
     },
     {
+      "id": "297612112ec1ceb6",
+      "title": "A combined noise source model based on vertical coherence to quantify the proportions of two types of noise power",
+      "authors": "Xuefeng Liu, Qi Li, Rui Tang, Yilin Wang, Dajing Shang, Zhenxing Zhao",
+      "affiliations": "National Key Laboratory of Underwater Acoustic Technology, Harbin Engineering University 1 , Harbin 150001,; Key Laboratory of Marine Information Acquisition and Security, Harbin Engineering University, Ministry of Industry and Information Technology 2 , Harbin 150001,; College of Underwater Acoustic Engineering, Harbin Engineering University 3 , Harbin 150001,",
+      "abstract": "With the vigorous development of maritime trade, the frequency band from 100 to 1500 Hz of shallow-sea ambient noise is not only affected by surface wind-induced noise but also the contribution of ship noise. Shallow-sea ambient noise can be described by a linear combination of surface wind-induced noise sources and ship noise sources. By using the correspondence between the real part of the vertical coherence and vertical energy flux, this work establishes a combined noise source model based on vertical coherence. A 64-element vertical array is used to measure the ocean ambient noise 103 m deep in an area of the South China Sea. Two scenarios, one dominated by surface wind-induced noise and one dominated by wind-induced noise and ship noise, are selected for investigation. By comparing the theoretical and measured values, the accuracy of the model proposed in this paper and its ability to remove the ship noise reliably are verified. This approach can be used to quantify the proportion of ship noise power in shallow-sea low-frequency environments and evaluate the contributions of wind-induced noise and ship noise at different times.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034786",
+      "url": "https://doi.org/10.1121/10.0034786",
+      "published": "2025-01-09",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-25T01:13:35.952715+00:00"
+    },
+    {
       "id": "9dbc7781622a1181",
       "title": "Typicality analysis on statistical shape model-based average head and its head-related transfer functions",
       "authors": "Yewei Wang, Guangzheng Yu",
@@ -2931,6 +2995,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-05-25T07:04:52.133558+00:00"
+    },
+    {
+      "id": "c47db5cd466f8b52",
+      "title": "A small cavity for detecting sound-induced flow",
+      "authors": "Junpeng Lai, Zihan Liu, Morteza Karimi, Mahdi Farahikia, Weili Cui, Johar Pourghader, Sara Aghazadeh, Changhong Ke, Ronald Miles",
+      "affiliations": "Department of Mechanical Engineering, Binghamton University 1 , Binghamton, New York 13902,; Division of Engineering Programs, State University of New York at New Paltz 2 , New Paltz, New York 12561,; Department of Mechanical & Facility Engineering, State University of New York, Maritime College 3 , Bronx, New York 10465,",
+      "abstract": "A study is presented of a method for creating an acoustic flow sensor that is generally compatible with current silicon microfabrication processes. An aim of this effort is to obtain a design consisting of a minimal departure from the existing designs employed in mass-produced silicon microphones. Because the primary component in all of these microphones is the cavity behind the pressure-sensing diaphragm, we begin with a study of the acoustic particle velocity within a cavity in a planar surface. The sound within the cavity is caused by the external plane sound wave traveling parallel to the cavity's open surface. It is shown that with suitable dimensions of the cavity, the acoustic particle velocity simultaneously flows inward at one end and outward at the other end of the single open cavity surface. A simple analytical model is presented to estimate the required length and depth of the cavity such that the acoustic particle velocity into and out of the opening is a reasonable approximation to that of a plane traveling sound wave in the free field. Measurements of the acoustic particle velocity into and out of the cavity are in close agreement with both the simple model and a more detailed finite element model. Agreement between two dissimilar modeling approaches and experiments suggests that the dominant features of the system have been accounted for. By redirecting the acoustic particle velocity into and out of the cavity opening rather than the flow being parallel to the plane surface, this configuration greatly facilitates the design and fabrication of structures intended to sense the acoustic flow.",
+      "journal": "JASA",
+      "journal_full": "Journal of the Acoustical Society of America",
+      "doi": "10.1121/10.0034788",
+      "url": "https://doi.org/10.1121/10.0034788",
+      "published": "2025-01-07",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-25T01:13:35.942798+00:00"
     },
     {
       "id": "41d591ceaeb336e3",

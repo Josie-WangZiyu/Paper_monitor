@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-27T07:47:37.707061+00:00",
+  "last_updated": "2026-08-28T09:52:04.725864+00:00",
   "papers": [
     {
       "id": "92ce7af2822f80c8",
@@ -16,6 +16,22 @@
       "oa_url": "https://arxiv.org/abs/2608.25404v1",
       "image_url": "",
       "fetched_at": "2026-08-27T07:47:37.239414+00:00"
+    },
+    {
+      "id": "594eccc02446f9d3",
+      "title": "GAN-based Joint Dereverberation and Directional Filtering",
+      "authors": "Weilong Huang, Shrishti Saha Shetu, Emanuël A. P. Habets",
+      "affiliations": "",
+      "abstract": "Recently, neural directional filtering (NDF) enables reconstruction of a virtual directional microphone (VDM) with a desired directivity pattern, accurately rendering multi-source scenes by preserving spatial cues. In strongly reverberant environments, spatial cues become perceptually difficult to distinguish, limiting NDF-based spatial sound capture. This paper addresses this limitation with three contributions: First, we propose a neural dereverberation and directional filtering (NDDF) approach to reconstruct dereverberated VDM signals. Second, NDDF is implemented with discriminatively trained and generative adversarial network (GAN)-based models, compared with cascaded dereverberation and directional-filtering baselines. Experimental results indicate that the NDDF consistently surpasses the cascaded baselines. Additionally, the GAN-based NDDF outperforms the discriminative variant when addressing a high-order VDM target. Third, we introduce a method for directivity pattern estimation that relies solely on the input and output signals. This method is suitable for signal-mapping-based spatial filtering, which synthesizes the output signal directly without explicit filtering or masking.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2608.26403v1",
+      "url": "https://arxiv.org/abs/2608.26403v1",
+      "published": "2026-08-26",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2608.26403v1",
+      "image_url": "",
+      "fetched_at": "2026-08-28T09:52:04.356757+00:00"
     },
     {
       "id": "ef3a3c1ae01abc51",
@@ -64,6 +80,22 @@
       "oa_url": "https://arxiv.org/abs/2608.24374v1",
       "image_url": "",
       "fetched_at": "2026-08-27T07:47:37.263694+00:00"
+    },
+    {
+      "id": "2727b8c206ae5a45",
+      "title": "Array-Agnostic Ambisonics Encoding via Diffusion Posterior Sampling",
+      "authors": "Amit Milstein, Nir Shlezinger, Boaz Rafaely",
+      "affiliations": "",
+      "abstract": "Spatial audio enhances user immersion by reproducing 3D sound fields, with Ambisonics being a widely adopted representation. While Ambisonics is theoretically independent of the recording setup, practical microphone arrays introduce hardware-dependent encoding artifacts. Moreover, existing data-driven solutions lack flexibility, as they are typically restricted to fixed array geometries. To overcome these limitations, we propose ADEPS, a generative framework that explicitly embeds the physical acquisition model into the inference process. By leveraging this formulation, ADEPS effectively compensates for array-specific distortions while enabling zero-shot encoding across arbitrary array topologies. We train the underlying generative prior in an unsupervised manner solely on target Ambisonic representations. Extensive evaluations across diverse simulated and real microphone arrays demonstrate that ADEPS consistently outperforms both traditional linear and parametric baselines in spatial fidelity and spectral quality.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2608.24558v2",
+      "url": "https://arxiv.org/abs/2608.24558v2",
+      "published": "2026-08-25",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2608.24558v2",
+      "image_url": "",
+      "fetched_at": "2026-08-28T09:52:04.389274+00:00"
     },
     {
       "id": "bd828f6ebf49c5d2",

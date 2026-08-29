@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-28T09:52:04.725864+00:00",
+  "last_updated": "2026-08-29T05:52:34.734372+00:00",
   "papers": [
     {
       "id": "92ce7af2822f80c8",
@@ -3747,6 +3747,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-08-27T07:47:34.185830+00:00"
+    },
+    {
+      "id": "360615b17284b351",
+      "title": "Low frequency broadband sound absorption structure based on dual hole embedded cone neck cascade resonator: prediction, modeling, and experimentation",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 January 2027Source: Applied Acoustics, Volume 255Author(s): Junyu Li, Wenxuan Zhang, Xinyu Zhou, Jian Wen, Yane Ma, Shande Li",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26003257?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-08-29T05:52:17.582267+00:00"
     }
   ]
 }

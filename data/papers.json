@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-08-30T03:56:33.496241+00:00",
+  "last_updated": "2026-08-31T03:59:09.131189+00:00",
   "papers": [
+    {
+      "id": "b92e2d6b56a77321",
+      "title": "A Frequency-Domain Artificial Reverberator Plug-In",
+      "authors": "Jonas Roth, Nishanth Kumar, Silvan Krebs, David Wieland, Christoph Studer",
+      "affiliations": "",
+      "abstract": "We present FDverb, a frequency-domain artificial reverberator, based on the idea of a vocoder with a noise carrier signal. Using a short-time Fourier transform (STFT) for analysis and synthesis, FDverb generates late reverberation by weighting spectral noise components with envelopes. We extend FDverb with early reflections, nonlinear decay, and pitch shifting. These extensions enable creative sound-design applications. We provide FDverb as an open-source DAW plug-in, using the JUCE framework.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2608.27695v1",
+      "url": "https://arxiv.org/abs/2608.27695v1",
+      "published": "2026-08-27",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2608.27695v1",
+      "image_url": "",
+      "fetched_at": "2026-08-31T03:59:08.692102+00:00"
+    },
     {
       "id": "92ce7af2822f80c8",
       "title": "CSAVocoder: A Causal Spatial Audio Vocoder Towards Real-Time Spatial Audio Generation",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-02T03:09:27.677741+00:00",
+  "last_updated": "2026-09-03T03:12:49.171475+00:00",
   "papers": [
     {
       "id": "1a2218f3e65122ea",
@@ -3859,6 +3859,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-08-29T05:52:17.582267+00:00"
+    },
+    {
+      "id": "684a55f2425b406b",
+      "title": "Influence of installation and humidity conditions on the sound absorption coefficient of aeronautical glass wool: An experimental and machine-learning-based study",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 15 January 2027Source: Applied Acoustics, Volume 256Author(s): Alfonso Caiazzo, Giuseppe Petrone, Alessandro Casaburo, Immacolata Climaco, Aurelio Bifulco",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26003270?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-09-03T03:12:47.091223+00:00"
     }
   ]
 }

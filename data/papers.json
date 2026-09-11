@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-09-10T03:20:58.555973+00:00",
+  "last_updated": "2026-09-11T03:17:04.333859+00:00",
   "papers": [
+    {
+      "id": "5a8c76e8270efe59",
+      "title": "Post-Training Zero-Shot TTS for Fine-Grained Emotion and Duration Control via Natural Language",
+      "authors": "Lianru Gao, Yujie Guo, Yong Qin",
+      "affiliations": "",
+      "abstract": "Audiobook narration, conversational agents, and audiovisual dubbing require speech that conveys changing emotions and adapts its pacing within a single utterance. But most existing TTS systems typically rely on utterance-level style conditioning, making such fine-grained control difficult to achieve. In light of this, and inspired by the success of post-training in large language models, we propose a unified post-training framework that equips pretrained text-to-speech models with natural-language control over segment-level emotion and duration. Supervised fine-tuning establishes instruction-conditioned speech generation, while reinforcement learning with group relative policy optimization refines control accuracy using emotion and duration rewards alongside content and speaker preservation objectives. By reusing the pretrained architecture, our approach avoids additional inference-time control modules. Experiments demonstrate significantly improved fine-grained controllability while maintaining speech intelligibility and speaker identity, highlighting post-training as a practical approach to extending existing speech synthesis models.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2609.11523v1",
+      "url": "https://arxiv.org/abs/2609.11523v1",
+      "published": "2026-09-10",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2609.11523v1",
+      "image_url": "",
+      "fetched_at": "2026-09-11T03:17:03.851468+00:00"
+    },
     {
       "id": "00803459e0ff2658",
       "title": "Teacher-Free Self-Distilled Consistency Trajectory Learning for Fast Speech Enhancement",

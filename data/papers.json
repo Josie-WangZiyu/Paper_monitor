@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22T03:34:47.595976+00:00",
+  "last_updated": "2026-09-23T03:34:23.647211+00:00",
   "papers": [
     {
       "id": "4bad84598936cbee",
@@ -4307,6 +4307,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-09-03T03:12:47.091223+00:00"
+    },
+    {
+      "id": "52cd7a05f25e89b4",
+      "title": "Micro-porosity-aware DP-JCAL inverse modeling of sound absorption in recycled paper strip materials",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Muhammad Imran, Hongjun Fan, Hassaan Ahmad, Tenglong Xu, Long Xu, Chunguang Wang, Naseem Abbas, Xiaobing Cai",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26003579?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-09-23T03:34:19.375978+00:00"
     }
   ]
 }

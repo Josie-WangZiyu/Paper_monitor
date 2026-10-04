@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-03T04:02:08.768973+00:00",
+  "last_updated": "2026-10-04T04:35:43.378593+00:00",
   "papers": [
     {
       "id": "f0fd017e7014e8ac",
@@ -5043,6 +5043,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-10-01T04:27:14.499617+00:00"
+    },
+    {
+      "id": "0d37880649a3952d",
+      "title": "A design method for hierarchical bionic venation Voronoi structures with integrated load bearing and sound absorption",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Hanbin Wang, Wenjiong Chen, Yipu Wang, Zhi Zong",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26003786?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-10-04T04:35:26.483493+00:00"
     }
   ]
 }

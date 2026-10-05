@@ -1,6 +1,38 @@
 {
-  "last_updated": "2026-10-04T04:35:43.378593+00:00",
+  "last_updated": "2026-10-05T04:21:05.981838+00:00",
   "papers": [
+    {
+      "id": "28577df8a8359712",
+      "title": "Rubric-Based Optimization for Text-to-Music Generation",
+      "authors": "Ping Wang, Guang Yang, Shao-Rong Su, Junkai Wu, Pang Wei Koh, Noah A. Smith",
+      "affiliations": "",
+      "abstract": "Post-training text-to-music generation requires reward signals that capture multiple aspects of musical quality beyond what any single automatic metric can measure. We study structured, rubric-based rewards from pretrained audio-language models (ALMs) as training signals for both autoregressive and diffusion-based music generators. An ALM scores each generated clip against the rubric; we rank candidates generated for the same text prompt by their scores and convert these rankings into preference pairs for DPO on both MusicGen-small and ACE-Step~v1, and additionally use the rubric scores directly as scalar rewards for DiffusionNFT on ACE-Step~v1. On MusicCaps, rubric-based optimization improves CLAP, SongEval, and Audiobox-Aesthetics simultaneously, with the strongest gains obtained by DiffusionNFT on ACE-Step. By contrast, on MusicGen-small, building preferences from any one of these automatic evaluators produces clear cross-metric trade-offs: the targeted evaluator improves while other independent evaluators deteriorate. We further study tempo, key, and instrumentation, where precise objective rewards are available. Directly optimizing these specialized rewards reliably improves the target attributes, whereas ALM rubrics provide only partial transfer for tempo and instrumentation and no measurable improvement for key. Together, these results suggest a practical division of labor: ALM rubrics are effective for broad perceptual qualities that are difficult to formalize, while specialized objective rewards remain preferable when reliable measurements are available.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2610.03589v1",
+      "url": "https://arxiv.org/abs/2610.03589v1",
+      "published": "2026-10-02",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2610.03589v1",
+      "image_url": "",
+      "fetched_at": "2026-10-05T04:21:05.359643+00:00"
+    },
+    {
+      "id": "e8f9abda41c5a0e0",
+      "title": "DriftTTS: Few-Step Text-to-Speech Without Distillation via Distribution-Matching Drift",
+      "authors": "Mohammad Nur Hossain Khan, Subrata Biswas, Bashima Islam",
+      "affiliations": "",
+      "abstract": "Few-step neural text-to-speech models often rely on short- ened diffusion or flow-matching schedules, or on distillation from pretrained multi-step teachers. To avoid these depen- dencies, we present DriftTTS, a few-step mel-spectrogram generator trained without a generative teacher, distillation, or adversarial discrimination. DriftTTS uses a distribution- matching drift objective in a mel-domain feature space defined by raw mels and a frozen masked-autoencoder encoder pretrained on the same LJSpeech training split. On-policy rollout trains the decoder on its own interme- diate states and supports inference up to the trained roll- out depth. On LJSpeech, DriftTTS at NFE=4 achieves 3.87 dB MCD and 3.7% WER, compared with 3.85 dB and 3.4% for Matcha-TTS. In a fully paired blind listen- ing test, DriftTTS obtains 4.18 MOS, compared with 3.96 for Matcha-TTS and 4.22 for ground truth. These results demonstrate competitive few-step synthesis without a pre- trained generative teacher. Code can be found at https: //github.com/BASHLab/driftTTS.git",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2610.03390v1",
+      "url": "https://arxiv.org/abs/2610.03390v1",
+      "published": "2026-10-02",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2610.03390v1",
+      "image_url": "",
+      "fetched_at": "2026-10-05T04:21:05.368652+00:00"
+    },
     {
       "id": "f0fd017e7014e8ac",
       "title": "Beyond Decodability: Do Acoustic Factors Drive Predictions in Speech-Based Alzheimer's Assessment?",

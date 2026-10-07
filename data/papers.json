@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06T05:08:49.510355+00:00",
+  "last_updated": "2026-10-07T04:35:43.241432+00:00",
   "papers": [
     {
       "id": "bfce2374ff8a64e1",
@@ -5251,6 +5251,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-10-04T04:35:26.483493+00:00"
+    },
+    {
+      "id": "1b828221804e926e",
+      "title": "Boundary-impedance-engineered loss-channel redistribution in Helmholtz acoustic metastructures for low-frequency absorption bandwidth enhancement",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Nansha Gao, Zhicheng Zhang, Jiacheng Guo, Qiaogao Huang, Guang Pan",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26003841?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-10-07T04:35:41.390687+00:00"
+    },
+    {
+      "id": "47dc12a1a0f3747f",
+      "title": "Compact broadband low-frequency sound absorption using coupled folded side-slit Helmholtz resonators with dual-peak multimodal resonances",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Haochen Liu, Qiming Yan, Feiyang Sun, Li Fan, Yinlong Wang, Xiaodong Xu, Shuyi Zhang, Guoquan Cao",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26003798?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-10-07T04:35:41.392751+00:00"
     }
   ]
 }

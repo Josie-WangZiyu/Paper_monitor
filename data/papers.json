@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-20T03:39:24.191751+00:00",
+  "last_updated": "2026-10-21T03:31:43.265972+00:00",
   "papers": [
     {
       "id": "3b40de72615b9977",
@@ -5795,6 +5795,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-10-17T03:13:14.319166+00:00"
+    },
+    {
+      "id": "c16f964ce7d23ba5",
+      "title": "Low-frequency vibroacoustic behavior of thin plate coupled with membrane-type metamaterials for floor impact sound attenuation",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Tongjun Cho, Jewoo Choi",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004123?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-10-21T03:31:41.501672+00:00"
     }
   ]
 }

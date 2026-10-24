@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-23T03:36:44.752623+00:00",
+  "last_updated": "2026-10-24T03:30:13.030757+00:00",
   "papers": [
     {
       "id": "f3c07923180c6d83",
@@ -6019,6 +6019,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-10-21T03:31:41.501672+00:00"
+    },
+    {
+      "id": "2b1ed0dc99413945",
+      "title": "Speech intelligibility in classrooms, clinical, and auralized environments: Comparing listening performance in primary school children",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Virginia Tardini, Giulia Fusari, Pasquale Bottalico",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004111?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-10-24T03:30:10.000593+00:00"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03T05:33:34.781223+00:00",
+  "last_updated": "2026-11-04T05:01:33.661971+00:00",
   "papers": [
     {
       "id": "d6eb7ae28f5ea3bb",
@@ -6355,6 +6355,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-10-24T03:30:10.000593+00:00"
+    },
+    {
+      "id": "d1dfa8bf4d31227c",
+      "title": "Latency and anchor dependence in objective binaural quality metrics: a cross-format evaluation of immersive audio",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Bartłomiej Mróz, Przemysław Danowski",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004251?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-11-04T05:01:31.387805+00:00"
     }
   ]
 }

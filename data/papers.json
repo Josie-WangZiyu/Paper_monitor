@@ -1,6 +1,70 @@
 {
-  "last_updated": "2026-11-05T05:24:41.639015+00:00",
+  "last_updated": "2026-11-06T05:23:25.750913+00:00",
   "papers": [
+    {
+      "id": "b1287b144478799d",
+      "title": "Joint Higher-Order Low-Rank Tensor Decompositions for Multichannel Acoustic System Compression",
+      "authors": "Matthias Blochberger, Filip Elvander, Jan Østergaard, Toon van Waterschoot",
+      "affiliations": "",
+      "abstract": "Multichannel room impulse responses (RIRs) in acoustics are often long and therefore the sample count becomes large if seen as finite impulse response (FIR) filters, making storage and real-time convolution costly. Pole-zero (PZ) models are an established way to represent RIRs compactly as infinite impulse response (IIR) transfer functions. We show that a PZ model implies a low-rank canonical polyadic decomposition (CPD) of tensorized RIRs: the early reflections form a sparse rank-1 sum, while the late reverberation admits a CPD with factors determined by the poles. This motivates higher-order-tensor-based compression of RIRs via the block term decomposition (BTD), a generalization of the CPD. We propose two multichannel compression schemes: (i) a stacked multichannel block term decomposition (SMCBTD) applied to a (D+1)-mode tensor of RIRs, and (ii) a joint multichannel block term decomposition (JMCBTD) that shares subsets of factors across channels discovered by spectral clustering on factor-subspace affinity graphs. Both are optimized by an alternating higher-order orthogonal iteration (HOOI) procedure. On simulated rooms as well as measured datasets, the proposed methods achieve consistently lower reconstruction error at equal compression ratios compared to separate single-channel decompositions and a generalized low-rank approximation of matrices (GLRAM) baseline. The largest gains occur with scalar cores (i.e., CPD), supporting the PZ-to-CPD modelling link. We also find D = 3 to be a practical sweet spot, offering most of the achievable gain at moderate compute/memory cost. The compressed models enable efficient downstream multichannel convolution.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.07975v1",
+      "url": "https://arxiv.org/abs/2611.07975v1",
+      "published": "2026-11-05",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.07975v1",
+      "image_url": "",
+      "fetched_at": "2026-11-06T05:23:24.997194+00:00"
+    },
+    {
+      "id": "0c04b99333cf3627",
+      "title": "Auditory and Visual Virtualization in 6DoF XR: Effects on Plausibility and Dynamic Auditory Distance Perception",
+      "authors": "Johannes M. Arend, Christian Scheer, Melissa Ramírez, Stefan Weinzierl, Fabian Brinkmann",
+      "affiliations": "",
+      "abstract": "Extended reality (XR) enables controlled yet naturalistic multisensory experiments, but its validity depends on whether virtualized cues are perceptually plausible and lead to behavior comparable to the real world. To the best of our knowledge, this is the first study to perceptually evaluate a six-degree-of-freedom (6DoF) XR system that combines real-time room acoustic simulation, binaural rendering, and an audio-visually matched virtual replica of a large laboratory room in terms of both plausibility and behavior. In two experiments with 45 participants, we investigated how auditory and visual virtualization affect plausibility and dynamic auditory distance perception (ADP). A plausibility experiment compared real and virtual sound sources in audio-augmented reality (AAR) and virtual reality (VR), while a locomotion-based ADP experiment assessed distance-judgment accuracy, signed error, and task effort across four virtualization conditions. The system produced plausible binaural rendering in both AAR and VR, with higher plausibility in VR, indicating that perceptual requirements for XR audio depend on the visual reference frame. In the ADP task, any form of virtualization reduced accuracy and increased effort, although performance remained high overall. Virtual audio produced a bias toward nearer perceived source distances, whereas visual-only virtualization reduced accuracy without a significant directional bias. These effects did not add up in full VR. Overall, the findings demonstrate the strong potential of current 6DoF XR systems for interactive perceptual research, while revealing that task-specific behavioral validation may be necessary.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.07612v1",
+      "url": "https://arxiv.org/abs/2611.07612v1",
+      "published": "2026-11-05",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.07612v1",
+      "image_url": "",
+      "fetched_at": "2026-11-06T05:23:24.998527+00:00"
+    },
+    {
+      "id": "3d14e5ec59b98e3b",
+      "title": "A Unified Multi-Encoder Framework for Music Lyric Intelligibility Assessment: Bridging Invasive and Non-Invasive Paradigms",
+      "authors": "Jing Yang, Shenghao Liao, Shuqing Zhang, Yongyi Deng, Pan Li, Zerui Han, Gongping Huang",
+      "affiliations": "",
+      "abstract": "Lyric intelligibility significantly impacts music engagement and comprehension, especially for hearing-impaired individuals. Existing speech intelligibility metrics perform poorly in musical contexts due to differences in prosody, timing, and spectral dynamics. We propose a unified multi-encoder framework that supports both invasive and non-invasive modeling for robust lyric intelligibility prediction. By capturing complementary local acoustic-semantic alignments, global musical semantics, and ASR-derived textual cues, our method achieves superior performance over baselines on the ICASSP 2026 Cadenza dataset, with the best model achieving 26.61 RMSE, a $9.2$\\% improvement over the baseline, demonstrating its flexibility and robustness.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.07485v1",
+      "url": "https://arxiv.org/abs/2611.07485v1",
+      "published": "2026-11-05",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.07485v1",
+      "image_url": "",
+      "fetched_at": "2026-11-06T05:23:25.002992+00:00"
+    },
+    {
+      "id": "919b10acaf046850",
+      "title": "FFMT: Frequency-Factorized Multi-Rate Tokenization for Music-to-Dance Generation",
+      "authors": "Qirong Guo, Ruijie Li, Zeyan Li, Sicheng Shu, Guanzhi Ding, Weihang Ding",
+      "affiliations": "",
+      "abstract": "Dance motion combines slowly varying body configurations with rapid local movements. We investigate how explicit temporal-frequency decomposition can guide the temporal resolution and codebook capacity of discrete motion representations. We introduce frequency-factorized motion tokenization (FFMT), which separates root-relative motion into a low-frequency choreographic scaffold and a complementary high-frequency residual. FFMT uses a lower token rate and a smaller codebook for the low-frequency component, and a higher token rate and a larger codebook for the high-frequency residual. This representation further induces a plan-then-articulate autoregressive factorization: low-frequency tokens establish coarse choreography, while high-frequency tokens realize local motion details conditioned on the generated plan and music. Experiments on AIST++ and FineDance show strong distributional fidelity while preserving realistic diversity and music--motion synchronization. Ablations consistently support frequency factorization, asymmetric temporal allocation, and low-to-high conditioning.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.07384v1",
+      "url": "https://arxiv.org/abs/2611.07384v1",
+      "published": "2026-11-05",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.07384v1",
+      "image_url": "",
+      "fetched_at": "2026-11-06T05:23:25.009558+00:00"
+    },
     {
       "id": "0bf7f0962d3de852",
       "title": "The Hearpiece Database of Binaural Room Impulse Responses and Driver Responses on KEMAR",
@@ -6579,6 +6643,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-11-04T05:01:31.387805+00:00"
+    },
+    {
+      "id": "0d2c6890eafd546e",
+      "title": "Numerical analysis of broadband sound absorption performance of MOF-based porous composites",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 5 February 2027Source: Applied Acoustics, Volume 257Author(s): Heye Xiao, Mingyang Han, Peimiao Li, Yaxuan Guo, Hui Wang",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004275?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-11-06T05:23:22.024341+00:00"
     }
   ]
 }

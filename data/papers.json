@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-11-06T05:23:25.750913+00:00",
+  "last_updated": "2026-11-07T04:52:09.668177+00:00",
   "papers": [
+    {
+      "id": "1dd594d94f3ef720",
+      "title": "Singing Voice Synthesis via Guided Diffusion",
+      "authors": "Sijia Li, Shiguang Liu, Wenhuan Lu",
+      "affiliations": "",
+      "abstract": "Singing voice synthesis has emerged as a popular research area recently. Different from standard text-to-speech, it demands simultaneous adherence to both lyrical and musical constraints. This multiconditional nature makes singing voice synthesis systems highly dependent on accurately annotated datasets, making data preparation laborious and expensive. Therefore, the authors propose a novel dual-classifier guided diffusion framework that employs guidance functions for a pretrained, unconditional diffusion model, reducing the dependence on precise labels during diffusion training. This approach consists of an unconditional diffusion model and two classifiers as external guidance: a phoneme classifier to ensure accurate pronunciation and a pitch classifier to adjust pitch alignment. Techniques like gradient conflict projection are also explored and validated to harmonize the potentially conflicting gradients from the two classifiers. The authors investigate different guidance strategies, including the noisy-space and the more general clean-space guidance, which estimate gradients in noisy and clean feature spaces, respectively. Experimental results demonstrate that this method is capable of generating singing voices without annotations during diffusion training, providing a more convenient solution for the development of virtual singer applications.",
+      "journal": "AES",
+      "journal_full": "Journal of the Audio Engineering Society",
+      "doi": "10.17743/jaes.2026.0303",
+      "url": "https://doi.org/10.17743/jaes.2026.0303",
+      "published": "2026-11-06",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-11-07T04:51:53.703154+00:00"
+    },
     {
       "id": "b1287b144478799d",
       "title": "Joint Higher-Order Low-Rank Tensor Decompositions for Multichannel Acoustic System Compression",

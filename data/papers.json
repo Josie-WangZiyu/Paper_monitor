@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T05:57:54.368133+00:00",
+  "last_updated": "2026-11-13T05:20:42.895745+00:00",
   "papers": [
     {
       "id": "1dd594d94f3ef720",
@@ -6675,6 +6675,22 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-11-06T05:23:22.024341+00:00"
+    },
+    {
+      "id": "2480288816bb0820",
+      "title": "Binaural and lateral energy parameters across seating zones in five historical European theatres: The role of architectural typology",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 15 February 2027Source: Applied Acoustics, Volume 258Author(s): Ruoran Yan, Lamberto Tronchin",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004457?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-11-13T05:20:24.118915+00:00"
     }
   ]
 }

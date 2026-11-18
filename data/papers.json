@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17T06:48:35.323201+00:00",
+  "last_updated": "2026-11-18T06:08:14.888992+00:00",
   "papers": [
     {
       "id": "5b5653227b4217d0",
@@ -6915,6 +6915,38 @@
       "oa_url": "",
       "image_url": "",
       "fetched_at": "2026-11-13T05:20:24.118915+00:00"
+    },
+    {
+      "id": "fc58f38ef10b22e8",
+      "title": "High speed train interior noise control based on ultra-thin coiled acoustic metamaterials",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 15 February 2027Source: Applied Acoustics, Volume 258Author(s): Xinhao Zhang, Junyuan Zheng, Xiaotong Yang, Duojia Shi, Xichen Fan, Wenchuan Zhao, Rui Shi, Caiyou Zhao, Ping Wang",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004378?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-11-18T06:07:43.678859+00:00"
+    },
+    {
+      "id": "77ea809d1081b06d",
+      "title": "Triply periodic minimal surface-filled rigid cavity for low-frequency broadband sound absorption",
+      "authors": "Unknown",
+      "affiliations": "",
+      "abstract": "Publication date: 15 February 2027Source: Applied Acoustics, Volume 258Author(s): Ke Shi, Peng-Fei Zhang, Zhong-Hua Li, Bo-Tao Yan, Yin-Zhuo Li, Chong Xu, Xiao-Qin Wang, Yan-Lan Li, Bin Liu, Pei-Kang Bai",
+      "journal": "App. Acoustics",
+      "journal_full": "Applied Acoustics",
+      "doi": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0003682X26004536?dgcid=rss_sd_all",
+      "published": "",
+      "is_oa": false,
+      "oa_url": "",
+      "image_url": "",
+      "fetched_at": "2026-11-18T06:07:43.679710+00:00"
     }
   ]
 }

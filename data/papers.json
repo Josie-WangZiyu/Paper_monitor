@@ -1,6 +1,22 @@
 {
-  "last_updated": "2026-11-26T07:02:34.778929+00:00",
+  "last_updated": "2026-11-27T06:58:28.570751+00:00",
   "papers": [
+    {
+      "id": "6a11cb3436f245a2",
+      "title": "Learning Temporal Stabilization for Double-Talk-Robust Delay Estimation in Acoustic Echo Cancellation",
+      "authors": "Lu Ma, Yongliang Wang, Zhewen Su",
+      "affiliations": "",
+      "abstract": "Acoustic echo cancellation (AEC) depends on accurate time-delay estimation (TDE): the adaptive canceller converges only after the bulk delay between the far-end reference and the microphone is compensated. GCC-PHAT remains the standard TDE front-end and, in our stress tests, wins or ties against a fully learned estimator under interference, low SNR, strong reverberation, loudspeaker nonlinearity, and noisy references. Its principal failure mode is short-window sustained double-talk, where near-end speech creates spurious correlation peaks that classical smoothing and confidence gating cannot reliably suppress. We therefore retain GCC-PHAT as a fixed, non-learnable backbone and learn only a 13.2K-parameter causal 2-D CNN stabilizer over the time--lag correlogram. The stabilizer exploits a simple temporal distinction: true delays form persistent ridges, whereas double-talk artifacts appear as transient spikes. Across synthetic and real AEC-Challenge echo paths, it reduces MAE and gross-outlier rates by approximately $3$--$5\\x$ over tuned classical estimators and the WebRTC AEC3 matched filter. A faithful AEC3-style downstream testbed further shows that these delay gains translate into lower echo-leak rates and faster post-jump ERLE recovery in time-varying regimes, closing much of the gap to the oracle-delay ceiling. An optional coarse-to-fine pre-alignment stage extends the same residual stabilizer to stable 100--400\\,ms bulk delays without retraining, while keeping the learned component focused on short-window double-talk robustness.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.33689v1",
+      "url": "https://arxiv.org/abs/2611.33689v1",
+      "published": "2026-11-25",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.33689v1",
+      "image_url": "",
+      "fetched_at": "2026-11-27T06:58:27.826491+00:00"
+    },
     {
       "id": "ea9bd16bd890bf60",
       "title": "Mask-Based Speech Enhancement for Spatial Audio: Effects of Signal Representation and Channel-Specific Masking",
@@ -32,6 +48,22 @@
       "oa_url": "https://arxiv.org/abs/2611.32311v1",
       "image_url": "",
       "fetched_at": "2026-11-25T07:14:07.433047+00:00"
+    },
+    {
+      "id": "68ae0295331d4a1a",
+      "title": "SynAVID: A Synthetic Audio-Visual Immersive Dataset of Dynamic Scenes",
+      "authors": "Jun Xu, Sujing Li, Chunhao Bi, Zhengxue Cheng, Ronghua Wu, Qunshan Gu, Li Song",
+      "affiliations": "",
+      "abstract": "Immersive scene modeling requires synchronized visual and auditory observations under changing viewpoints and scene conditions. Obtaining such observations and references for controlled scene changes remains challenging. We introduce SynAVID, a synthetic audio-visual immersive dataset comprising eight indoor and outdoor scenes. Each minute-scale episode combines fixed camera arrays and moving trajectories with synchronized, viewpoint-dependent binaural audio. Shared scene dynamics, sound-source events, and observer poses drive visual rendering and geometry-aware acoustic synthesis. We evaluate existing methods for visual reconstruction, binaural audio reconstruction, and audiovisual editing. Mixed-observation configurations generally improve visual reconstruction on fixed and moving test views, while transiently occupied and sparsely observed regions remain challenging. Methods rank differently on spectral, interaural, and perceptual audio metrics. Geometric and instance annotations expose uneven observation support and local Gaussian representations beyond aggregate scores. Paired references assess target edits and surrounding content, while controlled geometry changes produce listener-dependent acoustic responses. The project page is available at https://avery-xu.github.io/synavid-project/.",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.32311v2",
+      "url": "https://arxiv.org/abs/2611.32311v2",
+      "published": "2026-11-24",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.32311v2",
+      "image_url": "",
+      "fetched_at": "2026-11-27T06:58:27.850771+00:00"
     },
     {
       "id": "727449ebd26d7c15",
@@ -144,6 +176,22 @@
       "oa_url": "https://arxiv.org/abs/2611.28823v1",
       "image_url": "",
       "fetched_at": "2026-11-25T07:14:07.486741+00:00"
+    },
+    {
+      "id": "5f4b272f6fb9f005",
+      "title": "MOZAIC: An Audio-Video Deepfake Benchmark for Telling What Is Fake",
+      "authors": "Shaina Raza, Mohamed Hafez, Ahmed Y. Radwan, Khalid Elgazzar, Kathryn Hume",
+      "affiliations": "",
+      "abstract": "Audio-video (AV) deepfakes can fake the face, the voice, or both. Most benchmarks only ask whether a clip is real or fake, so they cannot show whether a detector relies on the picture, the voice, or encoding traces. We present MOZAIC, a paired benchmark with a 4-way label in which every source clip is released in all four combinations of real or fake video and real or fake audio so each modality contribution can be measured directly. Fakes cover inner-face swapping, whole-frame video diffusion and voice conversion. MOZAIC has 137,745 clips from 15,014 source pairs and four tasks: T1 AV authenticity, T2 manipulation type, T3 identity verification and T4 explanation. We evaluate 12 AV multimodal LLMs (MLLMs), train four detectors and fine-tune MLLMs with LoRA. Overall, the best MLLM reaches only 35.6% on the four-way T1 and catches far more video-only fakes than voice-only fakes (43.6% vs 7.5%). Trained detectors reach 98.4% on T1, and LoRA fine-tuning raises explanation scores (OmniVinci 4.17 to 7.40, Qwen2.5-Omni 4.42 to 6.98), but the best T1 detector falls to 78.3% when the face-swap generator is held out of training, so generalization and explanation remain open. We release the dataset, the compact MOZAIC-SMALL split, the code and the prompts. https://vectorinstitute.github.io/mozaic/",
+      "journal": "arXiv",
+      "journal_full": "arXiv (Audio & Acoustics)",
+      "doi": "arXiv:2611.31301v2",
+      "url": "https://arxiv.org/abs/2611.31301v2",
+      "published": "2026-11-21",
+      "is_oa": true,
+      "oa_url": "https://arxiv.org/abs/2611.31301v2",
+      "image_url": "",
+      "fetched_at": "2026-11-27T06:58:27.921720+00:00"
     },
     {
       "id": "c0f3ab3a798f51ca",
